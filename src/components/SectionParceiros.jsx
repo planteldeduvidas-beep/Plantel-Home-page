@@ -30,14 +30,7 @@
     label: "Mentoria de Redação, prof. Thay Puppin",
     imageSrc: "/Logo_parceiros/logo-puppin.png",
   },
-  {
-    id: "mobius",
-    name: "Editora Mobius",
-    link: "https://mobiuseditora.com.br/",
-    className: "logo-parceiros logo-mobius",
-    label: "Mobius Editora",
-    imageSrc: "/Logo_parceiros/mobius.jpg",
-  },
+  
 ];
 
 export default function SectionParceiros() {
@@ -87,7 +80,7 @@ export default function SectionParceiros() {
         Quer ser nosso parceiro?
       </h2>
       <div className="container-verde">
-        Entre em contato pelo email contato@gmail.com
+        Entre em contato pelo email  plantelduvidas@gmail.com
       </div>
     </section>
   );

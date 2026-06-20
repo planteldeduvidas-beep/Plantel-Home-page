@@ -7,7 +7,6 @@ import SectionComoFunciona from "./components/SectionComoFunciona.jsx";
 import SectionComunidades from "./components/SectionComunidades.jsx";
 import SectionRedes from "./components/SectionRedes.jsx";
 import SectionParceiros from "./components/SectionParceiros.jsx";
-import SectionProfessores from "./components/SectionProfessores.jsx";
 import SectionFaq from "./components/SectionFaq.jsx";
 import Footer from "./components/Footer.jsx";
 import BackToTop from "./components/BackToTop.jsx";
@@ -70,7 +69,6 @@ export default function App() {
       { id: "#comunidades", label: "Comunidades" },
       { id: "#redes", label: "Redes Sociais" },
       { id: "#parceiros", label: "Parceiros" },
-      { id: "#professores", label: "Professores" },
     ],
     []
   );
@@ -100,8 +98,6 @@ export default function App() {
         <SectionComunidades />
         <SectionRedes />
         <SectionParceiros />
-        <SectionProfessores />
-        <SectionFaq />
       </main>
 
       <Footer menuItems={menuItems} onAnchorClick={handleAnchorClick} />
