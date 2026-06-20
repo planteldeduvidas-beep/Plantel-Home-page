@@ -42,7 +42,7 @@
 
       <div className="footer-bottom">
         <p>© 2025 Plantel de Dúvidas. Todos os direitos reservados.</p>
-        <p className="dev-team">Desenvolvido pela Equipe de TI do Plantel de Dúvidas</p>
+        <p className="dev-team"> Desenvolvido pela Equipe de TI/Desenvolvimento - Plantel Labs </p>
       </div>
     </footer>
   );
