@@ -42,7 +42,7 @@ export default function SectionParceiros() {
         Nossos mais singelos agradecimentos aos parceiros que promovem e
         contribuem para a comunidade do Plantel de Dúvidas. Entre nas
         comunidades para ter acesso aos benefícios exclusivos oferecidos pelos
-        parceiros!
+        parceiros! <strong id="text-cupom">Use o cupom: PLANTEL10</strong>
       </p>
 
       {parceiros.map((parceiro) => (

@@ -299,6 +299,12 @@ header {
   margin-bottom: 10px;
 }
 
+#text-cupom{
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--primary-color)
+}
+
 .text-info-out {
   font-weight: 400;
   font-size: 1.2rem;
@@ -1070,9 +1076,10 @@ body.dark-theme .swiper-button-prev {
   color: var(--primary-color);
 }
 
-/* ======================================================
+ /* ======================================================
    18) FOOTER
-====================================================== */
+======================================================  */
+
 .main-footer {
   background-color: rgba(255, 255, 255, 0.8);
   -webkit-backdrop-filter: blur(10px);
@@ -1135,9 +1142,10 @@ body.dark-theme .swiper-button-prev {
 }
 
 .container-verde {
+  overflow-wrap: break-word;
   text-align: center;
   background-color: var(--accent-color);
-  width: 25%;
+  width: 38%;
   margin: auto;
   font-family: "Pathway Gothic One", sans-serif;
   font-size: 2em;
@@ -1146,7 +1154,7 @@ body.dark-theme .swiper-button-prev {
   font-weight: bold;
   box-shadow: var(--shadow);
   color: white;
-}
+} 
 
 /* ======================================================
    19) DARK MODE (por variÃ¡veis + ajustes pontuais)
@@ -1215,8 +1223,8 @@ body.dark-theme .filter-btn.active {
   color: #000;
 }
 
-/* Footer */
-body.dark-theme .main-footer {
+/* Footer */ 
+ body.dark-theme .main-footer {
   background-color: rgba(18, 18, 18, 0.9);
   border-top-color: rgba(255, 255, 255, 0.1);
 }
@@ -1535,6 +1543,10 @@ body.dark-theme .hamburger .bar:after {
   #backToTop {
     bottom: 80px;
   }
+
+  .container-verde{
+    width: 80%;
+  }
 }
 
 /* <= 992px */
@@ -1620,6 +1632,10 @@ body.dark-theme .hamburger .bar:after {
   /* SeÃ§Ãµes */
   .secao {
     padding: 80px 20px 100px;
+  }
+
+  .container-verde{
+    width: 100%;
   }
 
   .title h1 {
@@ -1792,6 +1808,8 @@ body.dark-theme .hamburger .bar:after {
   .secao {
     padding: 40px 20px;
   }
+
+  
 }
 
 /* Imagens mobile para parceiros (mantido) */
@@ -1818,6 +1836,9 @@ body.dark-theme .hamburger .bar:after {
     background-image: var(--gradient-overlay), url("/fundo_parceiros/mobius-cel.png");
     background-position: center 25px;
   }
+  
+  
+
 }
 
 /* Ajuste extremo filtros em telas muito pequenas */

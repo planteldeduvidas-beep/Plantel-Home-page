@@ -36,13 +36,13 @@
 
         <div className="footer-contact">
           <h4>Contato</h4>
-          <p>contato@plantel.com.br</p>
+          <p>plantelduvidas@plantel.com.br</p>
         </div>
       </div>
 
       <div className="footer-bottom">
         <p>© 2025 Plantel de Dúvidas. Todos os direitos reservados.</p>
-        <p className="dev-team"> Desenvolvido pela Equipe de TI/Desenvolvimento - Plantel Labs </p>
+        <p className="dev-team"> Desenvolvido pela Equipe de TI/Desenvolvimento - Plantel Labs</p>
       </div>
     </footer>
   );
