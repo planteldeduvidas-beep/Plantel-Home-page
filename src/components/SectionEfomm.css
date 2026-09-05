@@ -1,0 +1,128 @@
+.efomm-section {
+  padding: 56px 24px;
+  scroll-margin-top: 110px;
+}
+
+.efomm-section-heading {
+  max-width: 720px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.efomm-section-heading h2 {
+  margin: 0 0 20px;
+  color: var(--primary-color);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.efomm-section-heading .line {
+  max-width: 100%;
+  margin-bottom: 24px;
+}
+
+.efomm-section-heading p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.efomm-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  border: 1px solid #d5b453;
+  border-radius: 24px;
+  background: radial-gradient(ellipse at top left, #244763, #0c2137 70%);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 16px 40px #071a3020;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.efomm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px #071a3035;
+}
+
+.efomm-card:focus-visible {
+  outline: 3px solid #d5b453;
+  outline-offset: 5px;
+}
+
+.efomm-emblem {
+  width: 240px;
+  min-height: 240px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #f2d477;
+}
+
+.efomm-emblem img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.efomm-copy {
+  max-width: 390px;
+  min-width: 0;
+  text-align: center;
+}
+
+.efomm-eyebrow {
+  color: #f2d477;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.efomm-copy h3 {
+  margin: 10px 0 12px;
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+.efomm-copy p {
+  max-width: 390px;
+  margin: 0;
+  color: #dce6f0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.efomm-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #f2d477;
+  color: #0c2137;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .efomm-section { padding: 32px 20px; }
+  .efomm-card {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .efomm-emblem { width: 180px; min-height: 180px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .efomm-card { transition: none; }
+  .efomm-card:hover { transform: none; }
+}

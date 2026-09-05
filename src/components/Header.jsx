@@ -1,4 +1,4 @@
-﻿import { Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 
 export default function Header({
   menuItems,
@@ -17,7 +17,7 @@ export default function Header({
     <header>
       {/* Logo principal */}
       <img
-        src="/images/LogoPlantnoHeader.png"
+        src="/images/plantel-nova.png"
         alt="Logo"
         className="logo"
         onClick={() => window.location.reload()}
@@ -25,9 +25,9 @@ export default function Header({
       {/*
         Como colocar a imagem do logo:
         1) Coloque o arquivo em public/images/
-        2) Troque src="#" por src="/images/LogoPlantnoHeader.png"
+        2) Troque src="#" por src="/images/plantel-nova.png"
         Ou importe:
-        import logo from "../assets/LogoPlantnoHeader.png"; src={logo}
+        import logo from "../assets/plantel-nova.png"; src={logo}
       */}
 
       <nav className="menu">

@@ -2,6 +2,7 @@
 import Header from "./components/Header.jsx";
 import MobileMenu from "./components/MobileMenu.jsx";
 import Hero from "./components/Hero.jsx";
+import SectionEfomm from "./components/SectionEfomm.jsx";
 import SectionSobre from "./components/SectionSobre.jsx";
 import SectionComoFunciona from "./components/SectionComoFunciona.jsx";
 import SectionComunidades from "./components/SectionComunidades.jsx";
@@ -97,6 +98,7 @@ export default function App() {
         <SectionComoFunciona />
         <SectionComunidades />
         <SectionRedes />
+        <SectionEfomm />
         <SectionParceiros />
       </main>
 
