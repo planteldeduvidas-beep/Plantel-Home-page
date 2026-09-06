@@ -1,4 +1,6 @@
-﻿export default function MobileMenu({ menuItems, isOpen, onClose, onAnchorClick }) {
+﻿import { Link } from "react-router-dom";
+
+export default function MobileMenu({ menuItems, isOpen, onClose, onAnchorClick }) {
   const handleClick = (event, targetId) => {
     event.preventDefault();
     onAnchorClick(targetId);
@@ -12,7 +14,9 @@
       aria-hidden={!isOpen}
     >
       <div className="inner">
-        {menuItems.map((item) => (
+        {menuItems.map((item) => item.to ? (
+            <Link key={item.to} to={item.to}>{item.label}</Link>
+          ) : (
           <a
             key={item.id}
             href={item.id}
