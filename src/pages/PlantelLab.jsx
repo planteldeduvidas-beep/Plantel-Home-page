@@ -1,22 +1,23 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo-plantel.png";
+import logo from "../assets/logo_plantel1.png";
 import "../styles/plantelLab.css";
 
 export default function PlantelLab() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="plab">
+    <body class="plab">
       <header className="plab-header">
-        <div className="plab__inner plab-header__inner">
-          <Link to="/plantel-lab" className="plab-header__brand">
-            <img src={logo} alt="Plantel Labs" className="plab-header__logo" />
-            <span className="plab-header__name">
-              Plantel <span>Labs</span>
-            </span>
-          </Link>
 
+        <Link to="/plantel-lab" className="plab-header__brand">
+          <img src={logo} alt="Plantel Labs" className="plab-header__logo" />
+          <span className="plab-header__name">
+            Plantel<span>Labs</span>
+          </span>
+        </Link>
+
+        <div class="navegacao">
           <nav className={`plab-header__nav ${isMenuOpen ? "is-open" : ""}`}>
             <a href="#atuacao" className="plab-header__link">Atuação</a>
             <a href="#video" className="plab-header__link">Vídeo</a>
@@ -61,7 +62,6 @@ export default function PlantelLab() {
       {/* Seções de atuação, vídeo e time entram aqui */}
 
       <footer className="plab-footer">
-        <div className="plab__inner">
           <div className="plab-footer__grid">
             <div>
               <img src={logo} alt="Plantel Labs" className="plab-footer__logo" />
@@ -72,8 +72,17 @@ export default function PlantelLab() {
             </div>
 
             <div>
+              <h4 className="plab-footer__title">Contato</h4>
+              <ul className="plab-footer__list plab-footer__list--dot">
+                <li><a href="#contato">Fale com o time</a></li>
+                <li><a href="#contato">Parcerias</a></li>
+                <li><a href="mailto:plantelduvidas@plantel.com.br">plantelduvidas@plantel.com.br</a></li>
+              </ul>
+            </div>
+
+            <div>
               <h4 className="plab-footer__title">Navegação</h4>
-              <ul className="plab-footer__list">
+              <ul className="plab-footer__list plab-footer__list--arrow">
                 <li><a href="#atuacao">Atuação</a></li>
                 <li><a href="#video">Vídeo</a></li>
                 <li><a href="#time">Time</a></li>
@@ -82,24 +91,19 @@ export default function PlantelLab() {
             </div>
 
             <div>
-              <h4 className="plab-footer__title">Contato</h4>
+              <h4 className="plab-footer__title">Redes Sociais</h4>
               <ul className="plab-footer__list">
-                <li><a href="#contato">Fale com o time</a></li>
-                <li><a href="#contato">Parcerias</a></li>
+                <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                <li><a href="#" aria-label="GitHub">GitHub</a></li>
               </ul>
             </div>
           </div>
-
+          
           <div className="plab-footer__bottom">
             <span>© 2026 Plantel Labs. Todos os direitos reservados.</span>
-            <div className="plab-footer__social">
-              <a href="#" aria-label="Instagram">Instagram</a>
-              <a href="#" aria-label="LinkedIn">LinkedIn</a>
-              <a href="#" aria-label="GitHub">GitHub</a>
-            </div>
           </div>
-        </div>
       </footer>
-    </div>
+    </body>
   );
 }

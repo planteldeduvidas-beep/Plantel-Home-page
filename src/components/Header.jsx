@@ -1,4 +1,5 @@
 ﻿import { Moon, Sun } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Header({
   menuItems,
@@ -31,7 +32,9 @@ export default function Header({
       */}
 
       <nav className="menu">
-        {menuItems.map((item) => (
+        {menuItems.map((item) => item.to ? (
+            <Link key={item.to} to={item.to}>{item.label}</Link>
+          ) : (
           <a
             key={item.id}
             href={item.id}

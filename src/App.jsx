@@ -69,6 +69,7 @@ export default function App() {
       { id: "#comunidades", label: "Comunidades" },
       { id: "#redes", label: "Redes Sociais" },
       { id: "#parceiros", label: "Parceiros" },
+      { to: "/plantel-lab", label: "Plantel Lab"}
     ],
     []
   );
