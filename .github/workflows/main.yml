@@ -28,7 +28,9 @@ jobs:
         server: ${{ secrets.ftp_host }}
         username: ${{ secrets.ftp_user }}
         password: ${{ secrets.ftp_password }}
-        protocol: ftps
+        log-level: verbose
+        protocol: ftp
+        port: 21
         local-dir: ./dist/
         server-dir: ./
         exclude: |
