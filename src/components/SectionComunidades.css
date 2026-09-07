@@ -36,7 +36,21 @@
 .community-slide:nth-child(3n) { background: radial-gradient(ellipse at top right, #746043, #30271c 75%); }
 .community-slide.is-active { opacity: 1; transform: scale(1); }
 .community-slide-heading { display: flex; align-items: center; gap: 24px; margin-bottom: 28px; }
-.community-slide-logo { width: 88px; height: 88px; flex-shrink: 0; border-radius: 50%; object-fit: contain; }
+.community-logo-frame {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 4px 12px #00000014;
+}
+.community-slide-logo { display: block; width: 100%; height: 100%; object-fit: contain; }
+.community-logo-frame-zoom .community-slide-logo {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.32);
+}
 .community-slide-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #d4e3d9; }
 .community-slide h3 { margin: 10px 0 0; font-size: clamp(1.7rem, 3.4vw, 2.8rem); line-height: 1.15; color: #fff; }
 .community-slide-description, .community-slide-extra, .community-slide-benefits { font-size: 1rem; line-height: 1.7; }
@@ -70,7 +84,7 @@
   .community-track { --slide-width: 86vw; gap: 10px; }
   .community-slide { padding: 26px 22px; border-radius: 20px; }
   .community-slide-heading { flex-direction: column; align-items: flex-start; gap: 18px; }
-  .community-slide-logo { width: 64px; height: 64px; }
+  .community-logo-frame { width: 52px; height: 52px; border-radius: 12px; }
   .community-slide-description, .community-slide-extra, .community-slide-benefits { font-size: 0.95rem; }
   .community-controls { gap: 6px; }
   .community-dots button { width: 26px; }
