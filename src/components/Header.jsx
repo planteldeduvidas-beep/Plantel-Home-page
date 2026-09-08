@@ -1,4 +1,5 @@
 import { Moon, Sun } from "lucide-react";
+import "./Header.css";
 
 export default function Header({
   menuItems,
@@ -14,14 +15,19 @@ export default function Header({
   };
 
   return (
-    <header>
+    <header className="plantel-header">
+      <div className="header-inner">
       {/* Logo principal */}
+      <a className="header-brand" href="#" aria-label="Plantel — início" onClick={(event) => {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+      }}>
       <img
         src="/images/plantel-nova.png"
-        alt="Logo"
+        alt="Plantel"
         className="logo"
-        onClick={() => window.location.reload()}
       />
+      </a>
       {/*
         Como colocar a imagem do logo:
         1) Coloque o arquivo em public/images/
@@ -30,7 +36,7 @@ export default function Header({
         import logo from "../assets/plantel-nova.png"; src={logo}
       */}
 
-      <nav className="menu">
+      <nav className="menu" aria-label="Navegação principal">
         {menuItems.map((item) => (
           <a
             key={item.id}
@@ -50,7 +56,7 @@ export default function Header({
           onClick={onToggleDarkMode}
           aria-pressed={isDarkMode}
         >
-          {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          {isDarkMode ? <Sun size={16} /> : <Moon size={16} />}
         </button>
       </div>
 
@@ -66,9 +72,7 @@ export default function Header({
           1) public/images/LogoZap.png
           2) src="/images/LogoZap.png"
         */}
-        <h3>
-          Comunidades <br />no WhatsApp!
-        </h3>
+        <span>Comunidades no WhatsApp</span>
       </a>
 
       <button
@@ -76,10 +80,13 @@ export default function Header({
         className={`hamburger${isMenuOpen ? " open" : ""}`}
         type="button"
         aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+        aria-expanded={isMenuOpen}
+        aria-controls="mobile-menu"
         onClick={onToggleMenu}
       >
-        <span className="bar" />
+        <span className="menu-toggle-icon" aria-hidden="true"><span /><span /></span>
       </button>
+      </div>
     </header>
   );
 }

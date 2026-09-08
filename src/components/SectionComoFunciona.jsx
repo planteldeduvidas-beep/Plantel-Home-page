@@ -1,5 +1,7 @@
 ﻿import { BookOpen, MessageCircle, Trophy, Users } from "lucide-react";
 
+import { useEffect, useRef, useState } from "react";
+
 const steps = [
   {
     id: 1,
@@ -35,6 +37,46 @@ const steps = [
 ];
 
 export default function SectionComoFunciona() {
+  const timelineRef = useRef(null);
+  const [highlighted, setHighlighted] = useState(null);
+
+  useEffect(() => {
+    const mobileMotion = window.matchMedia("(max-width: 768px) and (prefers-reduced-motion: no-preference)");
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (!mobileMotion.matches) {
+        setHighlighted(null);
+        return;
+      }
+      let closest = null;
+      let distance = Infinity;
+      timelineRef.current.querySelectorAll(".timeline-content").forEach((card, index) => {
+        const bounds = card.getBoundingClientRect();
+        if (bounds.bottom <= 0 || bounds.top >= window.innerHeight) return;
+        const delta = Math.abs(bounds.top + bounds.height / 2 - window.innerHeight / 2);
+        if (delta < distance) {
+          closest = index;
+          distance = delta;
+        }
+      });
+      setHighlighted(closest);
+    };
+    const schedule = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    schedule();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    mobileMotion.addEventListener("change", schedule);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      mobileMotion.removeEventListener("change", schedule);
+    };
+  }, []);
+
   return (
     <section id="como-funciona" className="how-it-works secao">
       <div className="container">
@@ -43,7 +85,7 @@ export default function SectionComoFunciona() {
           <div className="line"></div>
         </div>
 
-        <div className="timeline-container">
+        <div className="timeline-container" ref={timelineRef}>
           <div className="timeline-line"></div>
 
           {steps.map((step, index) => {
@@ -57,7 +99,7 @@ export default function SectionComoFunciona() {
                 <div className="timeline-icon">
                   <Icon size={24} />
                 </div>
-                <div className="timeline-content">
+                <div className={`timeline-content${highlighted === index ? " is-scroll-highlighted" : ""}`}>
                   <span className="step-label">Passo {step.id}</span>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>

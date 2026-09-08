@@ -21,7 +21,7 @@ const communities = [
     id: "listas",
     title: "Plantel Listas",
     imageAlt: "Logo Plantel Listas",
-    imageSrc: "/images/LogoListas.png",
+    imageSrc: "/images/plantel-listas-nova.jpg",
     text:
       "A aura do Plantel. Caminho máximo para quem busca materiais de qualidade para se aprofundar e praticar os estudos nos mais diversos assuntos dos vestibulares.",
     extra:
@@ -187,11 +187,13 @@ export default function SectionComunidades() {
         {communities.map((community, index) => (
           <article key={community.id} className={`community-slide${index === activeIndex ? " is-active" : ""}`} role="group" aria-roledescription="slide" aria-label={`${index + 1} de ${communities.length}: ${community.title}`}>
             <div className="community-slide-heading">
-              <img
-                src={community.imageSrc}
-                className="community-slide-logo"
-                alt={community.imageAlt}
-              />
+              <div className={`community-logo-frame${community.imageSrc === "/images/plantel-comunidades.jpg" ? " community-logo-frame-zoom" : ""}`}>
+                <img
+                  src={community.imageSrc}
+                  className="community-slide-logo"
+                  alt={community.imageAlt}
+                />
+              </div>
               {/*
                 Como colocar a imagem:
                 1) Coloque o arquivo em public/images/

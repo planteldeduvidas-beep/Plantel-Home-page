@@ -206,7 +206,7 @@ header {
 /* CTA WhatsApp */
 #link {
   text-decoration: none;
-  background-color: var(--whatsapp-color);
+  background-color: #2eb056;
   color: white;
   padding: 10px 20px;
   border-radius: 12px;
@@ -228,7 +228,7 @@ header {
 }
 
 #link:hover {
-  background-color: #128c7e;
+  background-color: var(--whatsapp-color);
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
@@ -467,6 +467,20 @@ header {
   border-color: var(--primary-color) !important;
 }
 
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  #redes .container-redes { grid-template-columns: minmax(0, 1fr); }
+  #redes .box-redes {
+    transform: scale(0.96);
+    border-color: rgba(0, 0, 0, 0.05) !important;
+    transition: transform 320ms ease, box-shadow 320ms ease, border-color 320ms ease;
+  }
+  #redes .box-redes.is-scroll-highlighted {
+    transform: scale(1.02);
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
+  }
+}
+
 .title-rede {
   font-size: 1.5em;
   margin: auto;
@@ -544,6 +558,20 @@ header {
 
 .timeline-content:hover {
   transform: translateY(-5px);
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  #como-funciona .timeline-content {
+    transform: scale(0.96);
+    border: 1px solid transparent;
+    border-bottom-width: 3px;
+    transition: transform 320ms ease, box-shadow 320ms ease, border-color 320ms ease;
+  }
+  #como-funciona .timeline-content.is-scroll-highlighted {
+    transform: scale(1.02);
+    border-color: var(--primary-color);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
+  }
 }
 
 .step-label {
@@ -675,8 +703,8 @@ header {
 ====================================================== */
 #backToTop {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  right: max(16px, env(safe-area-inset-right));
   width: 50px;
   height: 50px;
   background-color: var(--primary-color);
@@ -1581,8 +1609,8 @@ body.dark-theme .hamburger .bar:after {
 }
 
 .social-btn {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -1592,10 +1620,30 @@ body.dark-theme .hamburger .bar:after {
 }
 
 .social-btn img {
-  width: 60%;
-  height: 60%;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
   display: block;
+}
+
+.social-btn.instagram img {
+  width: 30px;
+  height: 30px;
+}
+
+.social-btn.discord img {
+  width: 24px;
+  height: 24px;
+}
+
+.social-btn.youtube img {
+  width: 23px;
+  height: 23px;
+}
+
+.social-btn.whatsapp img {
+  width: 22px;
+  height: 22px;
 }
 
 .social-btn.instagram {
@@ -1641,7 +1689,7 @@ body.dark-theme .hamburger .bar:after {
   }
 
   #backToTop {
-    bottom: 80px;
+    bottom: max(16px, env(safe-area-inset-bottom));
   }
 
   .container-verde{
@@ -1828,8 +1876,8 @@ body.dark-theme .hamburger .bar:after {
 
   /* BackToTop nÃ£o sobrepÃµe */
   #backToTop {
-    bottom: 85px;
-    right: 20px;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    right: max(16px, env(safe-area-inset-right));
     width: 45px;
     height: 45px;
   }
