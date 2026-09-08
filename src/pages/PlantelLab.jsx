@@ -140,7 +140,7 @@ export default function PlantelLab() {
 
             <div>
               <h4 className="plab-footer__title">Navegação</h4>
-              <ul className="plab-footer__list plab-footer__list--arrow">
+              <ul className="plab-footer__list plab-footer__list--dot">
                 <li><a href="#atuacao">Atuação</a></li>
                 <li><a href="#video">Vídeo</a></li>
                 <li><a href="#time">Time</a></li>
@@ -151,16 +151,23 @@ export default function PlantelLab() {
             <div>
               <h4 className="plab-footer__title">Redes Sociais</h4>
               <ul className="plab-footer__list">
-                <li><img src="src/assets/iconInsta.svg" alt="" /><a href="#" aria-label="Instagram">Instagram</a></li>
-                <li><img src="src/assets/iconTelegram.svg" alt="" /><a href="#" aria-label="LinkedIn">Telegram</a></li>
-                <li><img src="src/assets/iconGithub.svg" alt="" /><a href="#" aria-label="GitHub">GitHub</a></li>
+                <li>
+                  <img src="src/assets/iconInsta.svg" alt="" /><a href="https://www.instagram.com/planteldeduvidas/" aria-label="Instagram" target="_blank">Instagram</a></li>
+                <li>
+                  <img src="src/assets/iconTelegram.svg" alt="" /><a href="https://t.me/plantelduvidas" aria-label="LinkedIn" target="_blank">Telegram</a></li>
+                <li>
+                  <img src="src/assets/iconGithub.svg" alt="" /><a href="#" aria-label="GitHub" target="_blank">GitHub</a>
+                </li>
+                <li>
+                  <img src="src/assets/iconGithub.svg" alt="" /><a href="https://www.youtube.com/@PlanteldeDuvidas" aria-label="GitHub" target="_blank">YouTube</a>
+                </li>
               </ul>
             </div>
-
              <div>
               <h4 className="plab-footer__title">Contato</h4>
               <ul className="plab-footer__list">
                 <li><img src="src/assets/iconEmail.svg" alt="" /><a href="mailto:plantelduvidas@plantel.com.br">plantelduvidas@plantel.com.br</a></li>
+                <li><img src="src/assets/iconEmail.svg" alt="" /><a href="mailto:plantelduvidas@plantel.com.br">planteldeduvidas@plantel.com.br</a></li>
               </ul>
             </div>
           </div>

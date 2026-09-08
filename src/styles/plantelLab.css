@@ -105,20 +105,6 @@ body{
   border-radius: 10px;
 }
 
-/* .plab-header__brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: inherit;
-}
-
-.plab-header__logo {
-  height: 65px;
-  width: 65px;
-  border-radius: 10px;
-} */
-
 .plab-header__name {
   display: flex;
   flex-direction: row;
@@ -168,18 +154,6 @@ body{
   transform: scaleX(1);
 }
 
-/* .plab-header__link {
-  color: var(--plab-text);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: color 0.2s;
-}
-
-.plab-header__link:hover {
-  color: var(--plab-green-light);
-} */
-
 .plab-header__cta {
   display: inline-flex;
   align-items: center;
@@ -210,23 +184,6 @@ body{
   box-shadow: 0 3px 10px rgba(20, 115, 21, 0.3);
 }
 
-/* .plab-header__cta {
-  display: inline-flex;
-  align-items: center;
-  padding: 9px 18px;
-  border-radius: 6px;
-  background: var(--plab-green-dark);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-.plab-header__cta:hover {
-  background: transparent;
-  border: 0px solid var(--plab-green-mid);
-} */
 
 .plab-header__toggle {
   display: none;
@@ -251,8 +208,8 @@ body{
 
 /* ---------- HERO ---------- */
 .plab-hero {
-  padding: 96px 0 88px;
-  border-bottom: 1px solid var(--plab-border);
+  padding: 8rem 0 4rem;
+  border-bottom: 1px solid var(--plab-border); 
 }
 
 .plab-hero__tag {
@@ -387,8 +344,8 @@ body{
 .plab-card {
   display: flex;
   flex-direction: column;
-  background: var(--plab-surface);
-  border: 1px solid var(--plab-border);
+  background: #020202;
+  border: 3px solid var(--plab-surface);
   border-radius: 14px;
   overflow: hidden;
   text-decoration: none;
@@ -426,13 +383,14 @@ body{
 }
 
 .plab-card__title {
-  font-size: 19px;
+  font-size: x-large;
   font-weight: 700;
   margin: 0 0 8px;
 }
 
 .plab-card__desc {
-  font-size: 14px;
+  font-size: medium;
+  font-weight: 400;
   line-height: 1.65;
   color: var(--plab-muted);
   margin: 0 0 18px;
@@ -445,11 +403,12 @@ body{
 }
 
 .plab-tag {
-  padding: 4px 11px;
+  padding: 10px 15px;
   border: 1px solid var(--plab-border);
-  border-radius: 100px;
-  font-size: 12px;
-  color: var(--plab-muted);
+  border-radius: 15px;
+  font-size: small;
+  font-weight: 600;
+  color: var(--plab-text);
 }
 
 .plab-card__link {
@@ -459,7 +418,7 @@ body{
   margin-top: 22px;
   padding: 16px 22px;
   border-top: 1px solid var(--plab-border);
-  font-size: 13px;
+  font-size: medium;
   font-weight: 600;
   color: var(--plab-green-light);
 }
@@ -533,6 +492,8 @@ body{
 }
 
 .plab-footer__list li {
+  position: relative;
+  padding-left: 20px;
   display: flex;
   align-items: center;
 }
@@ -548,19 +509,6 @@ body{
   height: 8px;
   border-radius: 50%;
   background-color: var(--plab-green-light);
-}
-
-/* variação com seta */
-.plab-footer__list--arrow li::before {
-  content: "›";
-  position: absolute;
-  left: 0;
-  top: 0.5em;
-  transform: translateY(-50%);
-  color: var(--plab-green-light);
-  font-size: 18px;
-  line-height: 1;
-  transition: transform 0.2s ease;
 }
 
 .plab-footer__list a {
