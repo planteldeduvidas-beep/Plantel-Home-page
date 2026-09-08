@@ -1,4 +1,4 @@
-﻿export default function Footer({ menuItems, onAnchorClick }) {
+export default function Footer({ menuItems, onAnchorClick }) {
   const handleMenuClick = (event, targetId) => {
     event.preventDefault();
     onAnchorClick(targetId);
@@ -9,14 +9,14 @@
       <div className="footer-container">
         <div className="footer-brand">
           <img
-            src="/images/LogoPlantnoHeader.png"
+            src="/images/plantel-nova.png"
             alt="Logo Plantel de Dúvidas"
             className="footer-logo"
           />
           {/*
             Como colocar a imagem do footer:
-            1) public/images/LogoPlantnoHeader.png
-            2) src="/images/LogoPlantnoHeader.png"
+            1) public/images/plantel-nova.png
+            2) src="/images/plantel-nova.png"
           */}
           <p>Transformando a educação através da colaboração.</p>
         </div>
@@ -36,7 +36,15 @@
 
         <div className="footer-contact">
           <h4>Contato</h4>
-          <p>plantelduvidas@plantel.com.br</p>
+          <a href="mailto:planteldeduvidas@gmail.com?subject=Contato%20-%20Plantel%20de%20D%C3%BAvidas">
+            planteldeduvidas@gmail.com
+          </a>
+          <a href="mailto:plantelduvidas@gmail.com?subject=Contato%20-%20Plantel%20de%20D%C3%BAvidas">
+            plantelduvidas@gmail.com
+          </a>
+          <a href="https://www.instagram.com/planteldeduvidas/" target="_blank" rel="noopener noreferrer">
+            Instagram
+          </a>
         </div>
       </div>
 

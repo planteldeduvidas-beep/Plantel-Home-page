@@ -20,7 +20,7 @@
     title: "YouTube",
     description: "Aulas, resoluções e conteúdos voltados para o ramo militar.",
     href: "https://www.youtube.com/@PlanteldeDuvidas",
-    imageSrc: "/images/youtube.png",
+    imageSrc: "/images/youtubeLogo.png",
   },
   {
     id: "whatsapp-1",
@@ -66,7 +66,9 @@ export default function SectionRedes() {
             <img
               src={rede.imageSrc}
               alt={rede.title}
-              style={{ width: "90px", height: "90px", margin: "auto" }}
+              className={`rede-icon${["youtube", "whatsapp-1", "whatsapp-2", "telegram"].includes(rede.id) ? " rede-icon-compact" : ""}`}
+              width="90"
+              height="90"
             />
             {/*
               Como colocar a imagem:

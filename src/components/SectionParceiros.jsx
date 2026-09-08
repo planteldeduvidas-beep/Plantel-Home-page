@@ -16,22 +16,20 @@
     imageSrc: "/Logo_parceiros/logofenix.png",
   },
   {
-    id: "japa",
-    name: "Japa Math",
-    link: "https://japamath.com.br/",
-    className: "logo-parceiros logo-japa",
-    imageSrc: "/Logo_parceiros/logo-japamath-v1.webp",
-  },
-  {
     id: "puppin",
     name: "Thay Puppin",
-    link: "https://linktr.ee/thaylisepuppin",
+    links: [
+      { label: "EFOMM - TURMA 2", href: "https://pay.kiwify.com.br/OyFUYjX?afid=1vBM9oo8" },
+      { label: "CLUBE DA REDAÇÃO", href: "https://pay.kiwify.com.br/ctsiQfg?afid=W5fMhBRq" },
+    ],
     className: "logo-parceiros",
     label: "Mentoria de Redação, prof. Thay Puppin",
     imageSrc: "/Logo_parceiros/logo-puppin.png",
   },
   
 ];
+
+import { ArrowUpRight } from "lucide-react";
 
 export default function SectionParceiros() {
   return (
@@ -55,7 +53,7 @@ export default function SectionParceiros() {
             src={parceiro.imageSrc}
             alt={parceiro.name}
             className={parceiro.className}
-            onClick={() => window.open(parceiro.link, "_blank")}
+            onClick={parceiro.link ? () => window.open(parceiro.link, "_blank") : undefined}
           />
           {/*
             Como colocar a imagem do parceiro:
@@ -64,6 +62,15 @@ export default function SectionParceiros() {
           */}
           {parceiro.label && (
             <p className="hero-parceiro-text">{parceiro.label}</p>
+          )}
+          {parceiro.links && (
+            <div className="parceiro-links">
+              {parceiro.links.map((link) => (
+                <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
           )}
         </section>
       ))}
@@ -77,11 +84,23 @@ export default function SectionParceiros() {
           marginBottom: "20px",
         }}
       >
-        Quer ser nosso parceiro?
+        Quer fazer parte dos nossos parceiros?
       </h2>
-      <div className="container-verde">
-        Entre em contato pelo email  plantelduvidas@gmail.com
-      </div>
+      <p className="parceria-convite">
+        Seu trabalho pode ajudar nossos estudantes a ir mais longe? Se você oferece
+        cursos, materiais ou mentorias para vestibulares e concursos, venha somar
+        à comunidade do Plantel. Fale com a nossa equipe para apresentar sua proposta
+        e levar novas oportunidades de preparação aos nossos alunos.
+      </p>
+      <a
+        className="parceria-whatsapp"
+        href={`https://wa.me/5524999216327?text=${encodeURIComponent("Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pela home page do Plantel.")}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Quero ser parceiro
+        <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />
+      </a>
     </section>
   );
 }
