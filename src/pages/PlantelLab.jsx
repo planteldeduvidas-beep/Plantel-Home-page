@@ -26,7 +26,8 @@ export default function PlantelLab() {
             <a href="#video" className="plab-header__link">Vídeo</a>
             <a href="#time" className="plab-header__link">Time</a>
             <Link to="/" className="plab-header__link">Voltar ao Plantel</Link>
-            <a href="#contato" className="plab-header__cta">Fale com o time</a>
+            <a href={`https://wa.me/5524999216327?text=${encodeURIComponent("Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pelo Plantel Labs.")}`}
+        target="_blank" rel="noopener noreferrer" className="plab-header__cta">Fale com o time</a>
           </nav>
 
           <button
@@ -58,7 +59,8 @@ export default function PlantelLab() {
         <a href="#video" onClick={() => setIsMenuOpen(false)}>Vídeo</a>
         <a href="#time" onClick={() => setIsMenuOpen(false)}>Time</a>
         <Link to="/" onClick={() => setIsMenuOpen(false)}>Voltar ao Plantel</Link>
-        <a href="#contato" className="plab-mobile-menu__cta" onClick={() => setIsMenuOpen(false)}>
+        <a href={`https://wa.me/5524999216327?text=${encodeURIComponent("Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pelo Plantel Labs.")}`}
+        target="_blank" rel="noopener noreferrer">
           Fale com o time
         </a>
       </nav>
@@ -149,16 +151,16 @@ export default function PlantelLab() {
             <div>
               <h4 className="plab-footer__title">Redes Sociais</h4>
               <ul className="plab-footer__list">
-                <li><a href="#" aria-label="Instagram">Instagram</a></li>
-                <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
-                <li><a href="#" aria-label="GitHub">GitHub</a></li>
+                <li><img src="src/assets/iconInsta.svg" alt="" /><a href="#" aria-label="Instagram">Instagram</a></li>
+                <li><img src="src/assets/iconTelegram.svg" alt="" /><a href="#" aria-label="LinkedIn">Telegram</a></li>
+                <li><img src="src/assets/iconGithub.svg" alt="" /><a href="#" aria-label="GitHub">GitHub</a></li>
               </ul>
             </div>
 
              <div>
               <h4 className="plab-footer__title">Contato</h4>
-              <ul className="plab-footer__list plab-footer__list--dot">
-                <li><a href="mailto:plantelduvidas@plantel.com.br">plantelduvidas@plantel.com.br</a></li>
+              <ul className="plab-footer__list">
+                <li><img src="src/assets/iconEmail.svg" alt="" /><a href="mailto:plantelduvidas@plantel.com.br">plantelduvidas@plantel.com.br</a></li>
               </ul>
             </div>
           </div>
