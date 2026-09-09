@@ -39,7 +39,7 @@
 }
 #mobile-menu .inner a {
   display: block;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", "Segoe UI", sans-serif;
   font-size: clamp(1.6rem, 6vw, 2rem);
   line-height: 1.25;
   font-weight: 600;
@@ -61,12 +61,12 @@ body.dark-theme #mobile-menu .inner a { color: #f5f5f7; }
 #mobile-menu .inner a:hover { color: var(--primary-color); }
 body.dark-theme #mobile-menu .inner a:hover { color: #61d17c; }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   header.plantel-header { z-index: 2100; }
   body.menu-open header.plantel-header { background: #fff; border-bottom-color: transparent; }
   body.dark-theme.menu-open header.plantel-header { background: #000; }
 }
-@media (min-width: 769px) { #mobile-menu { display: none; } }
+@media (min-width: 1081px) { #mobile-menu { display: none; } }
 @media (prefers-reduced-motion: reduce) {
   .plantel-header .menu-toggle-icon span,
   #mobile-menu, #mobile-menu.open,

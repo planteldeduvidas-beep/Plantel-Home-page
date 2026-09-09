@@ -122,6 +122,17 @@
   .efomm-emblem { width: 180px; min-height: 180px; }
 }
 
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  #efomm .efomm-card {
+    transform: scale(0.96);
+    transition: transform 320ms ease, box-shadow 320ms ease;
+  }
+  #efomm .efomm-card.is-scroll-highlighted {
+    transform: scale(1.02);
+    box-shadow: 0 20px 44px #071a3035;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .efomm-card { transition: none; }
   .efomm-card:hover { transform: none; }

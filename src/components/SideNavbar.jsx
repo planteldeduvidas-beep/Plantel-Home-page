@@ -32,7 +32,7 @@ export default function SideNavbar() {
         {sideLinks.map((link) => (
           <li key={link.id}>
             <a href={link.href} target="_blank" rel="noopener noreferrer">
-              <img src={link.imageSrc} alt={link.label} />
+              <img className={`navbar-icon-${link.id}`} src={link.imageSrc} alt={link.label} />
               {/*
                 Como colocar o ícone:
                 1) public/images/
