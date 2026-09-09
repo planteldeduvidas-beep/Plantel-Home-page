@@ -248,17 +248,33 @@ header {
    5) HERO
 ====================================================== */
 .hero {
-  height: 100vh;
-  background: var(--gradient-overlay), url("/images/bandeirabrasil.webP");
-  background-size: cover;
-  background-position: center -220px;
-  background-attachment: fixed;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 20px;
+  padding: calc(80px + env(safe-area-inset-top, 0px)) 20px 40px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -220px -8% 0;
+  z-index: -1;
+  background-image: var(--gradient-overlay), url("/images/bandeirabrasil.webP");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hero::before { top: -120px; }
 }
 
 .title h1 {
@@ -312,6 +328,39 @@ header {
   text-align: justify;
   max-width: 900px;
   margin: 35px auto 50px;
+}
+
+/* Textos de apresentação seguem a mesma leitura de Concursos e cupons. */
+:is(#sobre, #comunidades, #parceiros) > h2 {
+  max-width: 720px;
+  margin: 0 auto 20px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  text-wrap: balance;
+}
+
+:is(#sobre, #comunidades, #parceiros) > .line {
+  max-width: 100%;
+  margin-bottom: 24px;
+}
+
+:is(#sobre, #comunidades, #parceiros) > .text-info-out,
+#parceiros > .parceria-convite {
+  max-width: 720px;
+  margin: 0 auto 36px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+#comunidades > .text-info-out {
+  width: calc(100% - 48px);
+}
+
+#parceiros #text-cupom {
+  display: block;
+  margin-top: 12px;
+  font-size: inherit;
 }
 
 /* ======================================================
@@ -710,7 +759,7 @@ header {
   background-color: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 50%;
+  border-radius: 6px;
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
@@ -718,7 +767,7 @@ header {
   z-index: 1001;
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition);
+  transition: background-color 220ms ease, opacity 220ms ease, visibility 220ms ease;
 }
 
 #backToTop.show {
@@ -728,7 +777,6 @@ header {
 
 #backToTop:hover {
   background-color: var(--accent-color);
-  transform: scale(1.1);
 }
 
 /* ======================================================
@@ -754,7 +802,7 @@ header {
 .navbar ul {
   list-style: none;
   margin: 0;
-  padding: 0.75rem;
+  padding: 0.5rem;
   background-color: rgba(238, 242, 245, 0.4);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -767,7 +815,7 @@ header {
 }
 
 .navbar li+li {
-  margin-top: 0.75rem;
+  margin-top: 0.375rem;
 }
 
 .navbar a {
@@ -776,8 +824,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 8px;
   position: relative;
   transition: color 0.15s ease, background-color 0.15s ease;
@@ -794,6 +842,12 @@ header {
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+.navbar a img.navbar-icon-telegram {
+  width: 74%;
+  height: auto;
+  object-fit: contain;
 }
 
 .navbar a span {
@@ -2014,12 +2068,34 @@ body.dark-theme .hamburger .bar:after {
 @media (max-width: 1024px) {
   .social-fab {
     display: flex;
+    left: max(18px, env(safe-area-inset-left));
+    right: auto;
   }
 }
 
 /* ======================================================
    25) ANIMAÃ‡Ã•ES
 ====================================================== */
+/* Revela cada elemento uma vez ao entrar na tela durante a rolagem. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-scroll-reveal="pending"] {
+    opacity: 0;
+  }
+
+  [data-scroll-reveal="visible"] {
+    animation: scroll-item-reveal 650ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  [data-scroll-reveal]:focus-within {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+@keyframes scroll-item-reveal {
+  from { opacity: 0; translate: 0 22px; }
+  to { opacity: 1; translate: 0 0; }
+}
 @keyframes slideUp {
   from {
     transform: translateY(100%);

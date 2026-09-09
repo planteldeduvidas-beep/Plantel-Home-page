@@ -1,5 +1,6 @@
 import { Moon, Sun } from "lucide-react";
 import "./Header.css";
+import { useEffect, useState } from "react";
 
 export default function Header({
   menuItems,
@@ -9,13 +10,22 @@ export default function Header({
   onToggleMenu,
   isMenuOpen,
 }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateScroll = () => setIsScrolled(window.scrollY > 16);
+    updateScroll();
+    window.addEventListener("scroll", updateScroll, { passive: true });
+    return () => window.removeEventListener("scroll", updateScroll);
+  }, []);
+
   const handleMenuClick = (event, targetId) => {
     event.preventDefault();
     onAnchorClick(targetId);
   };
 
   return (
-    <header className="plantel-header">
+    <header className={`plantel-header${isScrolled ? " solid" : ""}`}>
       <div className="header-inner">
       {/* Logo principal */}
       <a className="header-brand" href="#" aria-label="Plantel — início" onClick={(event) => {
@@ -72,7 +82,7 @@ export default function Header({
           1) public/images/LogoZap.png
           2) src="/images/LogoZap.png"
         */}
-        <span>Comunidades no WhatsApp</span>
+        <span>Entrar no Plantel</span>
       </a>
 
       <button

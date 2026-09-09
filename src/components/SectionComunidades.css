@@ -3,7 +3,7 @@
   padding-right: 0;
 }
 
-#comunidades > .text-info-out { width: 80%; }
+#comunidades > .text-info-out { width: calc(100% - 48px); }
 
 .community-track {
   --slide-width: min(78vw, 900px);
@@ -33,7 +33,7 @@
 }
 
 .community-slide:nth-child(3n + 2) { background: radial-gradient(ellipse at top right, #386b92, #102737 75%); }
-.community-slide:nth-child(3n) { background: radial-gradient(ellipse at top right, #746043, #30271c 75%); }
+.community-slide:nth-child(3n) { background: radial-gradient(ellipse at top right, #347857, #102f27 75%); }
 .community-slide.is-active { opacity: 1; transform: scale(1); }
 .community-slide-heading { display: flex; align-items: center; gap: 24px; margin-bottom: 28px; }
 .community-logo-frame {
@@ -61,7 +61,7 @@
 .community-slide-extra { padding: 18px 22px; border-radius: 14px; background: #ffffff12; }
 .community-slide-extra p { margin: 0; }
 .community-controls { position: relative; display: flex; align-items: center; justify-content: center; gap: 16px; padding: 0 56px; min-height: 44px; }
-.community-controls .community-playback { position: absolute; right: 12px; top: 0; }
+.community-controls .community-playback { position: absolute; right: 12px; top: 6px; width: 32px; height: 32px; }
 .community-controls button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #e8ece9; color: #183d2e; cursor: pointer; }
 .community-controls button:disabled { opacity: 0.35; cursor: default; }
 .community-controls button:focus-visible, .community-track:focus-visible { outline: 3px solid var(--primary-color); outline-offset: 3px; }

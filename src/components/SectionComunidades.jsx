@@ -235,7 +235,7 @@ export default function SectionComunidades() {
           aria-label={isPaused ? "Retomar carrossel automático" : "Pausar carrossel automático"}
           title={isPaused ? "Retomar" : "Pausar"}
         >
-          {isPaused ? <Play size={16} fill="currentColor" /> : <Pause size={16} fill="currentColor" />}
+          {isPaused ? <Play size={13} fill="currentColor" /> : <Pause size={13} fill="currentColor" />}
         </button>
       </div>
       <p className="community-status" aria-live={isPaused ? "polite" : "off"} aria-atomic="true">{activeIndex + 1} de {communities.length} — {communities[activeIndex].title}</p>
