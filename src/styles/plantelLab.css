@@ -47,16 +47,11 @@ body{
   margin: 0;
 }
 
-.plab__inner {
-  width: 100%;
-  max-width: 1120px;
-  padding: 0 24px;
-}
 
 /* ---------- HEADER ---------- */
 
 .plab-header {
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -207,32 +202,34 @@ body{
 
 
 /* ---------- HERO ---------- */
-.plab-hero {
-  padding: 8rem 0 4rem;
-  border-bottom: 1px solid var(--plab-border); 
+.plab-intro {
+  position: relative;
+  padding: 8rem 0rem 0rem 15rem;
+  min-height: 600px;
+  background-image: url("./images/background-tech.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 
-.plab-hero__tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--plab-green-light);
-  margin-bottom: 20px;
+.plab-intro::after {
+    content: "";
+    position: absolute;
+
+    bottom: -120px;
+    left: -10%;
+
+    width: 120%;
+    height: 180px;
+
+    background: #FFFFFF ;
+
+    border-radius: 50% 50% 0 0;
 }
 
-.plab-hero__tag::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--plab-green-light);
-}
 
-.plab-hero__title {
+.plab-intro__title {
   font-size: clamp(36px, 5vw, 56px);
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -241,19 +238,16 @@ body{
   max-width: 18ch;
 }
 
-.plab-hero__title span {
-  color: var(--plab-green-light);
-}
-
-.plab-hero__text {
-  font-size: 17px;
+.plab-intro__text {
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1.7;
   color: var(--plab-muted);
   max-width: 60ch;
   margin: 0 0 36px;
 }
 
-.plab-hero__actions {
+.plab-intro__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -271,17 +265,6 @@ body{
   transition: background 0.2s, border-color 0.2s;
 }
 
-.plab-btn--primary {
-  background: var(--plab-green-dark);
-  color: #fff;
-  border: 1px solid var(--plab-green-dark);
-}
-
-.plab-btn--primary:hover {
-  background: var(--plab-green-mid);
-  border-color: var(--plab-green-mid);
-}
-
 .plab-btn--ghost {
   background: transparent;
   color: var(--plab-text);
@@ -292,56 +275,60 @@ body{
   border-color: var(--plab-green-mid);
 }
 
-.plab-section__tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--plab-green-light);
-  margin-bottom: 14px;
-}
 
-.plab-section__tag::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--plab-green-light);
-}
 
-.plab-section__title {
-  font-size: clamp(26px, 3.4vw, 36px);
+/* Atuações */
+
+.plab-projetos {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  padding: 8rem 4rem;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+.plab-atuacao__title {
+  text-align: center;
+  color: var(--plab-bg);
+  font-size: clamp(15px, 3.4vw, 80px);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0 0 12px;
+  margin: 0 0 2rem;
+  animation: subir 0.8s ease forwards;
 }
 
-.plab-section__text {
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* .plab-atuacao__text {
   font-size: 16px;
   line-height: 1.7;
   color: var(--plab-muted);
   max-width: 60ch;
   margin: 0 0 44px;
-}
-
-/* seção */
-.plab-projetos {
-  position: relative;
-  z-index: 1;
-  padding: 88px 0;
-}
+} */
 
 .plab-projetos__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, 600px);
+  justify-content: center;
+  gap: 24px;
+  animation: subir 0.8s ease forwards;
+  animation-delay: 0.4s;
 }
-
 /* card */
 .plab-card {
+  width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   background: #020202;
@@ -433,6 +420,24 @@ body{
   transform: translateX(4px);
 }
 
+.plab-time {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    padding: 8rem 4rem;
+    background: #000000;
+    overflow: hidden;
+}
+.plab-time::before{
+    content: "";
+    position: absolute;
+    top: -120px;
+    left: -10%;
+    width: 120%;
+    height: 180px;
+    background: #FFFFFF;
+    border-radius:  0 0 50% 50%;
+}
 
 /* ---------- FOOTER ---------- */
 .plab-footer {

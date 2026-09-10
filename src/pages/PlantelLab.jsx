@@ -65,35 +65,27 @@ export default function PlantelLab() {
         </a>
       </nav>
 
-      <section className="plab-hero">
-        <div className="plab__inner">
-          <span className="plab-hero__tag">Núcleo de tecnologia do Plantel</span>
-          <h1 className="plab-hero__title">
+      <section className="plab-intro" id="home">
+          <h1 className="plab-intro__title">
             O time por trás dos produtos <span>digitais</span> do Plantel
           </h1>
-          <p className="plab-hero__text">
+          <p className="plab-intro__text">
             O Plantel Labs é a área responsável por projetar, desenvolver e
             manter as plataformas que sustentam a operação do Plantel. Aqui você
             conhece as pessoas do time e as frentes em que atuamos.
           </p>
-          <div className="plab-hero__actions">
-            <a href="#time" className="plab-btn plab-btn--primary">
-              Conhecer o time
-            </a>
+          <div className="plab-intro__actions">
             <a href="#atuacao" className="plab-btn plab-btn--ghost">
               Ver nossa atuação
             </a>
           </div>
-        </div>
       </section>
 
       <section className="plab-projetos" id="atuacao">
-          <div className="plab__inner">
-            <span className="plab-section__tag">Projetos</span>
-            <h2 className="plab-section__title">O que construímos</h2>
-            <p className="plab-section__text">
+            <h2 className="plab-atuacao__title">Nossos Projetos</h2>
+            {/* <p className="plab-atuacao__text">
               Produtos digitais desenvolvidos e mantidos pelo time do Plantel Labs.
-            </p>
+            </p> */}
 
             <div className="plab-projetos__grid">
               {projetos.map((projeto) => (
@@ -125,6 +117,21 @@ export default function PlantelLab() {
                 </a>
               ))}
             </div>
+      </section>
+
+      <section className="plab-time" id="time">
+          <h1 className="plab-time__title">
+            O time por trás dos produtos <span>digitais</span> do Plantel
+          </h1>
+          <p className="plab-time__text">
+            O Plantel Labs é a área responsável por projetar, desenvolver e
+            manter as plataformas que sustentam a operação do Plantel. Aqui você
+            conhece as pessoas do time e as frentes em que atuamos.
+          </p>
+          <div className="plab-time__actions">
+            <a href="#atuacao" className="plab-btn plab-btn--ghost">
+              Ver nossa atuação
+            </a>
           </div>
       </section>
 
@@ -141,8 +148,8 @@ export default function PlantelLab() {
             <div>
               <h4 className="plab-footer__title">Navegação</h4>
               <ul className="plab-footer__list plab-footer__list--dot">
+                <li><a href="#home">Inicio</a></li>
                 <li><a href="#atuacao">Atuação</a></li>
-                <li><a href="#video">Vídeo</a></li>
                 <li><a href="#time">Time</a></li>
                 <li><Link to="/">Página inicial</Link></li>
               </ul>
