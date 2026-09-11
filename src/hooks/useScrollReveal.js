@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function useScrollReveal() {
+export default function useScrollReveal(pageKey) {
   useEffect(() => {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (!("IntersectionObserver" in window)) return;
@@ -16,6 +16,10 @@ export default function useScrollReveal() {
       "main .community-carousel",
       "main .efomm-section-heading",
       "main .efomm-card",
+      "main .calendar-intro",
+      "main .calendar-preview-clock",
+      "main .labs-copy",
+      "main .labs-showcase",
       "main .hero-parceiro",
       "main .parceria-convite",
       "main .parceria-whatsapp",
@@ -59,5 +63,5 @@ export default function useScrollReveal() {
       motion.removeEventListener("change", onMotionChange);
       elements.forEach((element) => delete element.dataset.scrollReveal);
     };
-  }, []);
+  }, [pageKey]);
 }
