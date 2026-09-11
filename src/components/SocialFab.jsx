@@ -1,4 +1,6 @@
-﻿import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronLeft } from "lucide-react";
+import "./SocialFab.css";
 
 const socialLinks = [
   {
@@ -29,22 +31,45 @@ const socialLinks = [
 
 export default function SocialFab() {
   const [open, setOpen] = useState(false);
+  const containerRef = useRef(null);
+  const toggleRef = useRef(null);
+  useEffect(() => {
+    if (!open) return;
+    const outside = (event) => {
+      if (!containerRef.current?.contains(event.target)) setOpen(false);
+    };
+    const escape = (event) => {
+      if (event.key === 'Escape') { setOpen(false); toggleRef.current?.focus(); }
+    };
+    document.addEventListener('pointerdown', outside);
+    document.addEventListener('focusin', outside);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', outside);
+      document.removeEventListener('focusin', outside);
+      document.removeEventListener('keydown', escape);
+    };
+  }, [open]);
 
   return (
-    <div className={`social-fab${open ? " open" : ""}`} aria-hidden="false">
+    <div ref={containerRef} className={`social-fab social-edge-tab${open ? " open" : ""}`}>
       <button
         id="social-toggle"
         className="social-toggle"
         type="button"
-        aria-label="Abrir redes"
+        ref={toggleRef}
+        aria-label={open ? "Fechar redes sociais" : "Abrir redes sociais"}
+        aria-expanded={open}
+        aria-controls="social-actions"
         onClick={() => setOpen((prev) => !prev)}
       >
-        ≡
+        <ChevronLeft size={16} aria-hidden="true" />
       </button>
       <div
         id="social-actions"
         className="social-actions"
         aria-hidden={!open}
+        inert={!open}
       >
         {socialLinks.map((item) => (
           <a
@@ -54,6 +79,7 @@ export default function SocialFab() {
             rel="noopener noreferrer"
             className={`social-btn ${item.id}`}
             aria-label={item.label}
+            onClick={() => setOpen(false)}
           >
             <img src={item.imageSrc} alt={item.label} />
             {/*

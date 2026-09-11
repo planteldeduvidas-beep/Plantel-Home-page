@@ -59,4 +59,54 @@ body.dark-theme .calendar-preview, body.dark-theme .exam-page { --calendar-ink: 
   .calendar-filters { gap: 4px; }
   .calendar-filters button { padding: 9px 12px; font-size: 11px; }
 }
+@media (prefers-reduced-motion: no-preference) {
+  .calendar-filters button {
+    transition: background-color 260ms ease, color 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+  }
+  .exam-grid { transition: opacity 160ms ease, translate 160ms ease; }
+  .exam-grid.is-filter-changing { opacity: 0; translate: 0 6px; pointer-events: none; }
+  .calendar-preview-clock, .exam-card {
+    transition: transform 320ms ease, box-shadow 320ms ease;
+  }
+  .exam-card {
+    animation: calendar-card-appear 600ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  .exam-card:nth-child(2) { animation-delay: 60ms; }
+  .exam-card:nth-child(3) { animation-delay: 120ms; }
+  .exam-card:nth-child(4) { animation-delay: 180ms; }
+  .exam-card:nth-child(5) { animation-delay: 240ms; }
+  .exam-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px #102f2712;
+    animation: none;
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .calendar-preview-clock:hover, .exam-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px #102f2712;
+  }
+}
+@keyframes calendar-card-appear {
+  from { opacity: 0; translate: 0 18px; }
+  to { opacity: 1; translate: 0 0; }
+}
 @media (prefers-reduced-motion: reduce) { .calendar-button, .calendar-filters button { transition: none; } }
+
+.calendar-button { transition: background-color 180ms ease, transform 220ms ease, box-shadow 220ms ease; }
+.calendar-button svg { transition: transform 220ms ease; }
+@media (min-width: 1081px) and (prefers-reduced-motion: no-preference) {
+  .calendar-button:hover, .calendar-button:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(35, 122, 59, .2);
+  }
+  .calendar-button:hover svg, .calendar-button:focus-visible svg { transform: translate(2px, -2px); }
+  .calendar-button:active { transform: translateY(0) scale(.98); box-shadow: none; }
+}
+@media (max-width: 1080px) {
+  .calendar-button { transition: background-color 180ms ease; }
+  .calendar-button svg { transition: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .calendar-button, .calendar-button svg { transition: none; }
+}

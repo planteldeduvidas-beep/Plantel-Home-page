@@ -14,15 +14,18 @@ import BackToTop from "./components/BackToTop.jsx";
 import SocialFab from "./components/SocialFab.jsx";
 import SideNavbar from "./components/SideNavbar.jsx";
 import useScrollReveal from "./hooks/useScrollReveal.js";
+import SectionLabs from "./components/SectionLabs.jsx";
+import LabsComingSoon from "./components/LabsComingSoon.jsx";
 import ExamCalendar, { SectionExamCalendar } from "./components/ExamCalendar.jsx";
 
 const HEADER_OFFSET = 80;
 
 export default function App() {
-  useScrollReveal();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [labsNoticeOpen, setLabsNoticeOpen] = useState(false);
   const [showCalendar, setShowCalendar] = useState(() => window.location.hash === '#calendario');
+  useScrollReveal(showCalendar);
 
   useEffect(() => {
     const updatePage = () => {
@@ -80,6 +83,11 @@ export default function App() {
   }, []);
 
   const handleAnchorClick = (targetId) => {
+    if (targetId === '#labs-em-breve') {
+      setIsMenuOpen(false);
+      setLabsNoticeOpen(true);
+      return;
+    }
     if (!targetId) return;
     const target = document.querySelector(targetId);
     if (!target) return;
@@ -95,6 +103,7 @@ export default function App() {
       { id: "#redes", label: "Redes Sociais" },
       { id: "#efomm", label: "Concursos e cupons" },
       { id: "#parceiros", label: "Parceiros" },
+      { id: "#plantel-labs", label: "Plantel Labs" },
     ],
     []
   );
@@ -128,11 +137,13 @@ export default function App() {
         <SectionExamCalendar />
         <SectionEfomm />
         <SectionParceiros />
+        <SectionLabs onOpen={() => setLabsNoticeOpen(true)} />
       </main>
 
       <Footer menuItems={menuItems} onAnchorClick={handleAnchorClick} />
       <BackToTop />
       <SideNavbar />
+      <LabsComingSoon open={labsNoticeOpen} onClose={() => setLabsNoticeOpen(false)} />
     </>
   );
 }

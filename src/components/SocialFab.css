@@ -1,0 +1,12 @@
+.social-fab.social-edge-tab { top: 50%; bottom: auto; left: auto; right: max(8px, env(safe-area-inset-right)); transform: translateY(-50%); gap: 0; }
+.social-edge-tab .social-toggle { width: 28px; height: 64px; padding: 0; border: 1px solid #183d2e18; border-radius: 14px; background: rgba(250,252,250,.82); color: #315544; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 3px 14px #102f2710; transition: background-color 220ms ease; touch-action: manipulation; }
+.social-edge-tab .social-toggle:hover { background: #f1f6f2; transform: none; }
+.social-edge-tab .social-toggle svg { transition: transform 260ms ease; }
+.social-edge-tab.open .social-toggle svg { transform: rotate(180deg); }
+.social-edge-tab .social-actions { position: absolute; right: calc(100% + 10px); top: 50%; padding: 10px; border: 1px solid #183d2e12; border-radius: 24px; background: rgba(250,252,250,.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 8px 28px #102f2718; transform: translate(10px, -50%); visibility: hidden; transition: opacity 260ms ease, transform 260ms cubic-bezier(.22,1,.36,1), visibility 260ms; }
+.social-edge-tab.open .social-actions { transform: translate(0, -50%); visibility: visible; }
+.social-edge-tab a:focus-visible, .social-edge-tab button:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 3px; }
+body.dark-theme .social-edge-tab .social-toggle, body.dark-theme .social-edge-tab .social-actions { background: rgba(25,33,29,.94); color: #d2e4d7; border-color: #ffffff18; }
+@media (prefers-reduced-motion: reduce) {
+  .social-edge-tab .social-toggle, .social-edge-tab .social-toggle svg, .social-edge-tab .social-actions { transition: none; }
+}

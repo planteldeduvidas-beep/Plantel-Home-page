@@ -1245,6 +1245,18 @@ body.dark-theme .swiper-button-prev {
 
 .footer-contact a { overflow-wrap: anywhere; }
 
+@media (max-width: 1080px) {
+  .main-footer .footer-links a,
+  .main-footer .footer-contact a {
+    transition: color 220ms ease;
+  }
+
+  .main-footer .footer-links a:hover,
+  .main-footer .footer-contact a:hover {
+    padding-left: 0;
+  }
+}
+
 .footer-links a:hover,
 .footer-contact a:hover {
   color: var(--primary-color);
@@ -2119,5 +2131,24 @@ body.dark-theme .hamburger .bar:after {
 
   100% {
     transform: translateY(-30px) scale(1);
+  }
+}
+
+@media (max-width: 1080px) {
+  #parceiros .parceria-whatsapp,
+  #parceiros .parceria-whatsapp:hover,
+  #parceiros .parceria-whatsapp:focus-visible,
+  #parceiros .parceria-whatsapp:active {
+    animation: none;
+    transform: none;
+    translate: none;
+    opacity: 1;
+    box-shadow: none;
+    transition: background-color 180ms ease;
+  }
+  #parceiros .parceria-whatsapp svg {
+    animation: none;
+    transform: none;
+    transition: none;
   }
 }
