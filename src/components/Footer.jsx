@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer({ menuItems, onAnchorClick }) {
   const handleMenuClick = (event, targetId) => {
     event.preventDefault();
@@ -23,15 +25,21 @@ export default function Footer({ menuItems, onAnchorClick }) {
 
         <div className="footer-links">
           <h4>Navegação</h4>
-          {menuItems.map((item) => (
-            <a
-              key={item.id}
-              href={item.id}
-              onClick={(event) => handleMenuClick(event, item.id)}
-            >
-              {item.label}
-            </a>
-          ))}
+          {menuItems.map((item) =>
+            item.to ? (
+              <Link key={item.to} to={item.to}>
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.id}
+                href={item.id}
+                onClick={(event) => handleMenuClick(event, item.id)}
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </div>
 
         <div className="footer-contact">

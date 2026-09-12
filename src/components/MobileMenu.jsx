@@ -39,7 +39,7 @@ export default function MobileMenu({ menuItems, isOpen, onClose, onAnchorClick }
       aria-label="Navegação mobile"
     >
       <div className="inner">
-        {menuItems.map((item) => item.to ? (
+        {menuItems.map((item, index) => item.to ? (
             <Link key={item.to} to={item.to}>{item.label}</Link>
           ) : (
           <a

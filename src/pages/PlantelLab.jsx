@@ -1,189 +1,126 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo_plantel1.png";
+// import { useState } from "react";
+// import { Link } from "react-router-dom";
+// import logo from "../assets/logo_plantel1.png";
+import membros from "../data/membros.js";
+import MembroCard from "../components/plantel_Labs/membroCard.jsx";
 import "../styles/plantelLab.css";
 import projetos  from "../data/projetos.js";
-import PlantelBackdrop from "../components/PlantelBackdrop.jsx";
+import PlantelBackdrop from "../components/plantel_Labs/PlantelBackdrop.jsx";
+import BacktoTop from "../components/BackToTop.jsx";
+import Footer from "../components/plantel_Labs/footerLabs.jsx";
+import Header from "../components/plantel_Labs/headerLabs.jsx";
+
+const linkWhatsapp = `https://wa.me/5524999216327?text=${encodeURIComponent(
+  "Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pelo Plantel Labs."
+)}`;
 
 export default function PlantelLab() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <body class="plab">
-      <PlantelBackdrop />
-      <header className="plab-header">
+      <div className="plab">
+        <PlantelBackdrop />
+        <BacktoTop/>
+        <Header />
+        <section className="plab-intro" id="home">
+            <h1 className="plab-intro__title">
+              O time por trás dos produtos <span>digitais</span> do Plantel
+            </h1>
+            <p className="plab-intro__text">
+              O Plantel Labs é a área responsável por projetar, desenvolver e
+              manter as plataformas que sustentam a operação do Plantel. Aqui você
+              conhece as pessoas do time e as frentes em que atuamos.
+            </p>
+            <div className="plab-intro__actions">
+              <a href="#time" className="plab-btn plab-btn--ghost">
+                Ver time
+              </a>
+            </div>
+        </section>
+        <section className="plab-projetos" id="projetos">
+          <h2 className="plab-projetos__title">Nossos Projetos</h2>
 
-        <Link to="/plantel-lab" className="plab-header__brand">
-          <img src={logo} alt="Plantel Labs" className="plab-header__logo" />
-          <span className="plab-header__name">
-            Plantel<span>Labs</span>
-          </span>
-        </Link>
+          <div className="plab-projetos__list">
+            {projetos.map((projeto) => (
+              <article key={projeto.nome} className="plab-projeto">
+                <div className="plab-projeto__media">
+                  <img src={projeto.imagem} alt={projeto.nome} loading="lazy" />
+                </div>
 
-        <div className="navegacao">
-          <nav className="plab-header__nav">
-            <a href="#atuacao" className="plab-header__link">Atuação</a>
-            <a href="#video" className="plab-header__link">Vídeo</a>
-            <a href="#time" className="plab-header__link">Time</a>
-            <Link to="/" className="plab-header__link">Voltar ao Plantel</Link>
-            <a href={`https://wa.me/5524999216327?text=${encodeURIComponent("Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pelo Plantel Labs.")}`}
-        target="_blank" rel="noopener noreferrer" className="plab-header__cta">Fale com o time</a>
-          </nav>
+                <div className="plab-projeto__body">
+                  <h3 className="plab-projeto__nome">{projeto.nome}</h3>
+                  <p className="plab-projeto__desc">{projeto.descricao}</p>
 
-          <button
-            className="plab-header__toggle"
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Abrir menu"
-            aria-expanded={isMenuOpen}
-          >
-            ☰
-          </button>
+                  <div className="plab-projeto__tags">
+                    {projeto.tags.map((tag) => (
+                      <span key={tag} className="plab-tag">{tag}</span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={projeto.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="plab-projeto__btn"
+                  >
+                    Acessar projeto <em>→</em>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="plab-time" id="time">
+            
+          <div className="plab-time__header">
+
+            <h2 className="plab-time__title">
+              As pessoas por trás das <span>tecnologias</span>
+            </h2>
+
+            <p className="plab-time__text">
+              Um time multidisciplinar responsável por transformar
+              ideias, necessidades e desafios em produtos digitais.
+            </p>
+
+          </div>
+
+
+          <div className="plab-time__grid">
+
+            {membros.map((membro) => (
+              <MembroCard
+                key={membro.nome}
+                membro={membro}
+              />
+            ))}
+
+          </div>
+        </section>
+
+        <section className="plab-cta" id="contato">
+        <div className="plab-cta__inner">
+          <div className="plab-cta__text">
+            <h2 className="plab-cta__title">
+              Quer construir algo junto com o Plantel Labs?
+              <span>Fale com a nossa equipe.</span>
+            </h2>
+              <a
+              href={linkWhatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="plab-cta__btn"
+            >
+              Agende uma conversa
+            </a>
+          </div>
+
+          <div className="plab-cta__media">
+            <img src="/images/time-plantel.png" alt="Equipe do Plantel Labs" loading="lazy" />
+          </div>
         </div>
-      </header>
-
-      <div
-        className={`plab-overlay${isMenuOpen ? " is-active" : ""}`}
-        onClick={() => setIsMenuOpen(false)}
-      />
-
-      <button
-        className={`plab-close${isMenuOpen ? " is-active" : ""}`}
-        onClick={() => setIsMenuOpen(false)}
-        aria-label="Fechar menu"
-      >
-        <span /><span />
-      </button>
-
-      <nav className={`plab-mobile-menu${isMenuOpen ? " is-active" : ""}`}>
-        <a href="#atuacao" onClick={() => setIsMenuOpen(false)}>Atuação</a>
-        <a href="#video" onClick={() => setIsMenuOpen(false)}>Vídeo</a>
-        <a href="#time" onClick={() => setIsMenuOpen(false)}>Time</a>
-        <Link to="/" onClick={() => setIsMenuOpen(false)}>Voltar ao Plantel</Link>
-        <a href={`https://wa.me/5524999216327?text=${encodeURIComponent("Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pelo Plantel Labs.")}`}
-        target="_blank" rel="noopener noreferrer">
-          Fale com o time
-        </a>
-      </nav>
-
-      <section className="plab-intro" id="home">
-          <h1 className="plab-intro__title">
-            O time por trás dos produtos <span>digitais</span> do Plantel
-          </h1>
-          <p className="plab-intro__text">
-            O Plantel Labs é a área responsável por projetar, desenvolver e
-            manter as plataformas que sustentam a operação do Plantel. Aqui você
-            conhece as pessoas do time e as frentes em que atuamos.
-          </p>
-          <div className="plab-intro__actions">
-            <a href="#atuacao" className="plab-btn plab-btn--ghost">
-              Ver nossa atuação
-            </a>
-          </div>
-      </section>
-
-      <section className="plab-projetos" id="atuacao">
-            <h2 className="plab-atuacao__title">Nossos Projetos</h2>
-            {/* <p className="plab-atuacao__text">
-              Produtos digitais desenvolvidos e mantidos pelo time do Plantel Labs.
-            </p> */}
-
-            <div className="plab-projetos__grid">
-              {projetos.map((projeto) => (
-                <a
-                  key={projeto.nome}
-                  href={projeto.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="plab-card"
-                >
-                  <div className="plab-card__thumb">
-                    <img src={projeto.imagem} alt={projeto.nome} loading="lazy" />
-                  </div>
-
-                  <div className="plab-card__body">
-                    <h3 className="plab-card__title">{projeto.nome}</h3>
-                    <p className="plab-card__desc">{projeto.descricao}</p>
-
-                    <div className="plab-card__tags">
-                      {projeto.tags.map((tag) => (
-                        <span key={tag} className="plab-tag">{tag}</span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <span className="plab-card__link">
-                    Acessar projeto <em>›</em>
-                  </span>
-                </a>
-              ))}
-            </div>
-      </section>
-
-      <section className="plab-time" id="time">
-          <h1 className="plab-time__title">
-            O time por trás dos produtos <span>digitais</span> do Plantel
-          </h1>
-          <p className="plab-time__text">
-            O Plantel Labs é a área responsável por projetar, desenvolver e
-            manter as plataformas que sustentam a operação do Plantel. Aqui você
-            conhece as pessoas do time e as frentes em que atuamos.
-          </p>
-          <div className="plab-time__actions">
-            <a href="#atuacao" className="plab-btn plab-btn--ghost">
-              Ver nossa atuação
-            </a>
-          </div>
-      </section>
-
-      <footer className="plab-footer">
-          <div className="plab-footer__grid">
-            <div>
-              <img src={logo} alt="Plantel Labs" className="plab-footer__logo" />
-              <p className="plab-footer__about">
-                Plantel Labs é o núcleo de tecnologia do Plantel, responsável
-                pelo desenvolvimento das plataformas digitais do projeto.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="plab-footer__title">Navegação</h4>
-              <ul className="plab-footer__list plab-footer__list--dot">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#atuacao">Atuação</a></li>
-                <li><a href="#time">Time</a></li>
-                <li><Link to="/">Página inicial</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="plab-footer__title">Redes Sociais</h4>
-              <ul className="plab-footer__list">
-                <li>
-                  <img src="src/assets/iconInsta.svg" alt="" /><a href="https://www.instagram.com/planteldeduvidas/" aria-label="Instagram" target="_blank">Instagram</a></li>
-                <li>
-                  <img src="src/assets/iconTelegram.svg" alt="" /><a href="https://t.me/plantelduvidas" aria-label="LinkedIn" target="_blank">Telegram</a></li>
-                <li>
-                  <img src="src/assets/iconGithub.svg" alt="" /><a href="#" aria-label="GitHub" target="_blank">GitHub</a>
-                </li>
-                <li>
-                  <img src="src/assets/iconGithub.svg" alt="" /><a href="https://www.youtube.com/@PlanteldeDuvidas" aria-label="GitHub" target="_blank">YouTube</a>
-                </li>
-              </ul>
-            </div>
-             <div>
-              <h4 className="plab-footer__title">Contato</h4>
-              <ul className="plab-footer__list">
-                <li><img src="src/assets/iconEmail.svg" alt="" /><a href="mailto:plantelduvidas@plantel.com.br">plantelduvidas@plantel.com.br</a></li>
-                <li><img src="src/assets/iconEmail.svg" alt="" /><a href="mailto:plantelduvidas@plantel.com.br">planteldeduvidas@plantel.com.br</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          
-          <div className="plab-footer__bottom">
-            <span>© 2026 Plantel Labs. Todos os direitos reservados.</span>
-          </div>
-      </footer>
-    </body>
+        </section>
+        <Footer />
+      </div>
   );
 }
