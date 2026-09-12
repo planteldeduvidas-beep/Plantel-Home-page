@@ -45,17 +45,59 @@
   },
 ];
 
+import { useEffect, useRef, useState } from "react";
+
 export default function SectionRedes() {
+  const cardsRef = useRef(null);
+  const [highlighted, setHighlighted] = useState(null);
+
+  useEffect(() => {
+    const mobileMotion = window.matchMedia("(max-width: 768px) and (prefers-reduced-motion: no-preference)");
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (!mobileMotion.matches) {
+        setHighlighted(null);
+        return;
+      }
+      let closest = null;
+      let distance = Infinity;
+      Array.from(cardsRef.current.children).forEach((card, index) => {
+        const bounds = card.getBoundingClientRect();
+        if (bounds.bottom <= 0 || bounds.top >= window.innerHeight) return;
+        const delta = Math.abs(bounds.top + bounds.height / 2 - window.innerHeight / 2);
+        if (delta < distance) {
+          closest = index;
+          distance = delta;
+        }
+      });
+      setHighlighted(closest);
+    };
+    const schedule = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    schedule();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    mobileMotion.addEventListener("change", schedule);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      mobileMotion.removeEventListener("change", schedule);
+    };
+  }, []);
+
   return (
     <section id="redes" className="secao">
       <h2>Redes Sociais</h2>
       <div className="line"></div>
 
-      <div className="container-redes">
-        {redes.map((rede) => (
+      <div className="container-redes" ref={cardsRef}>
+        {redes.map((rede, index) => (
           <div
             key={rede.id}
-            className="box-redes"
+            className={`box-redes${highlighted === index ? " is-scroll-highlighted" : ""}`}
             role="button"
             tabIndex={0}
             onClick={() => window.open(rede.href, "_blank")}
