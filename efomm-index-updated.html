@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantel de Dúvidas — EFOMM · Preparação</title>
+
+  <!-- Prévia de link (WhatsApp, Telegram, redes sociais) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Plantel de Dúvidas — EFOMM">
+  <meta property="og:description"
+    content="Tire suas dúvidas com quem também estuda para a EFOMM. Entre no plantel oficial de preparação.">
+  <meta property="og:image" content="assets/plantel-logo.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1280">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Plantel de Dúvidas — EFOMM">
+  <meta name="twitter:description" content="Tire suas dúvidas com quem também estuda para a EFOMM.">
+  <meta name="twitter:image" content="assets/plantel-logo.png">
+  <link rel="icon" type="image/png" sizes="any" href="assets/plantel-logo-nav.png?v=2">
+  <link rel="shortcut icon" type="image/png" href="assets/plantel-logo-nav.png?v=2">
+  <link rel="apple-touch-icon" href="assets/plantel-logo-nav.png?v=2">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #081527;
+      --navy-900: #0A1B33;
+      --navy-800: #0F2444;
+      --navy-700: #173259;
+      --parchment-100: #F4EFE3;
+      --parchment-50: #FBF8F1;
+      --brass-500: #BE9A46;
+      --brass-400: #D4B466;
+      --brass-700: #8F7230;
+      --signal-500: #C1502E;
+      --signal-600: #A43F22;
+      --ink-900: #14181F;
+      --ink-050: #EDE7D8;
+      --line-on-navy: rgba(237, 231, 216, 0.14);
+      --line-on-parchment: rgba(20, 24, 31, 0.12);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--parchment-100);
+      color: var(--ink-900);
+      font-family: 'Work Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    .display {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    @media (max-width:640px) {
+      .wrap {
+        padding: 0 20px;
+      }
+    }
+
+    /* Skip link for keyboard users */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--brass-500);
+      color: var(--navy-950);
+      padding: 12px 18px;
+      z-index: 200;
+      font-weight: 600;
+    }
+
+    .skip-link:focus {
+      left: 20px;
+      top: 20px;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--brass-500);
+      outline-offset: 3px;
+    }
+
+    /* ===== NAV ===== */
+    header.site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(8, 21, 39, 0.72);
+      border-bottom: 1px solid rgba(237, 231, 216, 0.08);
+      transition: background .35s ease, border-color .35s ease;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+
+    header.site-nav.solid {
+      background: rgba(8, 21, 39, 0.92);
+      border-bottom-color: var(--line-on-navy);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 24px;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .nav-start {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 0 0 auto;
+    }
+
+    .nav-back {
+      text-decoration: none;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+      color: var(--ink-050);
+      font: inherit;
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+    }
+
+    .nav-back:hover,
+    .nav-back:focus-visible {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--brass-400);
+      outline: none;
+    }
+
+    .nav-back[hidden] {
+      display: none;
+    }
+
+    .brand {
+      display: grid;
+      grid-template-columns: 28px;
+      align-items: center;
+      gap: 0;
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      color: var(--ink-050);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-logo {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    nav.links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(24px, 2.5vw, 36px);
+      flex: 0 1 auto;
+      margin: 0 auto;
+    }
+
+    nav.links a {
+      color: rgba(237, 231, 216, 0.82);
+      text-decoration: none;
+      font-size: 0.78rem;
+      opacity: 1;
+      padding: 6px 2px;
+      transition: color .2s ease;
+    }
+
+    nav.links a:hover,
+    nav.links a:focus-visible {
+      color: var(--brass-400);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--brass-500);
+      color: var(--navy-950);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .2s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--brass-400);
+      transform: translateY(-1px);
+    }
+
+    @media (min-width: 1081px) {
+      .nav-inner {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+      }
+
+      .nav-start {
+        justify-self: start;
+      }
+
+      nav.links {
+        margin: 0;
+      }
+
+      .nav-actions {
+        justify-self: end;
+      }
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      position: relative;
+    }
+
+    .menu-btn span {
+      position: absolute;
+      left: 4px;
+      width: 20px;
+      height: 1.5px;
+      top: 50%;
+      background: var(--ink-050);
+      transform-origin: center;
+      transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .menu-btn span:nth-child(1) {
+      transform: translateY(-4px);
+    }
+
+    .menu-btn span:nth-child(2) {
+      transform: translateY(4px);
+    }
+
+    .menu-btn.open span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    .menu-btn.open span:nth-child(2) {
+      transform: rotate(-45deg);
+    }
+
+    @media (max-width:1080px) {
+
+      nav.links,
+      .nav-cta.desktop-only {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-inner {
+        min-height: calc(48px + env(safe-area-inset-top));
+        padding: calc(8px + env(safe-area-inset-top)) 24px 8px;
+      }
+
+      .mobile-panel {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100dvh;
+        z-index: 99;
+        padding: calc(48px + env(safe-area-inset-top) + 32px) 36px 36px;
+        flex-direction: column;
+        align-items: flex-start;
+        background: var(--navy-950);
+        border: 0;
+        transform: none;
+        clip-path: inset(0 0 100% 0);
+        visibility: hidden;
+        pointer-events: none;
+        transition: clip-path 380ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 380ms;
+      }
+
+      .mobile-panel.open {
+        clip-path: inset(0);
+        visibility: visible;
+        pointer-events: auto;
+        transition: clip-path 420ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
+      }
+
+      .mobile-panel a {
+        width: 100%;
+        color: var(--ink-050);
+        text-decoration: none;
+        font-family: 'Work Sans', sans-serif;
+        font-size: clamp(1.6rem, 6vw, 2rem);
+        font-weight: 600;
+        padding: 10px 0;
+        border-bottom: 0;
+        opacity: 0;
+        transform: translateY(-14px);
+        transition: opacity 280ms ease, transform 280ms ease;
+      }
+
+      .mobile-panel.open a {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .mobile-panel.open a:nth-child(1) { transition-delay: 80ms; }
+      .mobile-panel.open a:nth-child(2) { transition-delay: 125ms; }
+      .mobile-panel.open a:nth-child(3) { transition-delay: 170ms; }
+      .mobile-panel.open a:nth-child(4) { transition-delay: 215ms; }
+
+    }
+
+    .mobile-panel {
+      display: none;
+    }
+
+    @media (max-width:1080px) {
+      .mobile-panel {
+        display: flex;
+      }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      background: radial-gradient(120% 90% at 78% 10%, var(--navy-800) 0%, var(--navy-950) 55%);
+      color: var(--ink-050);
+      padding: 132px 0 104px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width:900px) {
+      .hero {
+        padding: 96px 0 80px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      color: var(--brass-400);
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      line-height: 1.04;
+      max-width: 14ch;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--brass-400);
+    }
+
+    .hero p.lede {
+      margin-top: 26px;
+      max-width: 46ch;
+      font-size: 1.15rem;
+      color: rgba(237, 231, 216, 0.82);
+    }
+
+    .hero-actions {
+      margin-top: 38px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--brass-500);
+      color: var(--navy-950);
+      padding: 15px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      border: 1px solid var(--brass-500);
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--brass-400);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-ghost {
+      padding: 15px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      color: var(--ink-050);
+      border: 1px solid var(--line-on-navy);
+      transition: border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--brass-500);
+      background: rgba(190, 154, 70, 0.08);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-emblem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .hero-emblem img {
+      width: min(350px, 86vw);
+      aspect-ratio: 1;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.32));
+    }
+
+    .hero-emblem figcaption {
+      max-width: 34ch;
+      text-align: center;
+      font-size: 0.76rem;
+      color: rgba(237, 231, 216, 0.55);
+      line-height: 1.5;
+    }
+
+    .hero-coords {
+      position: absolute;
+      bottom: 22px;
+      left: 32px;
+      font-size: 0.78rem;
+      color: rgba(237, 231, 216, 0.45);
+      letter-spacing: 0.03em;
+    }
+
+    /* ===== SECTION SCAFFOLDING ===== */
+    section {
+      padding: 104px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 56px;
+      border-bottom: 1px solid var(--line-on-parchment);
+      padding-bottom: 28px;
+    }
+
+    @media (max-width:760px) {
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section-tag {
+      font-size: 0.85rem;
+      color: var(--brass-700);
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      max-width: 16ch;
+    }
+
+    .section-head p {
+      font-size: 1.02rem;
+      color: rgba(20, 24, 31, 0.68);
+      max-width: 44ch;
+    }
+
+    section.on-navy {
+      background: var(--navy-950);
+      color: var(--ink-050);
+    }
+
+    section.on-navy .section-head {
+      border-color: var(--line-on-navy);
+    }
+
+    section.on-navy .section-tag {
+      color: var(--brass-400);
+    }
+
+    section.on-navy .section-head p {
+      color: rgba(237, 231, 216, 0.68);
+    }
+
+    /* ===== O CONCURSO — waypoints ===== */
+    .route {
+      position: relative;
+      padding-left: 36px;
+    }
+
+    .route::before {
+      content: '';
+      position: absolute;
+      left: 9px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--line-on-parchment);
+    }
+
+    .waypoint {
+      position: relative;
+      padding: 0 0 40px;
+    }
+
+    .waypoint:last-child {
+      padding-bottom: 0;
+    }
+
+    .waypoint::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 4px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--parchment-100);
+      border: 2px solid var(--brass-500);
+    }
+
+    .waypoint h3 {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .waypoint p {
+      margin: 0;
+      color: rgba(20, 24, 31, 0.72);
+      max-width: 60ch;
+    }
+
+    .waypoint .wp-meta {
+      font-size: 0.85rem;
+      color: var(--brass-700);
+      margin-bottom: 4px;
+    }
+
+    .requirements {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-bottom: 56px;
+      border: 1px solid var(--line-on-parchment);
+      background: var(--line-on-parchment);
+    }
+
+    .requirement {
+      background: var(--parchment-50);
+      padding: 24px 20px;
+    }
+
+    .requirement strong {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 1.12rem;
+      margin-bottom: 6px;
+    }
+
+    .requirement span {
+      display: block;
+      color: rgba(20, 24, 31, 0.68);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    .route-title {
+      margin-bottom: 30px;
+    }
+
+    .route-title .section-tag {
+      margin-bottom: 6px;
+    }
+
+    .route-title h3 {
+      font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+    }
+
+    .exam-days {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+      max-width: 700px;
+    }
+
+    .exam-day {
+      padding: 10px 12px;
+      background: var(--parchment-100);
+      border-left: 2px solid var(--brass-500);
+      font-size: 0.84rem;
+      color: rgba(20, 24, 31, 0.72);
+    }
+
+    .exam-day strong {
+      color: var(--ink-900);
+    }
+
+    .official-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 44px 0 0 36px;
+    }
+
+    .official-links .btn-ghost {
+      color: var(--ink-900);
+      border-color: var(--line-on-parchment);
+    }
+
+    .official-links p {
+      width: 100%;
+      font-size: 0.8rem;
+      color: rgba(20, 24, 31, 0.58);
+    }
+
+    @media (max-width:860px) {
+      .requirements {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width:560px) {
+
+      .requirements,
+      .exam-days {
+        grid-template-columns: 1fr;
+      }
+
+      .official-links {
+        margin-left: 0;
+      }
+    }
+
+    /* ===== DISCIPLINAS ===== */
+    .subjects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line-on-navy);
+      border: 1px solid var(--line-on-navy);
+    }
+
+    @media (max-width:820px) {
+      .subjects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width:520px) {
+      .subjects {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .subject-cell {
+      background: var(--navy-950);
+      padding: 30px 26px;
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 0;
+      transition: transform .22s ease, background .22s ease, box-shadow .22s ease;
+    }
+
+    @media (hover:hover) {
+      .subject-cell:hover {
+        z-index: 2;
+        transform: scale(1.025);
+        background: var(--navy-900);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3), inset 0 0 0 1px var(--brass-500);
+      }
+    }
+
+    @media (max-width:520px) {
+      .subject-cell.is-scroll-active {
+        z-index: 2;
+        transform: scale(1.025);
+        background: var(--navy-900);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3), inset 0 0 0 1px var(--brass-500);
+      }
+    }
+
+    .subject-cell .num {
+      font-family: 'Fraunces', serif;
+      font-size: 0.95rem;
+      color: var(--brass-400);
+    }
+
+    .subject-cell h3 {
+      font-size: 1.15rem;
+      margin-top: 18px;
+    }
+
+    .subject-cell p {
+      font-size: 0.9rem;
+      color: rgba(237, 231, 216, 0.62);
+      margin-top: 8px;
+    }
+
+    /* ===== PARCEIROS (tabs por disciplina) ===== */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--line-on-parchment);
+      padding-bottom: 0;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 12px 4px;
+      margin-right: 22px;
+      color: rgba(20, 24, 31, 0.55);
+      border-bottom: 2px solid transparent;
+      transition: color .2s ease, border-color .2s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--ink-900);
+    }
+
+    .tab-btn[aria-selected="true"] {
+      color: var(--ink-900);
+      border-bottom-color: var(--brass-500);
+    }
+
+    .partner-panel {
+      display: none;
+    }
+
+    .partner-panel.active {
+      display: block;
+      animation: partner-panel-in .26s ease both;
+    }
+
+    .partner-subsection + .partner-subsection {
+      margin-top: 32px;
+    }
+
+    .partner-subsection-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--ink-900);
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+    }
+
+    .partner-subsection-title::after {
+      content: '';
+      height: 1px;
+      flex: 1;
+      background: var(--line-on-parchment);
+    }
+
+    @keyframes partner-panel-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--line-on-parchment);
+      border: 1px solid var(--line-on-parchment);
+    }
+
+    @media (max-width:760px) {
+      .partner-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .partner-card {
+      background: var(--parchment-50);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+    }
+
+    .partner-card:hover {
+      z-index: 2;
+      transform: translateY(-5px);
+      background: #fff;
+      box-shadow: 0 14px 30px rgba(8, 21, 39, 0.13);
+    }
+
+    .partner-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .partner-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+    }
+
+    .partner-kind {
+      font-size: 0.78rem;
+      color: var(--brass-700);
+    }
+
+    .partner-desc {
+      font-size: 0.92rem;
+      color: rgba(20, 24, 31, 0.7);
+      flex-grow: 1;
+    }
+
+    .partner-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .partner-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--ink-900);
+      border-bottom: 1px solid var(--brass-500);
+    }
+
+    .coupon-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--navy-950);
+      color: var(--ink-050);
+      padding: 6px 12px;
+      border-radius: 2px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      border: 1px dashed var(--brass-500);
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    .coupon-chip:hover {
+      background: var(--navy-800);
+    }
+
+    .coupon-chip.copied {
+      border-color: var(--signal-500);
+      color: var(--signal-500);
+    }
+
+    .partner-card.featured {
+      grid-column: 1 / -1;
+      gap: 22px;
+    }
+
+    .partner-invite {
+      margin-top: 40px;
+      padding: 28px 0;
+      border-top: 1px solid var(--line-on-parchment);
+      border-bottom: 1px solid var(--line-on-parchment);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .partner-invite-copy {
+      max-width: 650px;
+    }
+
+    .partner-invite-label {
+      color: var(--brass-700);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .partner-invite h3 {
+      color: var(--ink-900);
+      font-size: 1.35rem;
+    }
+
+    .partner-invite p {
+      margin-top: 6px;
+      color: rgba(20, 24, 31, 0.7);
+      font-size: 0.92rem;
+    }
+
+    .partner-invite .btn-primary {
+      flex: 0 0 auto;
+    }
+
+    @media (max-width:680px) {
+      .partner-invite {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .partner-invite .btn-primary {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .partner-profile {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .partner-logo {
+      width: 104px;
+      height: 104px;
+      flex-shrink: 0;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--line-on-parchment);
+      padding: 8px;
+    }
+
+    .partner-logo.fenix-logo,
+    .partner-logo.jp-logo,
+    .partner-logo.omp-logo {
+      background: #000;
+      border-color: #000;
+      padding: 7px;
+    }
+
+    .partner-logo.community-photo {
+      object-fit: cover;
+      padding: 0;
+    }
+
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .course-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 58px;
+      padding: 12px 14px;
+      color: var(--ink-900);
+      text-decoration: none;
+      border: 1px solid var(--line-on-parchment);
+      background: var(--parchment-100);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: border-color .2s ease, background .2s ease;
+    }
+
+    .course-link:hover {
+      border-color: var(--brass-500);
+      background: var(--parchment-50);
+    }
+
+    .course-link span:last-child {
+      color: var(--brass-700);
+      font-size: 0.72rem;
+      white-space: nowrap;
+    }
+
+    .coupon-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--line-on-parchment);
+      background: var(--line-on-parchment);
+    }
+
+    .coupon-steps.single {
+      grid-template-columns: 1fr;
+    }
+
+    .coupon-step {
+      background: var(--parchment-50);
+      padding: 14px;
+      font-size: 0.83rem;
+      color: rgba(20, 24, 31, 0.72);
+    }
+
+    .coupon-step strong {
+      display: block;
+      color: var(--brass-700);
+      margin-bottom: 4px;
+    }
+
+    @media (max-width:680px) {
+      .partner-profile {
+        align-items: flex-start;
+      }
+
+      .partner-logo {
+        width: 82px;
+        height: 82px;
+      }
+
+      .course-list,
+      .coupon-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== CUPONS DESTAQUE ===== */
+    .coupon-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line-on-navy);
+      border: 1px solid var(--line-on-navy);
+    }
+
+    .coupon-strip.carousel-ready {
+      display: block;
+      overflow: hidden;
+    }
+
+    .coupon-track {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      width: 200%;
+      gap: 1px;
+      background: var(--line-on-navy);
+      animation: coupon-carousel 18s linear infinite;
+      will-change: transform;
+    }
+
+    .coupon-strip:hover .coupon-track,
+    .coupon-strip:focus-within .coupon-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes coupon-carousel {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .coupon-controls {
+      display: none;
+    }
+
+    @media (max-width:820px) {
+      .coupon-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .coupon-track {
+        width: 600%;
+      }
+
+      .coupon-strip.mobile-carousel .coupon-track {
+        animation: none;
+        transform: translateX(0);
+        transition: transform .55s cubic-bezier(.25, .46, .45, .94);
+      }
+
+      .coupon-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .coupon-dots {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+
+      .coupon-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: rgba(237, 231, 216, 0.35);
+        transition: width .25s ease, background .25s ease;
+      }
+
+      .coupon-dot.active {
+        width: 25px;
+        background: var(--brass-400);
+      }
+
+      .coupon-play-toggle {
+        width: 32px;
+        height: 32px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line-on-navy);
+        border-radius: 50%;
+        background: transparent;
+        color: var(--ink-050);
+        font-size: .85rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .coupon-play-toggle:hover {
+        border-color: var(--brass-400);
+        color: var(--brass-400);
+      }
+    }
+
+    .coupon-big {
+      background: var(--navy-950);
+      padding: 34px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .coupon-big .pct {
+      font-family: 'Fraunces', serif;
+      font-size: 2.4rem;
+      color: var(--brass-400);
+    }
+
+    .coupon-big .who {
+      font-size: 0.95rem;
+      color: var(--ink-050);
+    }
+
+    .coupon-big .code-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .coupon-code {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      background: rgba(237, 231, 216, 0.08);
+      padding: 8px 12px;
+      border-radius: 2px;
+      border: 1px solid var(--line-on-navy);
+      font-size: 0.85rem;
+      color: var(--ink-050);
+    }
+
+    .copy-btn {
+      background: var(--signal-500);
+      color: var(--ink-050);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 2px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background .2s ease;
+    }
+
+    .copy-btn:hover {
+      background: var(--signal-600);
+    }
+
+    .copy-btn.done {
+      background: var(--brass-500);
+      color: var(--navy-950);
+    }
+
+    /* ===== PLANTEL DE DÚVIDAS ===== */
+    .plantel-box {
+      background: var(--navy-950);
+      color: var(--ink-050);
+      padding: 56px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .plantel-left {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .plantel-logo {
+      width: 76px;
+      height: 76px;
+      border-radius: 16px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+      padding: 8px;
+    }
+
+    .plantel-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .plantel-left h2 {
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+    }
+
+    .plantel-left p {
+      margin-top: 8px;
+      color: rgba(237, 231, 216, 0.7);
+      max-width: 44ch;
+      font-size: 0.98rem;
+    }
+
+    /* ===== CTA FINAL ===== */
+    .cta-final {
+      background: var(--parchment-100);
+      text-align: left;
+      padding: 100px 0;
+    }
+
+    .cta-box {
+      background: var(--navy-950);
+      color: var(--ink-050);
+      padding: 64px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      border-radius: 2px;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      max-width: 16ch;
+    }
+
+    .cta-box p {
+      color: rgba(237, 231, 216, 0.7);
+      margin-top: 12px;
+      max-width: 42ch;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy-950);
+      color: rgba(237, 231, 216, 0.6);
+      padding: 64px 0 32px;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--line-on-navy);
+    }
+
+    @media (max-width:760px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .footer-grid h4 {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.82rem;
+      color: var(--brass-400);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      flex-shrink: 0;
+      transform: translateY(4px);
+    }
+
+    .footer-brand h4 {
+      margin-bottom: 0;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      transform: translateY(-5px);
+    }
+
+    .footer-grid a {
+      display: block;
+      text-decoration: none;
+      color: rgba(237, 231, 216, 0.6);
+      padding: 6px 0;
+      transform: translateX(0);
+      transition: color 300ms ease, transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .footer-grid a:hover,
+    .footer-grid a:focus-visible {
+      color: var(--ink-050);
+      transform: translateX(6px);
+    }
+
+    @media (max-width: 1080px) {
+      .footer-grid a {
+        transform: none;
+        transition: color 220ms ease;
+      }
+
+      .footer-grid a:hover,
+      .footer-grid a:focus-visible {
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .footer-grid a {
+        transition: color 220ms ease;
+      }
+
+      .footer-grid a:hover,
+      .footer-grid a:focus-visible {
+        transform: none;
+      }
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 24px;
+      gap: 8px 24px;
+      font-size: 0.8rem;
+      color: rgba(237, 231, 216, 0.4);
+    }
+
+    .footer-bottom strong {
+      color: rgba(237, 231, 216, 0.6);
+      font-weight: 600;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 900;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(237, 231, 216, 0.22);
+      border-radius: 4px;
+      background: var(--brass-500);
+      color: var(--navy-950);
+      font-size: 1.35rem;
+      line-height: 1;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity .2s ease, transform .2s ease, visibility .2s ease, background .2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--brass-400);
+    }
+
+    .back-to-top:focus-visible {
+      outline: 3px solid var(--ink-050);
+      outline-offset: 3px;
+    }
+
+    html.motion-enabled .reveal-block {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+
+    html.motion-enabled .reveal-block.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width:1080px) {
+      .back-to-top {
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom));
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      body.menu-open .back-to-top {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .reveal-block {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <div class="nav-start">
+        <a class="nav-back" id="navBack" href="https://planteldeduvidas.com.br/" aria-label="Voltar ao Plantel" title="Voltar ao Plantel">&#8592;</a>
+      <a class="brand" href="#top">
+        <span class="brand-logo" aria-hidden="true"><img src="assets/plantel-logo-nav.png" alt=""></span>
+        <span class="brand-label">Plantel de Dúvidas</span>
+      </a>
+      </div>
+      <nav class="links" aria-label="Navegação principal">
+        <a href="#concurso">O Concurso</a>
+        <a href="#disciplinas">Disciplinas</a>
+        <a href="#parceiros">Parceiros</a>
+        <a href="#plantel">Plantel de Dúvidas</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="nav-cta desktop-only" href="https://chat.whatsapp.com/KMwYVUctbqh1sPtlhcs3ip?mode=ac_t" target="_blank" rel="noopener noreferrer">Entrar no Plantel</a>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobilePanel">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+    <a href="#concurso">O Concurso</a>
+    <a href="#disciplinas">Disciplinas</a>
+    <a href="#parceiros">Parceiros</a>
+    <a href="#plantel">Plantel de Dúvidas</a>
+  </div>
+
+  <main id="main">
+
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="hero-eyebrow">Preparação para a Escola de Formação de Oficiais da Marinha Mercante</div>
+          <h1>Plantel de <em>Dúvidas.</em></h1>
+          <p class="lede">Sua rota de preparação para a EFOMM: disciplinas organizadas, parceiros por área e uma
+            comunidade de apoio para avançar nos estudos.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#parceiros">Encontrar parceiros</a>
+            <a class="btn-ghost" href="#concurso">Entender o concurso</a>
+          </div>
+        </div>
+        <figure class="hero-emblem">
+          <img src="assets/efomm-emblem.png" alt="Emblema da Escola de Formação de Oficiais da Marinha Mercante">
+          <figcaption>Preparação voltada à EFOMM. Projeto independente, sem vínculo oficial com a Marinha do Brasil.
+          </figcaption>
+        </figure>
+      </div>
+      <div class="hero-coords">22°54'S · 43°10'W — RIO DE JANEIRO</div>
+    </section>
+
+    <section id="concurso">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-tag">O Concurso</div>
+            <h2>Seu caminho até a matrícula na EFOMM.</h2>
+          </div>
+          <p>Um resumo do PS EFOMM/2027, desde os requisitos de ingresso até o início da formação. Datas e regras podem
+            mudar: o edital oficial sempre prevalece.</p>
+        </div>
+
+        <div class="requirements" aria-label="Requisitos básicos do PS EFOMM 2027">
+          <div class="requirement"><strong>17 a 23 anos</strong><span>Idade considerada em 1º de janeiro de 2027.</span>
+          </div>
+          <div class="requirement"><strong>Ensino Médio</strong><span>Conclusão exigida até 1º de fevereiro de
+              2027.</span></div>
+          <div class="requirement"><strong>1,54 m a 2,00 m</strong><span>Faixa de altura prevista para ambos os
+              sexos.</span></div>
+          <div class="requirement"><strong>Dedicação exclusiva</strong><span>Não ter filhos ou dependentes, nem ser
+              casado ou ter união estável, conforme o edital.</span></div>
+        </div>
+
+        <div class="route-title">
+          <div class="section-tag">PS EFOMM/2027</div>
+          <h3>Etapas do processo seletivo</h3>
+        </div>
+        <div class="route">
+          <div class="waypoint">
+            <div class="wp-meta">Antes de começar</div>
+            <h3>Leia o edital e escolha o Centro de Instrução</h3>
+            <p>Confira todas as condições e escolha concorrer às vagas do CIAGA, no Rio de Janeiro, ou do CIABA, em
+              Belém. Essa escolha também define as cidades disponíveis para as etapas presenciais.</p>
+          </div>
+          <div class="waypoint">
+            <div class="wp-meta">Inscrições · 21/05 a 02/06/2026</div>
+            <h3>Faça a inscrição</h3>
+            <p>Preencha o cadastro pela internet e pague a taxa de R$ 110,00 dentro do prazo. O processo de 2027 oferece
+              368 vagas, distribuídas entre CIAGA e CIABA.</p>
+          </div>
+          <div class="waypoint">
+            <div class="wp-meta">1ª etapa · 25 e 26/07/2026</div>
+            <h3>Exame de Conhecimentos</h3>
+            <p>As provas escritas são realizadas em dois dias e têm caráter eliminatório e classificatório.</p>
+            <div class="exam-days">
+              <div class="exam-day"><strong>1º dia:</strong> Português, Inglês e Redação.</div>
+              <div class="exam-day"><strong>2º dia:</strong> Matemática e Física.</div>
+            </div>
+          </div>
+          <div class="waypoint">
+            <div class="wp-meta">2ª etapa · eliminatória</div>
+            <h3>Seleção Psicofísica</h3>
+            <p>Os candidatos convocados passam por inspeções e exames destinados a verificar as condições de saúde
+              exigidas para a formação e a atividade marítima.</p>
+          </div>
+          <div class="waypoint">
+            <div class="wp-meta">3ª etapa · eliminatória</div>
+            <h3>Teste de Suficiência Física</h3>
+            <p>O TSF inclui corrida de 2.400 m e natação de 50 m. Para homens, os limites são 14min30s e 2min; para
+              mulheres, 16min30s e 2min30s, respectivamente.</p>
+          </div>
+          <div class="waypoint">
+            <div class="wp-meta">4ª etapa · 11 a 29/01/2027</div>
+            <h3>Adaptação e verificação de documentos</h3>
+            <p>Os classificados participam do Período de Adaptação em regime de internato e apresentam a documentação
+              exigida. A matrícula e o início do curso estão previstos para 1º de fevereiro de 2027.</p>
+          </div>
+          <div class="waypoint">
+            <div class="wp-meta">Formação</div>
+            <h3>Náutica ou Máquinas</h3>
+            <p>O período acadêmico compreende seis semestres em regime de internato, seguido pelo estágio embarcado. A
+              formação ocorre no CIAGA ou no CIABA.</p>
+          </div>
+        </div>
+
+        <div class="official-links">
+          <a class="btn-primary" href="https://www.marinha.mil.br/ciaga/node/2516" target="_blank"
+            rel="noopener">Acessar o processo oficial</a>
+          <a class="btn-ghost" href="https://www.inscricao.marinha.mil.br/ciaga/index_concursos.jsp?id_concurso=77"
+            target="_blank" rel="noopener">Área de inscrição</a>
+          <p>Resumo baseado no edital do PS EFOMM/2027. Consulte sempre o documento oficial antes de tomar qualquer
+            decisão.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="disciplinas" class="on-navy">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-tag">Disciplinas</div>
+            <h2>O que cai na prova, em seis frentes de estudo.</h2>
+          </div>
+          <p>Cada disciplina tem peso e cobrança diferentes. Use essa base para priorizar o que preparar primeiro.</p>
+        </div>
+        <div class="subjects">
+          <div class="subject-cell">
+            <span class="num">01</span>
+            <div>
+              <h3>Matemática</h3>
+              <p>Maior peso da prova. Álgebra, geometria e trigonometria aparecem de forma recorrente.</p>
+            </div>
+          </div>
+          <div class="subject-cell">
+            <span class="num">02</span>
+            <div>
+              <h3>Português</h3>
+              <p>Interpretação de texto, gramática normativa e literatura em proporções equilibradas.</p>
+            </div>
+          </div>
+          <div class="subject-cell">
+            <span class="num">03</span>
+            <div>
+              <h3>Física</h3>
+              <p>Mecânica, ondulatória e eletromagnetismo — base direta para as disciplinas técnicas do curso.</p>
+            </div>
+          </div>
+          <div class="subject-cell">
+            <span class="num">04</span>
+            <div>
+              <h3>Inglês</h3>
+              <p>Leitura técnica e compreensão de texto, essencial também para a vida a bordo.</p>
+            </div>
+          </div>
+          <div class="subject-cell">
+            <span class="num">05</span>
+            <div>
+              <h3>Redação</h3>
+              <p>Dissertação argumentativa, com critérios objetivos de estrutura e coesão.</p>
+            </div>
+          </div>
+          <div class="subject-cell">
+            <span class="num">06</span>
+            <div>
+              <h3>Atualidades</h3>
+              <p>Temas de geopolítica marítima, Marinha do Brasil e conjuntura nacional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="parceiros">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-tag">Parceiros</div>
+            <h2>Apoio para cada disciplina, organizado por rota.</h2>
+          </div>
+          <p>Cursos, materiais e mentorias selecionados e agrupados por área — para não perder tempo procurando o que já
+            existe pronto.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Disciplinas dos parceiros">
+          <button class="tab-btn" role="tab" aria-selected="true" data-target="mat">Matemática</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-target="por">Português</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-target="fis">Física</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-target="ing">Inglês</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-target="red">Redação</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-target="ger">Preparação Geral</button>
+        </div>
+
+        <div class="partner-panel active" id="mat">
+          <div class="partner-grid">
+            <div class="partner-card featured">
+              <div class="partner-top">
+                <div>
+                  <div class="partner-name">Quer indicar professor ou se tornar parceiro?</div>
+                  <div class="partner-kind">Espaço aberto · Professores, cursos e mentorias</div>
+                </div>
+              </div>
+              <p class="partner-desc">Conhece um bom professor de Matemática ou trabalha com preparação para a EFOMM? Entre em contato com a nossa equipe.</p>
+              <div class="partner-foot">
+                <a class="partner-link" href="https://api.whatsapp.com/send?phone=5524999216327&amp;text=Ol%C3%A1%2C%20tenho%20interesse%20em%20ser%20parceiro%20de%20Matem%C3%A1tica%20do%20Plantel%20de%20D%C3%BAvidas." target="_blank" rel="noopener noreferrer">Candidatar-se como parceiro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-panel" id="por">
+          <div class="partner-grid">
+            <div class="partner-card featured">
+              <div class="partner-profile">
+                <img class="partner-logo omp-logo" src="assets/omp-logo.png" alt="Logo do OMP - O Método Português">
+                <div>
+                  <div class="partner-name">OMP - O Método Português</div>
+                  <div class="partner-kind">Cursos e aprofundamento · Português</div>
+                  <p class="partner-desc">Preparação em Português com opções de curso completo, conteúdo teórico e turmas de exercícios para aprofundamento.</p>
+                </div>
+              </div>
+
+              <div class="course-list" aria-label="Cursos do OMP - O Método Português">
+                <a class="course-link" href="https://pay.kiwify.com.br/ukBysMu?afid=X0tJmlOH" target="_blank" rel="noopener"><span>OMP - Completo</span><span>Kiwify ↗</span></a>
+                <a class="course-link" href="https://dashboard.kiwify.com/join/affiliate/fqfmWtLG" target="_blank" rel="noopener"><span>OMP - Curso Teórico</span><span>Kiwify ↗</span></a>
+                <a class="course-link" href="https://pay.kiwify.com.br/uqp1u1b?afid=yyT4wqyg" target="_blank" rel="noopener"><span>Turma de Exercícios OMP - Plano Mensal</span><span>Kiwify ↗</span></a>
+                <a class="course-link" href="https://pay.kiwify.com.br/kr9mgsa?afid=yyT4wqyg" target="_blank" rel="noopener"><span>Turma de Exercícios OMP - Plano Anual</span><span>Kiwify ↗</span></a>
+                <a class="course-link" href="https://pay.kiwify.com.br/XMD8PA3?afid=yyT4wqyg" target="_blank" rel="noopener"><span>Turma de Exercícios OMP</span><span>Kiwify ↗</span></a>
+              </div>
+
+              <div class="coupon-steps single" aria-label="Como usar o cupom">
+                <div class="coupon-step"><strong>Tem um cupom de desconto?</strong>No checkout, clique nessa opção e digite PLANTEL10.</div>
+              </div>
+
+              <div class="partner-foot">
+                <span>10% de desconto em todas as opções</span>
+                <span class="coupon-chip" data-code="PLANTEL10">Cupom PLANTEL10 · copiar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-panel" id="red">
+          <div class="partner-grid">
+            <div class="partner-card featured">
+              <div class="partner-profile">
+                <img class="partner-logo" src="assets/puppin-logo.png" alt="Logo Puppin">
+                <div>
+                  <div class="partner-name">Thaylise Puppin</div>
+                  <div class="partner-kind">Redação para EFOMM e concursos da Marinha</div>
+                  <p class="partner-desc">Professora especialista em redação para concursos militares, com preparação
+                    direcionada às exigências da EFOMM e da Marinha.</p>
+                </div>
+              </div>
+
+              <div class="course-list" aria-label="Cursos da Thaylise Puppin">
+                <a class="course-link" href="https://pay.kiwify.com.br/OyFUYjX?afid=1vBM9oo8" target="_blank"
+                  rel="noopener"><span>EFOMM - Turma 2</span><span>Kiwify ↗</span></a>
+                <a class="course-link" href="https://pay.kiwify.com.br/ctsiQfg?afid=W5fMhBRq" target="_blank"
+                  rel="noopener"><span>Clube da Redação (Mensal)</span><span>Kiwify ↗</span></a>
+              </div>
+
+              <div class="coupon-steps single" aria-label="Como usar o cupom">
+                <div class="coupon-step"><strong>Tem um cupom de desconto?</strong>No checkout, clique nessa opção e digite PLANTEL10.</div>
+              </div>
+
+              <div class="partner-foot">
+                <span>10% de desconto em todas as opções</span>
+                <span class="coupon-chip" data-code="PLANTEL10">Cupom PLANTEL10 · copiar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-panel" id="fis">
+          <div class="partner-grid">
+            <div class="partner-card">
+              <div class="partner-profile">
+                <img class="partner-logo jp-logo" src="assets/jp-militares-logo.png" alt="Logo do JP Militares">
+                <div>
+                  <div class="partner-name">JP Militares</div>
+                  <div class="partner-kind">Grupo gratuito · Física</div>
+                  <p class="partner-desc">Grupo gratuito para estudantes que querem reforçar Física e acompanhar conteúdos voltados à preparação militar.</p>
+                </div>
+              </div>
+              <div class="partner-foot">
+                <a class="partner-link" href="https://chat.whatsapp.com/DFre6T6TjbnGxSiY6zM0jS?s=cl&amp;p=a&amp;mlu=4" target="_blank" rel="noopener">Entrar no grupo</a>
+              </div>
+            </div>
+            <div class="partner-card">
+              <div class="partner-top">
+                <div>
+                  <div class="partner-name">Quer indicar professor ou se tornar parceiro?</div>
+                  <div class="partner-kind">Espaço aberto · Física</div>
+                </div>
+              </div>
+              <p class="partner-desc">Conhece um bom professor de Física ou trabalha com preparação para a EFOMM? Entre em contato com a nossa equipe.</p>
+              <div class="partner-foot">
+                <a class="partner-link" href="https://api.whatsapp.com/send?phone=5524999216327&amp;text=Ol%C3%A1%2C%20quero%20indicar%20um%20professor%20ou%20conversar%20sobre%20uma%20parceria%20de%20F%C3%ADsica%20com%20o%20Plantel%20de%20D%C3%BAvidas." target="_blank" rel="noopener noreferrer">Entre em contato</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-panel" id="ing">
+          <div class="partner-grid">
+            <div class="partner-card">
+              <div class="partner-top">
+                <div>
+                  <div class="partner-name">Quer indicar professor ou se tornar parceiro?</div>
+                  <div class="partner-kind">Espaço aberto · Inglês</div>
+                </div>
+              </div>
+              <p class="partner-desc">Conhece um bom professor de Inglês ou trabalha com preparação para a EFOMM? Entre em contato com a nossa equipe.</p>
+              <div class="partner-foot">
+                <a class="partner-link" href="https://api.whatsapp.com/send?phone=5524999216327&amp;text=Ol%C3%A1%2C%20quero%20indicar%20um%20professor%20ou%20conversar%20sobre%20uma%20parceria%20de%20Ingl%C3%AAs%20com%20o%20Plantel%20de%20D%C3%BAvidas." target="_blank" rel="noopener noreferrer">Entre em contato</a>
+              </div>
+            </div>
+            <div class="partner-card">
+              <div class="partner-profile">
+                <img class="partner-logo" src="assets/plantel-ingles-logo.png" alt="Logo do Plantel Inglês">
+                <div>
+                  <div class="partner-name">Plantel Inglês</div>
+                  <div class="partner-kind">Grupo gratuito com o JP · Inglês</div>
+                  <p class="partner-desc">Comunidade de apoio para estudar Inglês, compartilhar materiais e tirar dúvidas com foco na preparação para a EFOMM.</p>
+                </div>
+              </div>
+              <div class="partner-foot">
+                <a class="partner-link" href="https://chat.whatsapp.com/Eb0HMKSs1NXEriPxhPVHeG" target="_blank" rel="noopener noreferrer">Entrar no grupo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-panel" id="ger">
+          <div class="partner-subsection" id="comunidades">
+            <h3 class="partner-subsection-title">Cursos e preparação</h3>
+            <div class="partner-grid">
+              <div class="partner-card">
+                <div class="partner-profile">
+                  <img class="partner-logo fenix-logo" src="assets/fenix-logo.png" alt="Logo do Fênix">
+                  <div>
+                    <div class="partner-name">Fênix</div>
+                    <div class="partner-kind">Preparação geral · EFOMM</div>
+                    <p class="partner-desc">Preparação integrada para quem busca organizar os estudos e avançar em todas as frentes da prova da EFOMM.</p>
+                  </div>
+                </div>
+                <div class="coupon-steps" aria-label="Como usar o cupom Fênix">
+                  <div class="coupon-step"><strong>1. Escolha</strong>Abra qualquer uma das opções de cursos ou mentorias.</div>
+                  <div class="coupon-step"><strong>2. Vá ao pagamento</strong>Avance até o checkout da plataforma.</div>
+                  <div class="coupon-step"><strong>3. Aplique o cupom</strong>Digite PLANTEL10 ou EFOMM10 no campo de cupom.</div>
+                </div>
+                <div class="partner-foot">
+                  <span class="coupon-chip" data-code="PLANTEL10">Cupom PLANTEL10 · copiar</span>
+                  <span class="coupon-chip" data-code="EFOMM10">Cupom EFOMM10 · copiar</span>
+                </div>
+              </div>
+              <div class="partner-card">
+                <div class="partner-top">
+                  <div>
+                    <div class="partner-name">Quer se candidatar como parceiro?</div>
+                    <div class="partner-kind">Espaço aberto · Preparação Geral</div>
+                  </div>
+                </div>
+                <p class="partner-desc">Oferece curso, mentoria ou material completo para a EFOMM? Apresente seu trabalho e converse com a nossa equipe sobre uma parceria.</p>
+                <div class="partner-foot">
+                  <a class="partner-link" href="https://api.whatsapp.com/send?phone=5524999216327&amp;text=Ol%C3%A1%2C%20tenho%20interesse%20em%20me%20candidatar%20como%20parceiro%20de%20Prepara%C3%A7%C3%A3o%20Geral%20do%20Plantel%20de%20D%C3%BAvidas." target="_blank" rel="noopener noreferrer">Candidatar-se como parceiro</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="partner-subsection">
+            <h3 class="partner-subsection-title">Comunidades</h3>
+            <div class="partner-grid">
+              <div class="partner-card featured">
+                <div class="partner-profile">
+                  <img class="partner-logo community-photo" src="assets/comunidade-efomm.png" alt="Integrantes da comunidade EFOMM">
+                  <div>
+                    <div class="partner-name">Comunidade EFOMM</div>
+                    <div class="partner-kind">Grupo de apoio · Preparação Geral</div>
+                    <p class="partner-desc">Um espaço para estudantes compartilharem experiências, materiais e apoio durante a preparação para a EFOMM.</p>
+                  </div>
+                </div>
+                <div class="partner-foot">
+                  <a class="partner-link" href="https://chat.whatsapp.com/JG52SLYtHNh2dRJDVtoLco" target="_blank" rel="noopener noreferrer">Entrar na comunidade</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-invite">
+          <div class="partner-invite-copy">
+            <div class="partner-invite-label">Parcerias</div>
+            <h3>Quer fazer parte dos nossos parceiros?</h3>
+            <p>Se você oferece cursos, materiais ou mentorias para a preparação da EFOMM, fale com a nossa equipe para apresentar seu trabalho.</p>
+          </div>
+          <a class="btn-primary" href="https://api.whatsapp.com/send?phone=5524999216327&amp;text=Ol%C3%A1%2C%20tenho%20interesse%20em%20ser%20parceiro%20do%20Plantel%20de%20D%C3%BAvidas." target="_blank" rel="noopener noreferrer">Quero ser parceiro</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="plantel">
+      <div class="wrap">
+        <div class="plantel-box">
+          <div class="plantel-left">
+            <div class="plantel-logo">
+              <img src="assets/plantel-logo.png" alt="Logo do Plantel de Dúvidas">
+            </div>
+            <div>
+              <h2>Plantel de Dúvidas</h2>
+              <p>O grupo oficial de apoio da EFOMM · Preparação. Tire dúvidas de disciplina, edital e rotina de estudo
+                com quem também está na mesma rota.</p>
+            </div>
+          </div>
+          <a class="btn-primary" href="https://chat.whatsapp.com/KMwYVUctbqh1sPtlhcs3ip?mode=ac_t" target="_blank" rel="noopener noreferrer">Entrar no Plantel</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cupons" class="on-navy" hidden>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-tag">Cupons em destaque</div>
+            <h2>Benefícios dos parceiros do Plantel.</h2>
+          </div>
+          <p>Use o código PLANTEL10 no checkout das opções participantes e aproveite as condições oferecidas pelos parceiros.</p>
+        </div>
+        <div class="coupon-strip">
+          <div class="coupon-big">
+            <div class="pct">10%</div>
+            <div class="who">OMP - O Método Português</div>
+            <div class="code-row">
+              <span class="coupon-code">PLANTEL10</span>
+              <button class="copy-btn" data-code="PLANTEL10">Copiar</button>
+            </div>
+          </div>
+          <div class="coupon-big">
+            <div class="pct">10%</div>
+            <div class="who">Thaylise Puppin</div>
+            <div class="code-row">
+              <span class="coupon-code">PLANTEL10</span>
+              <button class="copy-btn" data-code="PLANTEL10">Copiar</button>
+            </div>
+          </div>
+          <div class="coupon-big">
+            <div class="pct">10%</div>
+            <div class="who">Fênix - Preparação Geral</div>
+            <div class="code-row">
+              <span class="coupon-code">PLANTEL10</span>
+              <button class="copy-btn" data-code="PLANTEL10">Copiar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-final">
+      <div class="wrap">
+        <div class="cta-box">
+          <div>
+            <h2>Pronto para traçar sua rota até a EFOMM?</h2>
+            <p>Fale com a equipe para indicar o parceiro certo para o seu momento de estudo.</p>
+          </div>
+          <a class="btn-primary" href="https://api.whatsapp.com/send?phone=5524999216327&amp;text=Ol%C3%A1%2C%20vim%20pelo%20site%20do%20Plantel%20de%20D%C3%BAvidas." target="_blank" rel="noopener noreferrer">Falar com a equipe</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="redes-sociais">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/plantel-logo-gold.png" alt="Logo do Plantel de Dúvidas">
+            <h4>PLANTEL DE DÚVIDAS</h4>
+          </div>
+          <p style="color:rgba(237,231,216,0.55); max-width:32ch;">Um ponto de apoio para quem estuda para o concurso da
+            Escola de Formação da Marinha Mercante.</p>
+        </div>
+        <div>
+          <h4>Navegar</h4>
+          <a href="#concurso">O Concurso</a>
+          <a href="#disciplinas">Disciplinas</a>
+          <a href="#parceiros">Parceiros</a>
+          <a href="#plantel">Plantel de Dúvidas</a>
+        </div>
+        <div>
+          <h4>Recursos</h4>
+          <a href="#" target="_blank" rel="noopener">Edital oficial (DPC)</a>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <a class="social-link"
+            href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=planteldeduvidas@gmail.com&amp;su=Contato%20-%20Plantel%20de%20D%C3%BAvidas"
+            target="_blank" rel="noopener">
+            <div><span>planteldeduvidas@gmail.com</span></div>
+          </a>
+          <a class="social-link"
+            href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=plantelduvidas@gmail.com&amp;su=Contato%20-%20Plantel%20de%20D%C3%BAvidas"
+            target="_blank" rel="noopener">
+            <div><span>plantelduvidas@gmail.com</span></div>
+          </a>
+          <a href="https://www.instagram.com/planteldeduvidas/">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Plantel de Dúvidas. Todos os direitos reservados.</span>
+        <strong>Desenvolvido pela Equipe de TI/Desenvolvimento - Plantel Labs</strong>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo"
+    title="Voltar ao topo">&uarr;</button>
+
+  <script>
+    (function () {
+      // Nav solid on scroll
+      var nav = document.getElementById('siteNav');
+
+      var backToTop = document.getElementById('backToTop');
+
+      function onScroll() {
+        if (window.scrollY > 40) { nav.classList.add('solid'); }
+        else { nav.classList.remove('solid'); }
+        var backToTopOffset = window.matchMedia('(max-width: 1080px)').matches ? 180 : 400;
+        backToTop.classList.toggle('visible', window.scrollY > backToTopOffset);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      backToTop.addEventListener('click', function () {
+        var behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+        window.scrollTo({ top: 0, behavior: behavior });
+      });
+
+      // Reveal section content as it enters the viewport
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var revealBlocks = document.querySelectorAll('main > section:not(.hero) > .wrap');
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        document.documentElement.classList.add('motion-enabled');
+        revealBlocks.forEach(function (block) { block.classList.add('reveal-block'); });
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+        revealBlocks.forEach(function (block) { revealObserver.observe(block); });
+      }
+
+      // Highlight the subject currently being read on small screens
+      var subjectCells = Array.from(document.querySelectorAll('.subject-cell'));
+      var subjectMedia = window.matchMedia('(max-width: 520px)');
+      var subjectObserver = null;
+
+      function setUpSubjectHighlight() {
+        if (subjectObserver) {
+          subjectObserver.disconnect();
+          subjectObserver = null;
+        }
+        subjectCells.forEach(function (cell) { cell.classList.remove('is-scroll-active'); });
+
+        if (!subjectMedia.matches || !('IntersectionObserver' in window)) return;
+
+        subjectObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            entry.target.classList.toggle('is-scroll-active', entry.isIntersecting);
+          });
+        }, { threshold: 0.01, rootMargin: '-38% 0px -38% 0px' });
+
+        subjectCells.forEach(function (cell) { subjectObserver.observe(cell); });
+      }
+
+      setUpSubjectHighlight();
+      if (subjectMedia.addEventListener) subjectMedia.addEventListener('change', setUpSubjectHighlight);
+      else subjectMedia.addListener(setUpSubjectHighlight);
+
+      // Mobile menu
+      var menuBtn = document.getElementById('menuBtn');
+      var panel = document.getElementById('mobilePanel');
+
+      function setMenuOpen(isOpen, returnFocus) {
+        panel.classList.toggle('open', isOpen);
+        menuBtn.classList.toggle('open', isOpen);
+        menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        menuBtn.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+        panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        document.body.classList.toggle('menu-open', isOpen);
+
+        if (isOpen) {
+          window.setTimeout(function () {
+            var firstLink = panel.querySelector('a');
+            if (firstLink) firstLink.focus();
+          }, reduceMotion ? 0 : 420);
+        } else if (returnFocus) {
+          menuBtn.focus();
+        }
+      }
+
+      menuBtn.addEventListener('click', function () {
+        setMenuOpen(!panel.classList.contains('open'), false);
+      });
+      panel.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          setMenuOpen(false, false);
+        });
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && panel.classList.contains('open')) {
+          setMenuOpen(false, true);
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 1080 && panel.classList.contains('open')) {
+          setMenuOpen(false, false);
+        }
+      });
+
+      // Tabs
+      var tabs = document.querySelectorAll('.tab-btn');
+      var panels = document.querySelectorAll('.partner-panel');
+      tabs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          tabs.forEach(function (b) { b.setAttribute('aria-selected', 'false'); });
+          panels.forEach(function (p) { p.classList.remove('active'); });
+          btn.setAttribute('aria-selected', 'true');
+          document.getElementById(btn.dataset.target).classList.add('active');
+        });
+      });
+
+      // Automatic coupon carousel
+      var couponStrip = document.querySelector('.coupon-strip');
+      if (couponStrip && !reduceMotion) {
+        var couponCards = Array.from(couponStrip.children);
+        var couponTrack = document.createElement('div');
+        couponTrack.className = 'coupon-track';
+        couponCards.forEach(function (card) { couponTrack.appendChild(card); });
+        couponCards.forEach(function (card) {
+          var clone = card.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          clone.querySelectorAll('button, a, [tabindex]').forEach(function (control) {
+            control.setAttribute('tabindex', '-1');
+          });
+          couponTrack.appendChild(clone);
+        });
+        couponStrip.appendChild(couponTrack);
+        couponStrip.classList.add('carousel-ready');
+
+        if (window.matchMedia('(max-width: 820px)').matches) {
+          couponStrip.classList.add('mobile-carousel');
+
+          var carouselControls = document.createElement('div');
+          carouselControls.className = 'coupon-controls';
+          carouselControls.setAttribute('aria-label', 'Controles do carrossel de cupons');
+
+          var carouselDots = document.createElement('div');
+          carouselDots.className = 'coupon-dots';
+          carouselDots.setAttribute('aria-hidden', 'true');
+          var dotElements = couponCards.map(function (_, dotIndex) {
+            var dot = document.createElement('span');
+            dot.className = 'coupon-dot' + (dotIndex === 0 ? ' active' : '');
+            carouselDots.appendChild(dot);
+            return dot;
+          });
+
+          var playToggle = document.createElement('button');
+          playToggle.className = 'coupon-play-toggle';
+          playToggle.type = 'button';
+          playToggle.textContent = 'Ⅱ';
+          playToggle.setAttribute('aria-label', 'Pausar carrossel');
+          playToggle.title = 'Pausar carrossel';
+
+          carouselControls.appendChild(carouselDots);
+          carouselControls.appendChild(playToggle);
+          couponStrip.insertAdjacentElement('afterend', carouselControls);
+
+          var carouselIndex = 0;
+          var carouselPaused = false;
+          var carouselTimer;
+
+          function updateCarouselDots() {
+            dotElements.forEach(function (dot, dotIndex) {
+              dot.classList.toggle('active', dotIndex === carouselIndex % couponCards.length);
+            });
+          }
+
+          function advanceCarousel() {
+            carouselIndex += 1;
+            couponTrack.style.transform = 'translateX(-' + (carouselIndex * 16.6667) + '%)';
+            updateCarouselDots();
+          }
+
+          function startCarousel() {
+            clearInterval(carouselTimer);
+            carouselTimer = setInterval(advanceCarousel, 4500);
+          }
+
+          couponTrack.addEventListener('transitionend', function () {
+            if (carouselIndex === couponCards.length) {
+              couponTrack.style.transition = 'none';
+              carouselIndex = 0;
+              couponTrack.style.transform = 'translateX(0)';
+              couponTrack.offsetWidth;
+              couponTrack.style.transition = '';
+              updateCarouselDots();
+            }
+          });
+
+          playToggle.addEventListener('click', function () {
+            carouselPaused = !carouselPaused;
+            if (carouselPaused) {
+              clearInterval(carouselTimer);
+              playToggle.textContent = '▶';
+              playToggle.setAttribute('aria-label', 'Retomar carrossel');
+              playToggle.title = 'Retomar carrossel';
+            } else {
+              startCarousel();
+              playToggle.textContent = 'Ⅱ';
+              playToggle.setAttribute('aria-label', 'Pausar carrossel');
+              playToggle.title = 'Pausar carrossel';
+            }
+          });
+
+          document.addEventListener('visibilitychange', function () {
+            if (document.hidden) clearInterval(carouselTimer);
+            else if (!carouselPaused) startCarousel();
+          });
+
+          startCarousel();
+        }
+      }
+
+      // Copy coupon codes
+      function copyCode(code, el, doneText, doneClass) {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(code).catch(function () { });
+        }
+        var original = el.textContent;
+        el.textContent = doneText;
+        el.classList.add(doneClass);
+        setTimeout(function () {
+          el.textContent = original;
+          el.classList.remove(doneClass);
+        }, 1800);
+      }
+      document.querySelectorAll('.coupon-chip').forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          copyCode(chip.dataset.code, chip, 'Copiado ✓', 'copied');
+        });
+      });
+      document.querySelectorAll('.copy-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          copyCode(btn.dataset.code, btn, 'Copiado', 'done');
+        });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

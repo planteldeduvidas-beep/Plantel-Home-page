@@ -173,8 +173,6 @@ export default function SectionComunidades() {
         className="community-track"
         ref={trackRef}
         onScroll={updateActive}
-        onPointerDown={() => setIsPaused(true)}
-        onFocus={() => setIsPaused(true)}
         tabIndex={0}
         aria-label="Use as setas para explorar as comunidades"
         onKeyDown={(event) => {
@@ -225,7 +223,7 @@ export default function SectionComunidades() {
       <div className="community-controls">
         <div className="community-dots" ref={dotsRef}>
           {communities.map((community, index) => (
-            <button key={community.id} type="button" aria-label={`Ver ${community.title}`} aria-current={activeIndex === index ? "true" : undefined} onClick={() => { setIsPaused(true); goTo(index); }}><span /></button>
+            <button key={community.id} type="button" aria-label={`Ver ${community.title}`} aria-current={activeIndex === index ? "true" : undefined} onClick={() => goTo(index)}><span /></button>
           ))}
         </div>
         <button

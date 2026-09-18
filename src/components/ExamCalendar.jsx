@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowUpRight, CalendarDays, Moon, Sun } from 'lucide-react';
 import { exams, remaining, status } from '../data/exams';
 import './ExamCalendar.css';
@@ -47,7 +47,26 @@ function formatDate(exam) {
 export default function ExamCalendar({ isDarkMode, onToggleDarkMode }) {
   const now = useClock();
   const [filter, setFilter] = useState('all');
-  const shown = exams.filter(exam => filter === 'all' || status(exam, now) === filter).sort((a, b) => {
+  const [displayedFilter, setDisplayedFilter] = useState('all');
+  const [isChanging, setIsChanging] = useState(false);
+  const filterTimer = useRef(null);
+  useEffect(() => () => window.clearTimeout(filterTimer.current), []);
+  const changeFilter = (value) => {
+    if (value === filter) return;
+    window.clearTimeout(filterTimer.current);
+    setFilter(value);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setDisplayedFilter(value);
+      setIsChanging(false);
+      return;
+    }
+    setIsChanging(true);
+    filterTimer.current = window.setTimeout(() => {
+      setDisplayedFilter(value);
+      setIsChanging(false);
+    }, 160);
+  };
+  const shown = exams.filter(exam => displayedFilter === 'all' || status(exam, now) === displayedFilter).sort((a, b) => {
     const order = { upcoming: 0, pending: 1, past: 2 };
     return order[status(a, now)] - order[status(b, now)] || new Date(a.date) - new Date(b.date);
   });
@@ -61,11 +80,11 @@ export default function ExamCalendar({ isDarkMode, onToggleDarkMode }) {
     <div className="calendar-topbar"><a href="#calendario-preview"><ArrowLeft size={17} /> Voltar ao Plantel</a><img src="/images/plantel-nova.png" width="28" height="28" alt="Plantel" /><button type="button" onClick={onToggleDarkMode} aria-label="Alternar tema">{isDarkMode ? <Sun size={18} /> : <Moon size={18} />}</button></div>
     <main className="calendar-main">
       <div className="calendar-page-heading"><span className="calendar-eyebrow">UM OBJETIVO. UM DIA DE CADA VEZ.</span><h1>Seu futuro.<br /><span>Cada vez mais perto.</span></h1><p>As datas que importam para a sua preparação,<br />reunidas em um só lugar.</p></div>
-      <div className="calendar-filters" role="group" aria-label="Filtrar concursos">{[['all', 'Todos'], ['upcoming', 'Próximas provas'], ['pending', 'Em conferência'], ['past', 'Provas passadas']].map(([value, label]) => <button type="button" key={value} aria-pressed={filter === value} onClick={() => setFilter(value)}>{label}</button>)}</div>
-      <div className="exam-grid">
+      <div className="calendar-filters" role="group" aria-label="Filtrar concursos">{[['all', 'Todos'], ['upcoming', 'Próximas provas'], ['pending', 'Em conferência'], ['past', 'Provas passadas']].map(([value, label]) => <button type="button" key={value} aria-pressed={filter === value} onClick={() => changeFilter(value)}>{label}</button>)}</div>
+      <div className={`exam-grid${isChanging ? ' is-filter-changing' : ''}`} aria-busy={isChanging}>
         {shown.map(exam => {
           const state = status(exam, now);
-          return <article className={`exam-card exam-card-${state}`} key={exam.id}>
+          return <article className={`exam-card exam-card-${state}`} key={`${displayedFilter}-${exam.id}`}>
             <div className="exam-card-top"><ExamIcon exam={exam} /><span className="exam-badge">{state === 'upcoming' ? 'No seu radar' : state === 'pending' ? 'Data em conferência' : 'Prova já realizada'}</span></div>
             <span className="calendar-eyebrow">{exam.branch}</span><h2>{exam.name} <span>{exam.edition}</span></h2><p className="exam-description">{exam.description}</p>
             <div className="exam-date"><CalendarDays size={15} /><span>{exam.date ? formatDate(exam) : 'Confira as atualizações no site oficial'}<small>{exam.stage}</small></span></div>
