@@ -17,6 +17,6 @@ export const headerPanels = {
   ],
   '#plantel-labs': [
     { title: 'Explore o Plantel Labs', links: [['Conheça o Labs', '#labs-em-breve'], ['Nossa atuação', '#labs-em-breve']] },
-    { title: 'Projetos e equipe', links: [['Plantel Hub', 'https://plantel-hub.vercel.app/'], ['Conheça o time', '#labs-em-breve']] },
+    { title: 'Projetos e equipe', links: [['Plantel EFOMM', 'https://plantel-efomm.vercel.app/'], ['Conheça o time', '#labs-em-breve']] },
   ],
 };
