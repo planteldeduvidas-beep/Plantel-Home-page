@@ -3,7 +3,7 @@ const membros = [
     nome: "Ygor",
     cargo: "Gerenciador de Projetos",
     foto: "/images/membros/Ygor.jpg",
-    tecnologias: ["danado"],
+    tecnologias: [],
     descricao:
       "Responsável pela organização e planejamento."
   }
