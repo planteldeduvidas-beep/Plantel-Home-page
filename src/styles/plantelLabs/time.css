@@ -70,7 +70,7 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
@@ -88,7 +88,7 @@
 
     border: 1px solid #222222;
     border-radius: 16px;
-
+    box-shadow: 0px 0.5px 10px #01ff0942;
     transition:
         transform 0.3s ease,
         border-color 0.3s ease;

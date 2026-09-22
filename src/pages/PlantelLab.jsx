@@ -16,6 +16,18 @@ const linkWhatsapp = `https://wa.me/5524999216327?text=${encodeURIComponent(
   "Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pelo Plantel Labs."
 )}`;
 
+
+const irPara = (event, id) => {
+  event.preventDefault();
+  const alvo = document.querySelector(id);
+  if (!alvo) return;
+  window.scrollTo({
+    top: alvo.offsetTop - 90,
+    behavior: "smooth",
+  });
+  setIsMenuOpen(false);
+};
+
 export default function PlantelLab() {
   useRevelar();
    
@@ -36,7 +48,7 @@ export default function PlantelLab() {
               conhece as pessoas do time e as frentes em que atuamos.
             </p>
             <div className="plab-intro__actions revelar">
-              <a href="#time" className="plab-btn plab-btn--ghost">
+              <a href="" className="plab-btn plab-btn--ghost" onClick={(e) => irPara(e, "#time")}>
                 Ver time
               </a>
             </div>
