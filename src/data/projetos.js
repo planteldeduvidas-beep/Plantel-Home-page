@@ -6,7 +6,7 @@ const projetos = [
     url: "https://planteldeduvidas.com.br/",
   },
   {
-    nome: "Plante EFOMM",
+    nome: "Plantel EFOMM",
     descricao: "Página dedicada para um concurso da EFOMM. Materias, parceiros e muito mais!",
     imagem: "/images/projetos/plantelEFOMM.png",
     url: "https://plantel-efomm.vercel.app/",

@@ -21,7 +21,7 @@ const membros = [
     foto: "/images/membros/Pedro.jpeg",
     tecnologias: [],
     descricao:
-      "Responsável desenvolvimento dos sistemas."
+      "Responsável pelo desenvolvimento dos sistemas."
   },
 
   {
@@ -30,7 +30,7 @@ const membros = [
     foto: "/images/membros/Miqueias.png",
     tecnologias: [],
     descricao:
-      "Responsável desenvolvimento dos sistemas."
+      "Responsável pelo desenvolvimento dos sistemas."
   }
 ]
 export default membros;
