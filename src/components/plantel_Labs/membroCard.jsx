@@ -18,14 +18,6 @@ export default function MembroCard({ membro }) {
           {membro.cargo}
         </span>
 
-        <div className="plab-member__skills">
-          {membro.tecnologias.map((tecnologia) => (
-            <span key={tecnologia}>
-              {tecnologia}
-            </span>
-          ))}
-        </div>
-
         <p>
           {membro.descricao}
         </p>

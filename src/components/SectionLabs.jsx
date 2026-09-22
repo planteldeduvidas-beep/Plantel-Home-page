@@ -1,5 +1,6 @@
 import { ArrowUpRight, Layers, LayoutTemplate, Code2 } from 'lucide-react';
 import './SectionLabs.css';
+import { Link } from "react-router-dom";
 
 // Endereço provisório para visualizar o site que a equipe está desenvolvendo.
 
@@ -11,8 +12,10 @@ export default function SectionLabs({ onOpen }) {
         <h2 id="labs-heading">Seu próximo projeto digital <span>começa aqui.</span></h2>
         <p>Somos o time que cria as plataformas do Plantel. Desenvolvemos sites e sistemas com atenção ao design, à experiência e a cada detalhe do funcionamento.</p>
         <p className="labs-invite">Agora, queremos construir o próximo com você.</p>
-        <button className="labs-cta" type="button" onClick={onOpen}>Conhecer o Plantel Labs <ArrowUpRight size={17} /></button>
-        <span className="labs-services">Sites · Sistemas · Experiências digitais</span>
+        <Link to="/plantellabs" className="labs-cta">
+          Conhecer o Plantel Labs <ArrowUpRight size={17} />
+        </Link>
+        <span className="labs-services" >Sites · Sistemas · Experiências digitais</span>
       </div>
       <div className="labs-showcase" aria-label="Projetos desenvolvidos pelo Plantel Labs">
         <div className="labs-window-bar" aria-hidden="true"><i /><i /><i /><span>Feito pelo Plantel Labs</span></div>
