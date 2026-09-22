@@ -30,7 +30,7 @@ export default function PlabFooter() {
               <h4 className="plab-footer__title">Redes Sociais</h4>
               <ul className="plab-footer__list">
                 <li>
-                  <img src="src/assets/iconInsta.svg" alt="" /><a href="https://www.instagram.com/planteldeduvidas/" aria-label="Instagram" target="_blank">Instagram</a></li>
+                  <img src="src/assets/iconInsta.svg" alt="" /><a href="https://www.instagram.com/plantellabs?stkn=d2Mzbml4OWZkbWZy" aria-label="Instagram" target="_blank">Instagram</a></li>
                 <li>
                   <img src="src/assets/iconTelegram.svg" alt="" /><a href="https://t.me/plantelduvidas" aria-label="LinkedIn" target="_blank">Telegram</a></li>
                 <li>
