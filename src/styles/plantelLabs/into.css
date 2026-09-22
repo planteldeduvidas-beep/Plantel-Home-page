@@ -2,7 +2,7 @@
   position: relative;
   padding: 7rem 0rem 0rem 15rem;
   min-height: 600px;
-  background-image: url("./images/background-tech.png");
+  background-image: url("/images/background-tech.png");
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
