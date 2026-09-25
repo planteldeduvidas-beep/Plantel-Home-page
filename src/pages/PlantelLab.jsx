@@ -11,6 +11,7 @@ import BacktoTop from "../components/BackToTop.jsx";
 import Footer from "../components/plantel_Labs/footerLabs.jsx";
 import Header from "../components/plantel_Labs/headerLabs.jsx";
 import { Code2, Users, Lightbulb, BarChart3 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const linkWhatsapp = `https://wa.me/5524999216327?text=${encodeURIComponent(
   "Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pelo Plantel Labs."
@@ -28,9 +29,17 @@ const irPara = (event, id) => {
   setIsMenuOpen(false);
 };
 
+
+
 export default function PlantelLab() {
   useRevelar();
-   
+   const [toast, setToast] = useState("");
+
+  useEffect(() => {
+    if (!toast) return;
+    const timer = setTimeout(() => setToast(""), 3000);
+    return () => clearTimeout(timer);
+  }, [toast]);
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
    
@@ -71,14 +80,30 @@ export default function PlantelLab() {
                   <h3 className="plab-projeto__nome">{projeto.nome}</h3>
                   <p className="plab-projeto__desc">{projeto.descricao}</p>
 
-                  <a
-                    href={projeto.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="plab-projeto__btn"
-                  >
-                    Acessar projeto <em>→</em>
-                  </a>
+                  <div className="plab-projeto__tags">
+                    {projeto.tags.map((tag) => (
+                      <span key={tag} className="plab-tag">{tag}</span>
+                    ))}
+                  </div>
+                  
+                  {projeto.url ? (
+                    <a
+                      href={projeto.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="plab-projeto__btn"
+                    >
+                      Acessar projeto <em>→</em>
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      className="plab-projeto__btn plab-projeto__btn--indisponivel"
+                      onClick={() => setToast("Indisponível.")}
+                    >
+                      Em breve <em>→</em>
+                    </button>
+                  )}
                 </div>
               </article>
             ))}
@@ -173,6 +198,7 @@ export default function PlantelLab() {
           </div>
         </section>
         <Footer />
+        {toast && <div className="plab-toast" role="status">{toast}</div>}
       </div>
   );
 }
