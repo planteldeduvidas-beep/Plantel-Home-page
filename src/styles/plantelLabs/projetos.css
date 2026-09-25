@@ -150,7 +150,7 @@
   font-size: 22px;
   line-height: 1.5;
   font-weight: 400;
-  width: 38ch;
+  width: 45ch;
   color: var(--plab-border);
   margin: 0 0 24px;
 }
@@ -161,6 +161,16 @@
   gap: 8px;
   margin-bottom: 32px;
 }
+
+.plab-tag {
+  padding: 8px 14px;
+  background-color: var(--plab-green-mid);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff5f5;
+}
+
 
 .plab-projeto__btn {
   display: inline-flex;
@@ -191,7 +201,39 @@
   transform: translateX(4px);
 }
 
+.plab-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  z-index: 3000;
+  padding: 14px 24px;
+  border-radius: 10px;
+  background: #141414;
+  color: var(--plab-text);
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  animation: toastEntra 0.3s ease;
+  max-width: calc(100vw - 32px);
+}
 
+@keyframes toastEntra {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 16px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.plab-projeto__btn--indisponivel {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: none;
+}
 
 
 @media (max-width: 1190px) {
@@ -209,6 +251,9 @@
     width: auto;
     max-width: 42ch;
   }
+  .plab-projeto__media {
+    height: 75%;
+}
 }
 
 @media (max-width: 900px) {
@@ -261,6 +306,7 @@
 
   .plab-projeto__media img {
     aspect-ratio: 16 / 9;
+    
   }
 
   .plab-projeto__desc {
