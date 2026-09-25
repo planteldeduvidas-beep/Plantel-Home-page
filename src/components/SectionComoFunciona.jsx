@@ -1,36 +1,37 @@
-﻿import { BookOpen, MessageCircle, Trophy, Users } from "lucide-react";
+import { t } from '../i18n/index.js';
+import { BookOpen, MessageCircle, Trophy, Users } from "lucide-react";
 
 import { useEffect, useRef, useState } from "react";
 
 const steps = [
   {
     id: 1,
-    title: "Entre na Comunidade",
+    title: t("Entre na Comunidade"),
     description:
-      "Clique no link do WhatsApp e entre em uma das nossas comunidades gratuitas.",
+      t("Clique no link do WhatsApp e entre em uma das nossas comunidades gratuitas."),
     icon: MessageCircle,
     side: "side-left",
   },
   {
     id: 2,
-    title: "Conheça a Galera",
+    title: t("Conheça a Galera"),
     description:
-      "Apresente-se e conheça outros estudantes com os mesmos objetivos que você.",
+      t("Apresente-se e conheça outros estudantes com os mesmos objetivos que você."),
     icon: Users,
     side: "side-right",
   },
   {
     id: 3,
-    title: "Tire Suas Dúvidas",
+    title: t("Tire Suas Dúvidas"),
     description:
-      "Pergunte nos grupos! Nossos professores e monitores estão prontos para ajudar.",
+      t("Pergunte nos grupos! Nossos professores e monitores estão prontos para ajudar."),
     icon: BookOpen,
     side: "side-left",
   },
   {
     id: 4,
-    title: "Conquiste Seus Sonhos",
-    description: "Com dedicação e apoio, alcance sua aprovação!",
+    title: t("Conquiste Seus Sonhos"),
+    description: t("Com dedicação e apoio, alcance sua aprovação!"),
     icon: Trophy,
     side: "side-right",
   },
@@ -81,7 +82,7 @@ export default function SectionComoFunciona() {
     <section id="como-funciona" className="how-it-works secao">
       <div className="container">
         <div className="section-header">
-          <h2>Funcionamento</h2>
+          <h2>{t("Funcionamento")}</h2>
           <div className="line"></div>
         </div>
 
@@ -100,7 +101,7 @@ export default function SectionComoFunciona() {
                   <Icon size={24} />
                 </div>
                 <div className={`timeline-content${highlighted === index ? " is-scroll-highlighted" : ""}`}>
-                  <span className="step-label">Passo {step.id}</span>
+                  <span className="step-label">{t("Passo")} {step.id}</span>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
                 </div>

@@ -1,4 +1,5 @@
-﻿import { useEffect, useMemo, useState } from "react";
+import { t } from './i18n/index.js';
+import { useEffect, useMemo, useState } from "react";
 import Header from "./components/Header.jsx";
 import MobileMenu from "./components/MobileMenu.jsx";
 import Hero from "./components/Hero.jsx";
@@ -15,6 +16,8 @@ import SocialFab from "./components/SocialFab.jsx";
 import SideNavbar from "./components/SideNavbar.jsx";
 import useScrollReveal from "./hooks/useScrollReveal.js";
 import SectionLabs from "./components/SectionLabs.jsx";
+import LanguagePage from "./components/LanguagePage.jsx";
+import ReadingControls from "./components/ReadingControls.jsx";
 import LabsComingSoon from "./components/LabsComingSoon.jsx";
 import ExamCalendar, { SectionExamCalendar } from "./components/ExamCalendar.jsx";
 
@@ -25,12 +28,14 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [labsNoticeOpen, setLabsNoticeOpen] = useState(false);
   const [showCalendar, setShowCalendar] = useState(() => window.location.hash === '#calendario');
-  useScrollReveal(showCalendar);
+  const [showLanguages, setShowLanguages] = useState(() => window.location.hash === '#idiomas');
+  useScrollReveal(`${showCalendar}-${showLanguages}`);
 
   useEffect(() => {
     const updatePage = () => {
       const calendar = window.location.hash === '#calendario';
       setShowCalendar(calendar);
+      setShowLanguages(window.location.hash === '#idiomas');
       setIsMenuOpen(false);
       if (!calendar) requestAnimationFrame(() => document.getElementById(window.location.hash.slice(1))?.scrollIntoView());
     };
@@ -89,6 +94,11 @@ export default function App() {
       return;
     }
     if (!targetId) return;
+    if (showLanguages) {
+      window.location.hash = targetId;
+      setIsMenuOpen(false);
+      return;
+    }
     const target = document.querySelector(targetId);
     if (!target) return;
     const top = target.offsetTop - HEADER_OFFSET;
@@ -98,17 +108,17 @@ export default function App() {
 
   const menuItems = useMemo(
     () => [
-      { id: "#sobre", label: "Sobre o Plantel" },
-      { id: "#comunidades", label: "Comunidades" },
-      { id: "#redes", label: "Redes Sociais" },
-      { id: "#efomm", label: "Concursos e cupons" },
-      { id: "#parceiros", label: "Parceiros" },
+      { id: "#sobre", label: t("Sobre o Plantel") },
+      { id: "#comunidades", label: t("Comunidades") },
+      { id: "#redes", label: t("Redes Sociais") },
+      { id: "#efomm", label: t("Concursos e cupons") },
+      { id: "#parceiros", label: t("Parceiros") },
       { id: "#plantel-labs", label: "Plantel Labs" },
     ],
     []
   );
 
-  if (showCalendar) return <ExamCalendar isDarkMode={isDarkMode} onToggleDarkMode={() => setIsDarkMode(prev => !prev)} />;
+  if (showCalendar) return <><ExamCalendar isDarkMode={isDarkMode} onToggleDarkMode={() => setIsDarkMode(prev => !prev)} /><ReadingControls /></>;
 
   return (
     <>
@@ -126,6 +136,7 @@ export default function App() {
         onClose={() => setIsMenuOpen(false)}
         onAnchorClick={handleAnchorClick}
       />
+      {showLanguages ? <LanguagePage /> : <>
       <SocialFab />
       <Hero />
 
@@ -137,11 +148,13 @@ export default function App() {
         <SectionExamCalendar />
         <SectionEfomm />
         <SectionParceiros />
-        <SectionLabs onOpen={() => setLabsNoticeOpen(true)} />
+        <SectionLabs />
       </main>
+      </>}
 
       <Footer menuItems={menuItems} onAnchorClick={handleAnchorClick} />
       <BackToTop />
+      <ReadingControls />
       <SideNavbar />
       <LabsComingSoon open={labsNoticeOpen} onClose={() => setLabsNoticeOpen(false)} />
     </>

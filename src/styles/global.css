@@ -458,8 +458,12 @@ header {
 }
 
 .numbers-text {
-  font-size: 2.5rem;
+  font-size: clamp(3.25rem, 5vw, 4rem);
   font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 12px;
   width: 100%;
   color: var(--primary-color);
 }
@@ -1899,7 +1903,7 @@ body.dark-theme .hamburger .bar:after {
   }
 
   .numbers-text {
-    font-size: 2.8rem;
+    font-size: clamp(3rem, 12vw, 3.75rem);
   }
 
   .numbers-text-label {
@@ -2151,4 +2155,49 @@ body.dark-theme .hamburger .bar:after {
     transform: none;
     transition: none;
   }
+}
+
+/* Detalhe discreto para destacar as estatísticas em telas menores. */
+@media (max-width: 1080px) {
+  .numbers-text {
+    width: fit-content;
+    max-width: 100%;
+    padding: 6px 12px;
+    border: 1px solid rgba(46, 125, 50, 0.22);
+    border-radius: 6px;
+    background: rgba(46, 125, 50, 0.035);
+  }
+}
+
+/* Grade compacta de alcance, adaptada ao espaço e ao tamanho da fonte. */
+@media (max-width: 1080px) {
+  :is(#sobre, #comunidades) .container-numbers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+    max-width: 560px;
+    padding: 16px 0;
+    align-items: start;
+  }
+  :is(#sobre, #comunidades) .numbers { width: 100%; min-width: 0; max-width: none; }
+  :is(#sobre, #comunidades) .numbers-text {
+    font-size: clamp(2rem, 6.5vw, 3.5rem);
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  :is(#sobre, #comunidades) .numbers-text-label {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    letter-spacing: 0.025em;
+  }
+  html[data-reading-enlarged="true"] :is(#sobre, #comunidades) .container-numbers {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 359px) {
+  :is(#sobre, #comunidades) .container-numbers { grid-template-columns: 1fr; }
+}
+@media (max-width: 1080px) {
+  #comunidades .container-numbers { width: calc(100% - 48px); }
+  #comunidades .numbers:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }

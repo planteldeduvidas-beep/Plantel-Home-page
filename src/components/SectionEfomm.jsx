@@ -1,8 +1,9 @@
+import { t } from '../i18n/index.js';
 import { ArrowUpRight } from "lucide-react";
 import "./SectionEfomm.css";
 import { useEffect, useRef, useState } from "react";
 
-const EFOMM_URL = "https://plantel-efomm.vercel.app/";
+const EFOMM_URL = "/efomm/";
 
 export default function SectionEfomm() {
   const cardRef = useRef(null);
@@ -35,28 +36,24 @@ export default function SectionEfomm() {
   return (
     <section id="efomm" className="efomm-section" aria-labelledby="concursos-heading">
       <div className="efomm-section-heading">
-        <h2 id="concursos-heading">Concursos e cupons</h2>
+        <h2 id="concursos-heading">{t("Concursos e cupons")}</h2>
         <div className="line" />
-        <p>
-          Conheça os concursos e encontre seu próximo objetivo. Clique no card
-          para saber mais, conhecer cursos preparatórios e conferir cupons de desconto.
-        </p>
+        <p> {t("Conheça os concursos e encontre seu próximo objetivo. Clique no card para saber mais, conhecer cursos preparatórios e conferir cupons de desconto.")} </p>
       </div>
       <a ref={cardRef} className={`efomm-card${highlighted ? " is-scroll-highlighted" : ""}`} href={EFOMM_URL}>
         <div className="efomm-emblem">
           <img
             src="/images/efomm.png"
-            alt="Brasão da EFOMM"
+            alt={t("Brasão da EFOMM")}
             width="240"
             height="240"
           />
         </div>
         <div className="efomm-copy">
-          <span className="efomm-eyebrow">Conheça o concurso</span>
+          <span className="efomm-eyebrow">{t("Conheça o concurso")}</span>
           <h3>EFOMM</h3>
-          <p>Escola de Formação de Oficiais da Marinha Mercante</p>
-          <span className="efomm-cta">
-            Ver cursos e cupons <ArrowUpRight size={20} aria-hidden="true" />
+          <p>{t("Escola de Formação de Oficiais da Marinha Mercante")}</p>
+          <span className="efomm-cta"> {t("Ver cursos e cupons")} <ArrowUpRight size={20} aria-hidden="true" />
           </span>
         </div>
       </a>

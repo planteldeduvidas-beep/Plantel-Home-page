@@ -1,10 +1,11 @@
-﻿const parceiros = [
+import { t } from '../i18n/index.js';
+const parceiros = [
   {
     id: "cosseno",
     name: "Cosseno",
     link: "https://cosseno.com",
     className: "logo-parceiros logo-cosseno",
-    label: "Plataforma do Cosseno",
+    label: t("Plataforma do Cosseno"),
     imageSrc: "/Logo_parceiros/cosseno_logo.jpeg",
   },
   {
@@ -23,7 +24,7 @@
       { label: "CLUBE DA REDAÇÃO", href: "https://pay.kiwify.com.br/ctsiQfg?afid=W5fMhBRq" },
     ],
     className: "logo-parceiros",
-    label: "Mentoria de Redação, prof. Thay Puppin",
+    label: t("Mentoria de Redação, prof. Thay Puppin"),
     imageSrc: "/Logo_parceiros/logo-puppin.png",
   },
   
@@ -34,13 +35,9 @@ import { ArrowUpRight } from "lucide-react";
 export default function SectionParceiros() {
   return (
     <section id="parceiros" className="secao">
-      <h2>Parceiros</h2>
+      <h2>{t("Parceiros")}</h2>
       <div className="line"></div>
-      <p className="text-info-out">
-        Nossos mais singelos agradecimentos aos parceiros que promovem e
-        contribuem para a comunidade do Plantel de Dúvidas. Entre nas
-        comunidades para ter acesso aos benefícios exclusivos oferecidos pelos
-        parceiros! <strong id="text-cupom">Use o cupom: PLANTEL10</strong>
+      <p className="text-info-out"> {t("Nossos mais singelos agradecimentos aos parceiros que promovem e contribuem para a comunidade do Plantel de Dúvidas. Entre nas comunidades para ter acesso aos benefícios exclusivos oferecidos pelos parceiros!")} <strong id="text-cupom">{t("Use o cupom: PLANTEL10")}</strong>
       </p>
 
       {parceiros.map((parceiro) => (
@@ -83,23 +80,14 @@ export default function SectionParceiros() {
           color: "green",
           marginBottom: "20px",
         }}
-      >
-        Quer fazer parte dos nossos parceiros?
-      </h2>
-      <p className="parceria-convite">
-        Seu trabalho pode ajudar nossos estudantes a ir mais longe? Se você oferece
-        cursos, materiais ou mentorias para vestibulares e concursos, venha somar
-        à comunidade do Plantel. Fale com a nossa equipe para apresentar sua proposta
-        e levar novas oportunidades de preparação aos nossos alunos.
-      </p>
+      > {t("Quer fazer parte dos nossos parceiros?")} </h2>
+      <p className="parceria-convite"> {t("Seu trabalho pode ajudar nossos estudantes a ir mais longe? Se você oferece cursos, materiais ou mentorias para vestibulares e concursos, venha somar à comunidade do Plantel. Fale com a nossa equipe para apresentar sua proposta e levar novas oportunidades de preparação aos nossos alunos.")} </p>
       <a
         className="parceria-whatsapp"
-        href={`https://wa.me/5524999216327?text=${encodeURIComponent("Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pela home page do Plantel.")}`}
+        href={`https://wa.me/5524999216327?text=${encodeURIComponent(t("Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pela home page do Plantel."))}`}
         target="_blank"
         rel="noopener noreferrer"
-      >
-        Quero ser parceiro
-        <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />
+      > {t("Quero ser parceiro")} <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />
       </a>
     </section>
   );

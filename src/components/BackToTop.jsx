@@ -1,4 +1,5 @@
-﻿import { useEffect, useState } from "react";
+import { t } from '../i18n/index.js';
+import { useEffect, useState } from "react";
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
@@ -16,7 +17,7 @@ export default function BackToTop() {
     <button
       id="backToTop"
       type="button"
-      title="Voltar ao topo"
+      title={t("Voltar ao topo")}
       className={visible ? "show" : ""}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
     >

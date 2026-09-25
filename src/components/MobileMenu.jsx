@@ -1,3 +1,4 @@
+import { t } from '../i18n/index.js';
 import { useEffect } from "react";
 import "./MobileMenu.css";
 
@@ -35,7 +36,7 @@ export default function MobileMenu({ menuItems, isOpen, onClose, onAnchorClick }
       className={`mobile-menu${isOpen ? " open" : ""}`}
       aria-hidden={!isOpen}
       inert={!isOpen}
-      aria-label="Navegação mobile"
+      aria-label={t("Navegação mobile")}
     >
       <div className="inner">
         {menuItems.map((item, index) => (

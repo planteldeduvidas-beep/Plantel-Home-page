@@ -1,3 +1,4 @@
+import { t } from '../i18n/index.js';
 import { Moon, Sun } from "lucide-react";
 import "./Header.css";
 import { headerPanels } from "../data/headerPanels";
@@ -37,8 +38,9 @@ export default function Header({
     <header className={`plantel-header${isScrolled ? " solid" : ""}${activePanel ? " labs-expanded" : ""}`} onMouseLeave={() => setActivePanel(null)}>
       <div className="header-inner">
       {/* Logo principal */}
-      <a className="header-brand" href="#" aria-label="Plantel — início" onClick={(event) => {
+      <a className="header-brand" href="#" aria-label={t("Plantel — início")} onClick={(event) => {
         event.preventDefault();
+        if (window.location.hash === '#idiomas') window.location.hash = '';
         window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
       }}>
       <img
@@ -55,7 +57,7 @@ export default function Header({
         import logo from "../assets/plantel-nova.png"; src={logo}
       */}
 
-      <nav className="menu" aria-label="Navegação principal">
+      <nav className="menu" aria-label={t("Navegação principal")}>
         {menuItems.map((item) => {
           const isOpen = activePanel === item.id;
           const panelId = `nav-panel-${item.id.slice(1)}`;
@@ -92,7 +94,7 @@ export default function Header({
         <button
           id="dark-mode-toggle"
           type="button"
-          title="Alternar tema"
+          title={t("Alternar tema")}
           onClick={onToggleDarkMode}
           aria-pressed={isDarkMode}
         >
@@ -112,14 +114,14 @@ export default function Header({
           1) public/images/LogoZap.png
           2) src="/images/LogoZap.png"
         */}
-        <span>Entrar no Plantel</span>
+        <span>{t("Entrar no Plantel")}</span>
       </a>
 
       <button
         id="hamburger"
         className={`hamburger${isMenuOpen ? " open" : ""}`}
         type="button"
-        aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+        aria-label={isMenuOpen ? t("Fechar menu") : t("Abrir menu")}
         aria-expanded={isMenuOpen}
         aria-controls="mobile-menu"
         onClick={onToggleMenu}

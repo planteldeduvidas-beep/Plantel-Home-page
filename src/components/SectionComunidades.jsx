@@ -1,3 +1,4 @@
+import { t } from '../i18n/index.js';
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
 import "./SectionComunidades.css";
@@ -10,11 +11,11 @@ const communities = [
     imageAlt: "Logo Plantel de Exatas",
     imageSrc: "/images/plantel-comunidades.jpg",
     text:
-      "Comunidade colaborativa das ciências exatas onde todos têm voz e espaço para aprender. Dúvidas são o ponto de partida para debates ricos e acessíveis.",
+      t("Comunidade colaborativa das ciências exatas onde todos têm voz e espaço para aprender. Dúvidas são o ponto de partida para debates ricos e acessíveis."),
     bullets: [
-      "Apoio dos professores qualificados",
-      "Monitores de plantão",
-      "Resolução colaborativa",
+      t("Apoio dos professores qualificados"),
+      t("Monitores de plantão"),
+      t("Resolução colaborativa"),
     ],
   },
   {
@@ -23,9 +24,9 @@ const communities = [
     imageAlt: "Logo Plantel Listas",
     imageSrc: "/images/plantel-listas-nova.jpg",
     text:
-      "A aura do Plantel. Caminho máximo para quem busca materiais de qualidade para se aprofundar e praticar os estudos nos mais diversos assuntos dos vestibulares.",
+      t("A aura do Plantel. Caminho máximo para quem busca materiais de qualidade para se aprofundar e praticar os estudos nos mais diversos assuntos dos vestibulares."),
     extra:
-      "DRIVE do Plantel Listas. Todos os conteúdos reunidos em um só lugar. Confira na bio do Instagram. +300 listas organizadas por assunto, provas de várias bancas militares, materiais de professores parceiros, tudo atualizado e gratuito.",
+      t("DRIVE do Plantel Listas. Todos os conteúdos reunidos em um só lugar. Confira na bio do Instagram. +300 listas organizadas por assunto, provas de várias bancas militares, materiais de professores parceiros, tudo atualizado e gratuito."),
   },
   {
     id: "redacao",
@@ -33,12 +34,12 @@ const communities = [
     imageAlt: "Logo Plantel de Redação",
     imageSrc: "/images/plantel-comunidades.jpg",
     text:
-      "Ambiente voltado ao desenvolvimento da redação, repertório crítico e prática textual, com análises de diferentes mestres e participação ativa dos alunos.",
+      t("Ambiente voltado ao desenvolvimento da redação, repertório crítico e prática textual, com análises de diferentes mestres e participação ativa dos alunos."),
     bullets: [
-      "Professores com anos de experiência",
-      "Recomendações de conteúdos culturais e relevantes",
-      "Discussões sobre temas contemporâneos",
-      "Exercícios de reescrita de introdução, desenvolvimento e conclusão",
+      t("Professores com anos de experiência"),
+      t("Recomendações de conteúdos culturais e relevantes"),
+      t("Discussões sobre temas contemporâneos"),
+      t("Exercícios de reescrita de introdução, desenvolvimento e conclusão"),
     ],
   },
   {
@@ -47,8 +48,8 @@ const communities = [
     imageAlt: "Logo Plantel de Humanas e Linguagens",
     imageSrc: "/images/plantel-comunidades.jpg",
     text:
-      "Enfoque na resolução de questões das Escolas Militares e Vestibulares de modo geral.",
-    bullets: ["EsPCEx", "ESA", "Colégio Naval", "Demais vestibulares"],
+      t("Enfoque na resolução de questões das Escolas Militares e Vestibulares de modo geral."),
+    bullets: ["EsPCEx", "ESA", "Colégio Naval", t("Demais vestibulares")],
   },
   {
     id: "compra-vendas",
@@ -56,17 +57,17 @@ const communities = [
     imageAlt: "Logo Plantel Compra/Vendas",
     imageSrc: "/images/plantel-comunidades.jpg",
     text:
-      "Espaço de divulgação de materiais relativos ao campo dos estudos: livros, mesas digitalizadoras, tablets e etc.",
+      t("Espaço de divulgação de materiais relativos ao campo dos estudos: livros, mesas digitalizadoras, tablets e etc."),
     extra:
-      "Não nos responsabilizamos por golpes. Realizem transações em plataformas de confiança, pois haverá seguro contra golpe.",
+      t("Não nos responsabilizamos por golpes. Realizem transações em plataformas de confiança, pois haverá seguro contra golpe."),
   },
   {
     id: "iteanos",
     title: "Grupo Pré-Iteanos",
     imageAlt: "Logo Grupo Pré-Iteanos",
     imageSrc: "/images/LogoIteano.png",
-    text: "Enfoque na resolução de questões de ITA/IME + Networking.",
-    bullets: ["+580 membros", "Questões para investir fosfato"],
+    text: t("Enfoque na resolução de questões de ITA/IME + Networking."),
+    bullets: [t("+580 membros"), t("Questões para investir fosfato")],
   },
   {
     id: "networking",
@@ -74,8 +75,8 @@ const communities = [
     imageAlt: "Logo Plantel Networking",
     imageSrc: "/images/plantel-comunidades.jpg",
     text:
-      "Esclarecer dúvidas gerais sobre concursos e estudos, com espaço para conversas moderadas e saudáveis.",
-    bullets: ["+250 membros"],
+      t("Esclarecer dúvidas gerais sobre concursos e estudos, com espaço para conversas moderadas e saudáveis."),
+    bullets: [t("+250 membros")],
   },
 ];
 
@@ -139,42 +140,37 @@ export default function SectionComunidades() {
   };
 
   return (
-    <section id="comunidades" className="secao">
-      <h2>Comunidades</h2>
+    <section id={t("comunidades")} className="secao">
+      <h2>{t("Comunidades")}</h2>
       <div className="line"></div>
       <div className="container-numbers">
         <div className="numbers">
           <div className="numbers-text">
             +3000
           </div>
-          <div className="numbers-text-label">membros</div>
+          <div className="numbers-text-label">{t("membros")}</div>
         </div>
 
         <div className="numbers">
           <div className="numbers-text">2</div>
-          <div className="numbers-text-label">comunidades</div>
+          <div className="numbers-text-label">{t("comunidades")}</div>
         </div>
 
         <div className="numbers">
           <div className="numbers-text">9</div>
-          <div className="numbers-text-label">grupos</div>
+          <div className="numbers-text-label">{t("grupos")}</div>
         </div>
       </div>
 
-      <p className="text-info-out">
-        Por meio das nossas comunidades, conseguimos proporcionar as mais diversas
-        ajudas ao estudante, sanar dúvidas, oferecer materiais de qualidade, apoio
-        dos professores e dos monitores de plantão, networking com aprovados e
-        muito mais.
-      </p>
+      <p className="text-info-out"> {t("Por meio das nossas comunidades, conseguimos proporcionar as mais diversas ajudas ao estudante, sanar dúvidas, oferecer materiais de qualidade, apoio dos professores e dos monitores de plantão, networking com aprovados e muito mais.")} </p>
 
-      <div className="community-carousel" role="region" aria-roledescription="carrossel" aria-label="Grupos do Plantel">
+      <div className="community-carousel" role="region" aria-roledescription={t("carrossel")} aria-label={t("Grupos do Plantel")}>
       <div
         className="community-track"
         ref={trackRef}
         onScroll={updateActive}
         tabIndex={0}
-        aria-label="Use as setas para explorar as comunidades"
+        aria-label={t("Use as setas para explorar as comunidades")}
         onKeyDown={(event) => {
           if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
             event.preventDefault();
@@ -183,7 +179,7 @@ export default function SectionComunidades() {
         }}
       >
         {communities.map((community, index) => (
-          <article key={community.id} className={`community-slide${index === activeIndex ? " is-active" : ""}`} role="group" aria-roledescription="slide" aria-label={`${index + 1} de ${communities.length}: ${community.title}`}>
+          <article key={community.id} className={`community-slide${index === activeIndex ? " is-active" : ""}`} role="group" aria-roledescription="slide" aria-label={`${index + 1} ${t("de")} ${communities.length}: ${community.title}`}>
             <div className="community-slide-heading">
               <div className={`community-logo-frame${community.imageSrc === "/images/plantel-comunidades.jpg" ? " community-logo-frame-zoom" : ""}`}>
                 <img
@@ -198,7 +194,7 @@ export default function SectionComunidades() {
                 2) Troque src="#" por src="/images/NOME_DA_IMAGEM.png"
               */}
               <div>
-                <span className="community-slide-label">Aprenda. Compartilhe. Evolua.</span>
+                <span className="community-slide-label">{t("Aprenda. Compartilhe. Evolua.")}</span>
                 <h3>{community.title}</h3>
               </div>
             </div>
@@ -223,20 +219,20 @@ export default function SectionComunidades() {
       <div className="community-controls">
         <div className="community-dots" ref={dotsRef}>
           {communities.map((community, index) => (
-            <button key={community.id} type="button" aria-label={`Ver ${community.title}`} aria-current={activeIndex === index ? "true" : undefined} onClick={() => goTo(index)}><span /></button>
+            <button key={community.id} type="button" aria-label={t('Ver {name}', { name: community.title })} aria-current={activeIndex === index ? "true" : undefined} onClick={() => goTo(index)}><span /></button>
           ))}
         </div>
         <button
           className="community-playback"
           type="button"
           onClick={() => setIsPaused((paused) => !paused)}
-          aria-label={isPaused ? "Retomar carrossel automático" : "Pausar carrossel automático"}
-          title={isPaused ? "Retomar" : "Pausar"}
+          aria-label={isPaused ? t("Retomar carrossel automático") : t("Pausar carrossel automático")}
+          title={isPaused ? t("Retomar") : t("Pausar")}
         >
           {isPaused ? <Play size={13} fill="currentColor" /> : <Pause size={13} fill="currentColor" />}
         </button>
       </div>
-      <p className="community-status" aria-live={isPaused ? "polite" : "off"} aria-atomic="true">{activeIndex + 1} de {communities.length} — {communities[activeIndex].title}</p>
+      <p className="community-status" aria-live={isPaused ? "polite" : "off"} aria-atomic="true">{activeIndex + 1} {t("de")} {communities.length} — {communities[activeIndex].title}</p>
       </div>
     </section>
   );
