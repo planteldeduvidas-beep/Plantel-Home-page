@@ -26,7 +26,7 @@ const projetos = [
     nome: "Plantel Listas",
     descricao:"O Plantel Listas é uma plataforma integrada ao Google Drive que organiza o acervo em uma biblioteca digital própria, com busca, filtros, navegação por pastas etc.",
     tags: ["React", "Node", "MySQL", "PWA"],
-    imagem:"public/images/projetos/plantelListas2.png",
+    imagem:"/images/projetos/plantelListas2.png",
     url:"https://plantellistas.planteldeduvidas.com.br"
   }
 ];
