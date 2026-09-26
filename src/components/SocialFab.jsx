@@ -1,3 +1,4 @@
+import { t } from '../i18n/index.js';
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft } from "lucide-react";
 import "./SocialFab.css";
@@ -58,7 +59,7 @@ export default function SocialFab() {
         className="social-toggle"
         type="button"
         ref={toggleRef}
-        aria-label={open ? "Fechar redes sociais" : "Abrir redes sociais"}
+        aria-label={open ? t("Fechar redes sociais") : t("Abrir redes sociais")}
         aria-expanded={open}
         aria-controls="social-actions"
         onClick={() => setOpen((prev) => !prev)}

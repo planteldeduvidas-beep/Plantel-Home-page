@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/youtube", "destination": "/index.html" },
+    { "source": "/youtube/", "destination": "/index.html" },
+    { "source": "/efomm", "destination": "/efomm/index.html" },
+    { "source": "/efomm/", "destination": "/efomm/index.html" },
+    { "source": "/plantellabs", "destination": "/index.html" },
+    { "source": "/plantellabs/", "destination": "/index.html" },
+    { "source": "/plantel-lab", "destination": "/index.html" }
+  ]
+}

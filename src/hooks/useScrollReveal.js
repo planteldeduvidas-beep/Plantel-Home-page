@@ -9,7 +9,7 @@ export default function useScrollReveal(pageKey) {
       "main > section > h2",
       "main > section > .line",
       "main > section > .text-info-out",
-      "main .container-numbers",
+      "main .container-numbers .numbers",
       "main .section-header",
       "main .timeline-item",
       "main .box-redes",

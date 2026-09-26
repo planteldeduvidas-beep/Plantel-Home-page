@@ -10,3 +10,15 @@ body.dark-theme .social-edge-tab .social-toggle, body.dark-theme .social-edge-ta
 @media (prefers-reduced-motion: reduce) {
   .social-edge-tab .social-toggle, .social-edge-tab .social-toggle svg, .social-edge-tab .social-actions { transition: none; }
 }
+
+/* Reserva espaço acima dos controles de leitura e do retorno ao topo. */
+@media (max-width: 1024px) {
+  .social-fab.social-edge-tab {
+    top: min(50dvh, calc(100dvh - max(16px, env(safe-area-inset-bottom)) - 238px));
+  }
+}
+/* Em paisagem, as duas barras usam menos espaço vertical. */
+@media (max-width: 1024px) and (max-height: 480px) {
+  .social-fab.social-edge-tab { top: 45dvh; }
+  .social-edge-tab .social-actions { flex-direction: row; gap: 8px; padding: 8px; border-radius: 18px; }
+}

@@ -1,4 +1,9 @@
-import { Link } from "react-router-dom";
+import { t } from "../../i18n/index.js";
+import email from "../../assets/iconEmail.svg";
+import youtube from "../../assets/iconYoutube.svg";
+import github from "../../assets/iconGithub.svg";
+import insta from "../../assets/iconInsta.svg";
+
 import logo from "../../assets/logo_plantel1.png";
 
 
@@ -8,17 +13,14 @@ const irPara = (event, id) => {
   if (!alvo) return;
   window.scrollTo({
     top: alvo.offsetTop - 90,
-    behavior: "smooth",
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
   });
-  setIsMenuOpen(false);
+
 };
 
 
 export default function PlabFooter() {
   return (
-    <footer className="plab-footer">
-    {
-    
     <footer className="plab-footer">
           <div className="plab-footer__grid">
             <div>
@@ -32,10 +34,10 @@ export default function PlabFooter() {
             <div>
               <h4 className="plab-footer__title revelar">Navegação</h4>
               <ul className="plab-footer__list plab-footer__list--dot revelar">
-                <li><a href="" onClick={(e) => irPara(e, "#home")}>Inicio</a></li>
-                <li><a href="" onClick={(e) => irPara(e, "#projetos")}> Projetos</a></li>
-                <li><a href="" onClick={(e) => irPara(e, "#time")}>Time</a></li>
-                <li><Link to="/">Página inicial</Link></li>
+                <li><a href="#home" onClick={(e) => irPara(e, "#home")}>Inicio</a></li>
+                <li><a href="#projetos" onClick={(e) => irPara(e, "#projetos")}> Projetos</a></li>
+                <li><a href="#time" onClick={(e) => irPara(e, "#time")}>Time</a></li>
+                <li><a href="/">Página inicial</a></li>
               </ul>
             </div>
 
@@ -43,20 +45,20 @@ export default function PlabFooter() {
               <h4 className="plab-footer__title revelar">Redes Sociais</h4>
               <ul className="plab-footer__list revelar">
                 <li>
-                  <img src="/images/iconInsta.svg" alt="" /><a href="https://www.instagram.com/plantellabs?stkn=d2Mzbml4OWZkbWZy" aria-label="Instagram" target="_blank">Instagram</a></li>
+                  <img src={insta} alt="" /><a href="https://www.instagram.com/plantellabs?stkn=d2Mzbml4OWZkbWZy" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                 <li>
-                  <img src="/images/iconGithub.svg" alt="" /><a href="https://github.com/planteldeduvidas-beep" aria-label="GitHub" target="_blank">GitHub</a>
+                  <img src={github} alt="" /><a href="https://github.com/planteldeduvidas-beep" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </li>
                 <li>
-                  <img src="/images/iconYoutube.svg" alt="" /><a href="https://www.youtube.com/@PlanteldeDuvidas" aria-label="GitHub" target="_blank">YouTube</a>
+                  <img src={youtube} alt="" /><a href="https://www.youtube.com/@PlanteldeDuvidas" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YouTube</a>
                 </li>
               </ul>
             </div>
              <div>
               <h4 className="plab-footer__title revelar">Contato</h4>
               <ul className="plab-footer__list revelar">
-                <li><img src="/images/iconEmail.svg" alt="" /><a href="mailto:plantelduvidas@plantel.com.br">plantelduvidas@plantel.com.br</a></li>
-                <li><img src="/images/iconEmail.svg" alt="" /><a href="mailto:plantelduvidas@plantel.com.br">planteldeduvidas@plantel.com.br</a></li>
+                <li><img src={email} alt="" /><a href="mailto:plantelduvidas@plantel.com.br">plantelduvidas@plantel.com.br</a></li>
+                <li><img src={email} alt="" /><a href="mailto:planteldeduvidas@plantel.com.br">planteldeduvidas@plantel.com.br</a></li>
               </ul>
             </div>
           </div>
@@ -65,8 +67,6 @@ export default function PlabFooter() {
           <div className="plab-footer__bottom ">
             <span>© 2026 Plantel Labs. Todos os direitos reservados.</span>
           </div>
-      </footer>
-      }
-    </footer>
+      <a className="plab-language-link" href="/#idiomas">{t("Escolha seu idioma")}</a></footer>
   );
 }

@@ -2,7 +2,11 @@ import { useEffect } from "react";
 
 export function useRevelar() {
   useEffect(() => {
-    const alvos = document.querySelectorAll(".revelar");
+    const alvos = document.querySelectorAll(".plab .revelar");
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      alvos.forEach(alvo => alvo.classList.add('visivel'));
+      return;
+    }
 
     const observador = new IntersectionObserver(
       (entradas) => {
