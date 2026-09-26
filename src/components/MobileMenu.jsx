@@ -1,5 +1,6 @@
 import { t } from '../i18n/index.js';
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./MobileMenu.css";
 
 export default function MobileMenu({ menuItems, isOpen, onClose, onAnchorClick }) {
@@ -39,7 +40,9 @@ export default function MobileMenu({ menuItems, isOpen, onClose, onAnchorClick }
       aria-label={t("Navegação mobile")}
     >
       <div className="inner">
-        {menuItems.map((item, index) => (
+        {menuItems.map((item, index) => item.to ? (
+            <Link key={item.to} to={item.to}>{item.label}</Link>
+          ) : (
           <a
             key={item.id}
             href={item.id}

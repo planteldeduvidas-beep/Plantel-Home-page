@@ -1,5 +1,6 @@
 import { t } from '../i18n/index.js';
 import { Moon, Sun } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import { headerPanels } from "../data/headerPanels";
 import { useEffect, useState } from "react";
