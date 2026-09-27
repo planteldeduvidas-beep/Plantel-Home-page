@@ -17,7 +17,7 @@ export const headerPanels = {
     { title: 'Thay Puppin', links: [['EFOMM - Turma 2', 'https://pay.kiwify.com.br/OyFUYjX?afid=1vBM9oo8'], ['Clube da Redação', 'https://pay.kiwify.com.br/ctsiQfg?afid=W5fMhBRq']] },
   ],
   '#plantel-labs': [
-    { title: t("Explore o Plantel Labs"), links: [[t("Conheça o Labs"), '/plantellabs'], [t("Nossa atuação"), '/plantellabs#atuacao']] },
+    { title: t("Explore o Plantel Labs"), links: [[t("Conheça o Labs"), '/plantellabs/'], [t("Nossa atuação"), '/plantellabs#projetos']] },
     { title: t("Projetos e equipe"), links: [['Plantel EFOMM', '/efomm/'], [t("Conheça o time"), '/plantellabs#time']] },
   ],
 };

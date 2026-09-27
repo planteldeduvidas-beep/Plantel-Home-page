@@ -1,5 +1,5 @@
 // import { useState } from "react";
-// 
+// import { Link } from "react-router-dom";
 // import logo from "../assets/logo_plantel1.png";
 import membros from "../data/membros.js";
 import { useRevelar } from "../hooks/useScrollRevealLabs.js";
@@ -11,8 +11,7 @@ import BacktoTop from "../components/BackToTop.jsx";
 import Footer from "../components/plantel_Labs/footerLabs.jsx";
 import Header from "../components/plantel_Labs/headerLabs.jsx";
 import { Code2, Users, Lightbulb, BarChart3 } from "lucide-react";
-import { useEffect } from 'react';
-import ReadingControls from '../components/ReadingControls.jsx';
+import { useState, useEffect } from "react";
 
 const linkWhatsapp = `https://wa.me/5524999216327?text=${encodeURIComponent(
   "Olá, tenho interesse em ser parceiro do Plantel de Dúvidas. Vim pelo Plantel Labs."
@@ -25,30 +24,41 @@ const irPara = (event, id) => {
   if (!alvo) return;
   window.scrollTo({
     top: alvo.offsetTop - 90,
-    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    behavior: "smooth",
   });
-
+  setIsMenuOpen(false);
 };
 
+
+
 export default function PlantelLab() {
-  useRevelar();
+
   useEffect(() => {
-    const previous = document.title;
-    document.title = 'Plantel Labs';
-    const frame = requestAnimationFrame(() => {
-      const id = window.location.hash.slice(1);
-      if (id) document.getElementById(id)?.scrollIntoView();
-    });
-    return () => { cancelAnimationFrame(frame); document.title = previous; };
-  }, []);
-   
+  const hash = window.location.hash;
+  if (!hash) return;
+
+  const alvo = document.querySelector(hash);
+  if (!alvo) return;
+
+  requestAnimationFrame(() => {
+    window.scrollTo({ top: alvo.offsetTop - 90, behavior: "smooth" });
+  });
+}, []);
+
+  useRevelar();
+   const [toast, setToast] = useState("");
+
+  useEffect(() => {
+    if (!toast) return;
+    const timer = setTimeout(() => setToast(""), 3000);
+    return () => clearTimeout(timer);
+  }, [toast]);
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
    
       <div className="plab">
         <PlantelBackdrop />
         <BacktoTop/>
-        <ReadingControls />
         <Header />
         <section className="plab-intro " id="home">
             <h1 className="plab-intro__title revelar">
@@ -60,7 +70,7 @@ export default function PlantelLab() {
               conhece as pessoas do time e as frentes em que atuamos.
             </p>
             <div className="plab-intro__actions revelar">
-              <a href="#time" className="plab-btn plab-btn--ghost" onClick={(e) => irPara(e, "#time")}>
+              <a href="" className="plab-btn plab-btn--ghost" onClick={(e) => irPara(e, "#time")}>
                 Ver time
               </a>
             </div>
@@ -83,21 +93,37 @@ export default function PlantelLab() {
                   <h3 className="plab-projeto__nome">{projeto.nome}</h3>
                   <p className="plab-projeto__desc">{projeto.descricao}</p>
 
-                  <a
-                    href={projeto.url}
-                    target={projeto.url.startsWith('/') ? undefined : '_blank'}
-                    rel={projeto.url.startsWith('/') ? undefined : 'noopener noreferrer'}
-                    className="plab-projeto__btn"
-                  >
-                    Acessar projeto <em>→</em>
-                  </a>
+                  <div className="plab-projeto__tags">
+                    {projeto.tags.map((tag) => (
+                      <span key={tag} className="plab-tag">{tag}</span>
+                    ))}
+                  </div>
+                  
+                  {projeto.url ? (
+                    <a
+                      href={projeto.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="plab-projeto__btn"
+                    >
+                      Acessar projeto <em>→</em>
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      className="plab-projeto__btn plab-projeto__btn--indisponivel"
+                      onClick={() => setToast("Indisponível.")}
+                    >
+                      Em breve <em>→</em>
+                    </button>
+                  )}
                 </div>
               </article>
             ))}
           </div>
 
 
-          <div className="plab-atuacao revelar" id="atuacao">
+          <div className="plab-atuacao revelar">
             <h2 className="plab-atuacao__title">
               Da ideia ao <span>impacto</span>
             </h2>
@@ -185,6 +211,7 @@ export default function PlantelLab() {
           </div>
         </section>
         <Footer />
+        {toast && <div className="plab-toast" role="status">{toast}</div>}
       </div>
   );
 }

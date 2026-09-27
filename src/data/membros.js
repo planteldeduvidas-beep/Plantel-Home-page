@@ -1,11 +1,18 @@
 const membros = [
   {
-    nome: "Ygor",
-    cargo: "Gerenciador de Projetos",
+    nome: "Ygor Esteves",
+    cargo: "CEO",
     foto: "/images/membros/Ygor.jpg",
     tecnologias: [],
     descricao:
-      "Responsável pela organização e planejamento."
+      "CEO do Plantel de Dúvidas e gerente de projetos."
+  },
+  {
+    nome: "Eduardo Hastenreiter",
+    cargo: "CEO",
+    foto: "/images/membros/Eduardo2.png",
+    tecnologias: [],
+    descricao:"CEO do Plantel de Dúvidas e incentivador do projeto."
   },
   {
     nome: "Gabriel",
@@ -21,16 +28,16 @@ const membros = [
     foto: "/images/membros/Pedro.jpeg",
     tecnologias: [],
     descricao:
-      "Responsável desenvolvimento dos sistemas."
+      "Responsável pelo desenvolvimento dos sistemas."
   },
 
   {
     nome: "Miqueias Carvalho",
     cargo: "Desenvolvedor",
-    foto: "/images/membros/Miqueias.png",
+    foto: "/images/membros/Miqueias2.png",
     tecnologias: [],
     descricao:
-      "Responsável desenvolvimento dos sistemas."
+      "Responsável pelo desenvolvimento dos sistemas."
   }
 ]
 export default membros;
