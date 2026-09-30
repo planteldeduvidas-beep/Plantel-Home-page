@@ -10,7 +10,7 @@ const membros = [
   {
     nome: "Eduardo Hastenreiter",
     cargo: "CEO",
-    foto: "/images/membros/Eduardo2.png",
+    foto: "/images/membros/Eduardo2.jpeg",
     tecnologias: [],
     descricao:"CEO do Plantel de Dúvidas e incentivador do projeto."
   },
