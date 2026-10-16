@@ -1,0 +1,22 @@
+.cookie-table { margin: 22px 0; border: 1px solid #17372d1a; border-radius: 8px; overflow: hidden; }
+.cookie-table > div { display: grid; grid-template-columns: minmax(140px, .8fr) minmax(220px, 1.5fr) minmax(120px, .7fr); }
+.cookie-table > div + div { border-top: 1px solid #17372d14; }
+.cookie-table span, .cookie-table code { padding: 13px 14px; color: #52685f; font: 400 .78rem/1.5 "Work Sans", sans-serif; }
+.cookie-table code { color: #237a3b; font-weight: 600; overflow-wrap: anywhere; }
+.cookie-table-head { background: #edf2ee; }
+.cookie-table-head span { color: #17372d; font-weight: 700; }
+body.dark-theme .cookie-table { border-color: #ffffff18; }
+body.dark-theme .cookie-table > div + div { border-color: #ffffff12; }
+body.dark-theme .cookie-table span { color: #a9bbb1; }
+body.dark-theme .cookie-table code { color: #55c875; }
+body.dark-theme .cookie-table-head { background: #18231f; }
+body.dark-theme .cookie-table-head span { color: #edf5f0; }
+@media (max-width: 620px) {
+  .cookie-table { border: 0; overflow: visible; }
+  .cookie-table-head { display: none !important; }
+  .cookie-table > div { grid-template-columns: 1fr; margin-bottom: 12px; padding: 12px; border: 1px solid #17372d1a; border-radius: 8px; }
+  .cookie-table > div + div { border-top: 1px solid #17372d1a; }
+  .cookie-table span, .cookie-table code { padding: 4px; }
+  body.dark-theme .cookie-table > div,
+  body.dark-theme .cookie-table > div + div { border-color: #ffffff18; }
+}

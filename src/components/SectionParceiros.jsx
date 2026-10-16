@@ -22,10 +22,22 @@ const parceiros = [
     links: [
       { label: "EFOMM - TURMA 2", href: "https://pay.kiwify.com.br/OyFUYjX?afid=1vBM9oo8" },
       { label: "CLUBE DA REDAÇÃO", href: "https://pay.kiwify.com.br/ctsiQfg?afid=W5fMhBRq" },
+      { label: "EFOMM - TURMA (MENSAL)", href: "https://pay.kiwify.com.br/Vb6d4Sk?afid=EP5FoOSU" },
     ],
     className: "logo-parceiros",
     label: t("Mentoria de Redação, prof. Thay Puppin"),
     imageSrc: "/Logo_parceiros/logo-puppin.png",
+  },
+  {
+    id: "omp",
+    name: "OMP - O Método Português",
+    links: [
+      { label: "TURMA DE EXERCÍCIOS - MENSAL", href: "https://pay.kiwify.com.br/uqp1u1b?afid=yyT4wqyg" },
+      { label: "TURMA DE EXERCÍCIOS - ANUAL", href: "https://pay.kiwify.com.br/XMD8PA3?afid=yyT4wqyg" },
+    ],
+    className: "logo-parceiros logo-omp",
+    label: "OMP - O Método Português · Turmas de exercícios",
+    imageSrc: "/efomm/assets/omp-logo.png",
   },
   
 ];
