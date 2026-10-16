@@ -62,21 +62,30 @@
 .main-footer .footer-bottom {
   max-width: 1120px;
   margin: 44px auto 0;
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 24px;
+  padding-top: 18px;
+  display: block;
+  border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent);
   text-align: left;
 }
 
-.main-footer .footer-bottom p {
+.main-footer .footer-bottom p,
+.main-footer .footer-bottom a,
+.main-footer .footer-bottom span {
   font: 400 .75rem/1.6 "Work Sans", sans-serif;
   letter-spacing: normal;
   margin: 0;
 }
 
-.main-footer .footer-bottom .dev-team { font-weight: 600; text-align: right; }
+.main-footer .footer-legal-meta,
+.main-footer .footer-legal-row,
+.main-footer .footer-legal-links { display: flex; align-items: center; }
+.main-footer .footer-legal-meta,
+.main-footer .footer-legal-row { justify-content: space-between; gap: 24px; }
+.main-footer .footer-legal-links { flex-wrap: wrap; gap: 9px; }
+.main-footer .footer-legal-row { margin-top: 2px; }
+.main-footer .footer-bottom a { color: inherit; text-decoration: none; }
+.main-footer .footer-bottom a:hover { color: var(--primary-color); }
+.main-footer .footer-bottom .dev-team { font-weight: 500; text-align: right; }
 .main-footer .language-selector { max-width: 1120px; margin-top: 16px; }
 .main-footer a:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 4px; }
 body.dark-theme .main-footer .footer-brand-heading { color: var(--accent-color); }
@@ -90,7 +99,10 @@ body.dark-theme .main-footer .footer-brand-heading { color: var(--accent-color);
   .main-footer .footer-container { gap: 32px 24px; }
   .main-footer .footer-brand, .main-footer .footer-contact { grid-column: 1 / -1; }
   .main-footer .footer-brand p { max-width: 36ch; }
-  .main-footer .footer-bottom { flex-direction: column; gap: 12px; margin-top: 32px; }
+  .main-footer .footer-bottom { margin-top: 32px; }
+  .main-footer .footer-legal-meta,
+  .main-footer .footer-legal-row { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .main-footer .footer-legal-row { margin-top: 8px; }
   .main-footer .footer-bottom .dev-team { text-align: left; }
   .main-footer .language-selector { justify-content: flex-start; }
 }

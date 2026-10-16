@@ -21,8 +21,9 @@ function Countdown({ exam, now }) {
 }
 
 function ExamIcon({ exam }) {
-  const logos = { ime: 'ime.png', ita: 'ita.png', afa: 'afa.png', en: 'escola-naval.png', efomm: 'efomm.png' };
-  return <div className="exam-symbol" aria-hidden="true"><img src={`/images/${logos[exam.id]}`} alt="" /></div>;
+  const logos = { ime: 'ime.png', ita: 'ita.png', afa: 'afa.png', en: 'escola-naval.png', efomm: 'efomm.png', esa: 'esa-logo-clean.png', espcex: 'espcex-logo.png', eear1: 'eear-logo-clean.png', eear2: 'eear-logo-clean.png', epcar: 'epcar-logo.svg', cn: 'colegio-naval-logo.png', eam: 'eam-logo.png' };
+  const logo = logos[exam.id];
+  return <div className="exam-symbol" aria-hidden="true">{logo ? <img className={`exam-logo exam-logo-${exam.id}`} src={`/images/${logo}`} alt="" /> : <span>{exam.name === 'Colégio Naval' ? 'CN' : exam.name}</span>}</div>;
 }
 
 export function SectionExamCalendar() {
@@ -96,7 +97,7 @@ export default function ExamCalendar({ isDarkMode, onToggleDarkMode }) {
         })}
       </div>
       {!shown.length && <p className="calendar-empty">{t("Nenhuma prova nesta categoria por enquanto. Veja todos os concursos.")}</p>}
-      <p className="calendar-footnote">{t("Horário de Brasília · Datas conferidas em 08/09/2026.")}<br />{t("Acompanhe possíveis alterações e as demais etapas nos canais oficiais.")}</p>
+      <p className="calendar-footnote">{t("Horário de Brasília · Concursos e links oficiais revisados em 15/10/2026.")}<br />{t("Acompanhe possíveis alterações e as demais etapas nos canais oficiais.")}</p>
       <LanguageSelector />
     </main>
   </div>;

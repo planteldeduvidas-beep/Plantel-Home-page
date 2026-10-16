@@ -41,6 +41,7 @@ export default function Footer({ menuItems, onAnchorClick }) {
           <a href="#calendario">{t("Calendário de provas")}</a>
           <a href="/efomm/">Plantel EFOMM</a>
           <a href="/plantellabs">Plantel Labs</a>
+          <a href="/privacidade">Política de Privacidade</a>
         </div>
 
         <div className="footer-contact">
@@ -58,8 +59,24 @@ export default function Footer({ menuItems, onAnchorClick }) {
       </div>
 
       <div className="footer-bottom">
-        <p>{t("© 2025 Plantel de Dúvidas. Todos os direitos reservados.")}</p>
-        <p className="dev-team"> {t("Desenvolvido pela Equipe de TI/Desenvolvimento - Plantel Labs")}</p>
+        <div className="footer-legal-meta">
+          <p>Copyright © 2026 Plantel de Dúvidas. Todos os direitos reservados.</p>
+          <span>Brasil</span>
+        </div>
+        <div className="footer-legal-row">
+          <div className="footer-legal-links">
+            <a href="/privacidade">Política de Privacidade</a>
+            <span aria-hidden="true">|</span>
+            <a href="/termos-de-uso">Termos de Uso</a>
+            <span aria-hidden="true">|</span>
+            <a href="/politica-de-cookies">Política de Cookies</a>
+            <span aria-hidden="true">|</span>
+            <a href="mailto:planteldeduvidas@gmail.com?subject=Contato%20-%20Plantel%20de%20D%C3%BAvidas">Contato</a>
+            <span aria-hidden="true">|</span>
+            <a href="/plantellabs">Plantel Labs</a>
+          </div>
+          <p className="dev-team">Desenvolvido pela Equipe de TI/Desenvolvimento</p>
+        </div>
       </div>
       <LanguageSelector />
     </footer>

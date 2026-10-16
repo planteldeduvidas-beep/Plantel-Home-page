@@ -20,6 +20,7 @@ import LanguagePage from "./components/LanguagePage.jsx";
 import ReadingControls from "./components/ReadingControls.jsx";
 import LabsComingSoon from "./components/LabsComingSoon.jsx";
 import ExamCalendar, { SectionExamCalendar } from "./components/ExamCalendar.jsx";
+import SectionPlantelListas from "./components/SectionPlantelListas.jsx";
 
 const HEADER_OFFSET = 80;
 
@@ -146,6 +147,7 @@ export default function App() {
         <SectionComunidades />
         <SectionRedes />
         <SectionExamCalendar />
+        <SectionPlantelListas />
         <SectionEfomm />
         <SectionParceiros />
         <SectionLabs />

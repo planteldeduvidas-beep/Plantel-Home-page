@@ -722,6 +722,17 @@ header {
   background-position: center -25px;
 }
 
+.hero-parceiro[data-parceiro="omp"] {
+  background-image: var(--gradient-overlay), linear-gradient(135deg, #070707, #252525);
+  background-position: center;
+}
+
+.logo-omp {
+  background: #000;
+  object-fit: contain;
+  padding: 12px;
+}
+
 .hero-parceiro[data-parceiro="mobius"] {
   background-image: var(--gradient-overlay), url("/fundo_parceiros/fundo-mobius.png");
   background-position: center 90px;
