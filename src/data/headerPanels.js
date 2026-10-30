@@ -10,6 +10,7 @@ export const headerPanels = {
     { title: t("Conecte-se ao Plantel"), links: [['Instagram', 'https://www.instagram.com/planteldeduvidas/'], ['YouTube', '/youtube'], ['Discord', 'https://discord.gg/dbKeAz6Y'], ['Telegram', 'https://t.me/plantelduvidas']] },
   ],
   '#efomm': [
+    { title: 'Ferramentas de estudo', links: [['Plantel Listas', 'https://plantellistas.planteldeduvidas.com.br/']] },
     { title: t("Seu próximo objetivo"), links: [[t("Conheça a EFOMM"), '/efomm/'], [t("Calendário de provas"), '#calendario']] },
   ],
   '#parceiros': [

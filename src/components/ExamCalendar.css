@@ -37,6 +37,10 @@ body.dark-theme .calendar-preview, body.dark-theme .exam-page { --calendar-ink: 
 .exam-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 24px; }
 .exam-symbol { flex-shrink: 0; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; background: var(--calendar-bg); color: #39915b; }
 .exam-symbol img { width: 34px; height: 34px; object-fit: contain; }
+.exam-symbol .exam-logo-esa { width: 30px; height: 40px; }
+.exam-symbol .exam-logo-eear1,
+.exam-symbol .exam-logo-eear2 { width: 29px; height: 38px; }
+.exam-symbol span { max-width: 42px; padding: 0 3px; overflow-wrap: anywhere; color: #287a45; font-size: .6875rem; font-weight: 700; line-height: 1; text-align: center; letter-spacing: 0; }
 .exam-card h2 { font-family: inherit; color: var(--calendar-ink); font-size: 1.5rem; line-height: 1.2; letter-spacing: -.04em; margin: 10px 0; }
 .exam-description { font-size: 0.75rem; line-height: 1.6; color: var(--calendar-muted); min-height: 58px; margin: 0 0 18px; }
 .exam-date { display: flex; align-items: flex-start; gap: 8px; font-size: 0.6875rem; }
