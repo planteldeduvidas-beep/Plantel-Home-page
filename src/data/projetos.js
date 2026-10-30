@@ -28,6 +28,13 @@ const projetos = [
     tags: ["React", "Node", "MySQL", "PWA"],
     imagem:"/images/projetos/plantelListas2.png",
     url:"https://plantellistas.planteldeduvidas.com.br"
+  },
+  {
+    nome: "LABIOMEC Hub",
+    descricao:"Sistema de gestão para o Laboratório de biomecânica da UFRJ.",
+    tags: ["React", "Node", "MySQL"],
+    imagem: "/images/projetos/LABIOMECHub.png",
+    url:"",
   }
 ];
 
